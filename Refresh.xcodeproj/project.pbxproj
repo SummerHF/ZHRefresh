@@ -18,6 +18,8 @@
 		C48350512092EF1F00DB253B /* ZHRefreshNormalHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48350502092EF1F00DB253B /* ZHRefreshNormalHeader.swift */; };
 		C48350532092EF4700DB253B /* ZHRefreshGifHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48350522092EF4700DB253B /* ZHRefreshGifHeader.swift */; };
 		C48350552092F06600DB253B /* ZHRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C48350542092F06600DB253B /* ZHRefresh.bundle */; };
+		C483505A2092F22A00DB253B /* UIScrollView+ZHRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48350592092F22A00DB253B /* UIScrollView+ZHRefresh.swift */; };
+		C483505D2092F4CB00DB253B /* ZHRefreshKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = C483505C2092F4CB00DB253B /* ZHRefreshKeys.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		C48350502092EF1F00DB253B /* ZHRefreshNormalHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZHRefreshNormalHeader.swift; sourceTree = "<group>"; };
 		C48350522092EF4700DB253B /* ZHRefreshGifHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZHRefreshGifHeader.swift; sourceTree = "<group>"; };
 		C48350542092F06600DB253B /* ZHRefresh.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ZHRefresh.bundle; sourceTree = "<group>"; };
+		C48350592092F22A00DB253B /* UIScrollView+ZHRefresh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+ZHRefresh.swift"; sourceTree = "<group>"; };
+		C483505C2092F4CB00DB253B /* ZHRefreshKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZHRefreshKeys.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +87,8 @@
 				C48350542092F06600DB253B /* ZHRefresh.bundle */,
 				C41A38472092CD420006444B /* Base */,
 				C41A384A2092CD7D0006444B /* Custom */,
+				C48350562092F18300DB253B /* Extension */,
+				C483505B2092F4B300DB253B /* Tool */,
 			);
 			path = ZHRefresh;
 			sourceTree = "<group>";
@@ -120,6 +126,22 @@
 				C48350522092EF4700DB253B /* ZHRefreshGifHeader.swift */,
 			);
 			path = Header;
+			sourceTree = "<group>";
+		};
+		C48350562092F18300DB253B /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				C48350592092F22A00DB253B /* UIScrollView+ZHRefresh.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		C483505B2092F4B300DB253B /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				C483505C2092F4CB00DB253B /* ZHRefreshKeys.swift */,
+			);
+			path = Tool;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,6 +219,8 @@
 				C48350532092EF4700DB253B /* ZHRefreshGifHeader.swift in Sources */,
 				C41A38352092CC2E0006444B /* ViewController.swift in Sources */,
 				C48350512092EF1F00DB253B /* ZHRefreshNormalHeader.swift in Sources */,
+				C483505D2092F4CB00DB253B /* ZHRefreshKeys.swift in Sources */,
+				C483505A2092F22A00DB253B /* UIScrollView+ZHRefresh.swift in Sources */,
 				C41A38332092CC2E0006444B /* AppDelegate.swift in Sources */,
 				C41A38542092EE060006444B /* ZHRefreshStateHeader.swift in Sources */,
 				C41A38502092EB8C0006444B /* ZHRefreshHeader.swift in Sources */,

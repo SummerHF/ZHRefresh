@@ -1,4 +1,4 @@
-//  ZHRefreshHeader.swift
+//  ZHRefreshKeys.swift
 //  Refresh
 //
 //  Created by SummerHF on 27/04/2018.
@@ -25,9 +25,12 @@
 //  THE SOFTWARE.
 //
 
-import UIKit
+import Foundation
 
-/// 基础的下拉刷新控件
-class ZHRefreshHeader: ZHRefreshComponent {
-
+/// Key - Value
+struct ZHRefreshKeys {
+    static var header = "header"
 }
+
+
+

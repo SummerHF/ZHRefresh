@@ -1,4 +1,4 @@
-//  ZHRefreshComponent.swift
+//  UIScrollView+ZHRefresh.swift
 //  Refresh
 //
 //  Created by SummerHF on 27/04/2018.
@@ -25,18 +25,25 @@
 //  THE SOFTWARE.
 //
 
-
 import UIKit
 
-/// 刷新控件的基类
-class ZHRefreshComponent: UIView {
+extension UIScrollView {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    var header: ZHRefreshHeader {
+        get {
+            return objc_getAssociatedObject(self, &ZHRefreshKeys.header) as! ZHRefreshHeader
+        }
+        set {
+            if self.header != newValue {
+                /// 移除旧值
+                self.header.removeFromSuperview()
+                self.addSubview(header)
+                /// 存储新的
+                /// KVO
+                self.willChangeValue(forKey: ZHRefreshKeys.header)
+                objc_setAssociatedObject(self, &ZHRefreshKeys.header, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_ASSIGN)
+                self.didChangeValue(forKey: ZHRefreshKeys.header)
+            }
+        }
     }
-    */
-
 }
