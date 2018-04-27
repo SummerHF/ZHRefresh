@@ -10,9 +10,16 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    lazy var tableView: UITableView = {
+        let view = UITableView(frame: self.view.bounds)
+        return view
+    }()
+
     override func viewDidLoad() {
+
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        self.view.addSubview(tableView)
     }
 
     override func didReceiveMemoryWarning() {
@@ -20,4 +27,3 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 }
-

@@ -1,0 +1,15 @@
+/// 1. about willMoveToSuperview
+/// - https://stackoverflow.com/questions/25996906/willmovetosuperview-is-called-twice
+/**
+When a view is added to a superview, the system sends willMoveToSuperview: to the view. The parameter is the new superview.
+When a view is removed from a superview, the system sends willMoveToSuperview: to the view. The parameter is nil.
+You can't prevent the system from sending willMoveToSuperview: when you remove the view from its superview, but you can check the parameter:
+*/
+
+/// run time
+/// - https://academy.realm.io/posts/mobilization-roy-marmelstein-objective-c-runtime-swift-dynamic/
+/// - https://github.com/marmelroy/ObjectiveKit
+
+///Any and AnyObject
+/// - https://cocoacasts.com/what-is-any-in-swift
+/// - https://medium.com/@markohlebar/5-things-you-can-do-in-objective-c-but-cant-do-in-pure-swift-31bb66b4aab8

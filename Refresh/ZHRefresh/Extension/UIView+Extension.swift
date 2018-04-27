@@ -1,4 +1,4 @@
-//  ZHRefreshKeys.swift
+//  UIView+Extension.swift
 //  Refresh
 //
 //  Created by SummerHF on 27/04/2018.
@@ -27,16 +27,59 @@
 
 import UIKit
 
-/// Key - Value
-struct ZHRefreshKeys {
+extension UIView {
 
-    /// key path 
-    static var header = "header"
-    static var contentOffset = "contentOffset"
-    static var contentInSet = "contentInset"
-    static var contentSize = "contentSize"
-    static var panState = "state"
+    var zh_x: CGFloat {
+        get {
+            return self.frame.origin.x
+        }
+        set {
+            self.frame.origin.x = newValue
+        }
+    }
 
-    /// animate duration
-    static var fastAnimateDuration: TimeInterval = 0.25
+    var zh_y: CGFloat {
+        get {
+            return self.frame.origin.y
+        }
+        set {
+            self.frame.origin.y = newValue
+        }
+    }
+
+    var zh_w: CGFloat {
+        get {
+            return self.frame.size.width
+        }
+        set {
+            self.frame.size.width = newValue
+        }
+    }
+
+    var zh_h: CGFloat {
+        get {
+            return self.frame.size.height
+        }
+        set {
+            self.frame.size.height = newValue
+        }
+    }
+
+    var zh_size: CGSize {
+        get {
+            return self.frame.size
+        }
+        set {
+            self.frame.size = newValue
+        }
+    }
+
+    var zh_origin: CGPoint {
+        get {
+            return self.frame.origin
+        }
+        set {
+            self.frame.origin = newValue
+        }
+    }
 }

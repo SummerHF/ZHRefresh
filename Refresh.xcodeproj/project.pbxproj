@@ -20,6 +20,9 @@
 		C48350552092F06600DB253B /* ZHRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C48350542092F06600DB253B /* ZHRefresh.bundle */; };
 		C483505A2092F22A00DB253B /* UIScrollView+ZHRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48350592092F22A00DB253B /* UIScrollView+ZHRefresh.swift */; };
 		C483505D2092F4CB00DB253B /* ZHRefreshKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = C483505C2092F4CB00DB253B /* ZHRefreshKeys.swift */; };
+		C4AE51E220930C72009DCF90 /* Record in Resources */ = {isa = PBXBuildFile; fileRef = C4AE51E120930C72009DCF90 /* Record */; };
+		C4AE51E420931353009DCF90 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AE51E320931353009DCF90 /* UIView+Extension.swift */; };
+		C4AE51EA209327A5009DCF90 /* ZHRefreshRunTime.m in Sources */ = {isa = PBXBuildFile; fileRef = C4AE51E9209327A5009DCF90 /* ZHRefreshRunTime.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +41,11 @@
 		C48350542092F06600DB253B /* ZHRefresh.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ZHRefresh.bundle; sourceTree = "<group>"; };
 		C48350592092F22A00DB253B /* UIScrollView+ZHRefresh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+ZHRefresh.swift"; sourceTree = "<group>"; };
 		C483505C2092F4CB00DB253B /* ZHRefreshKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZHRefreshKeys.swift; sourceTree = "<group>"; };
+		C4AE51E120930C72009DCF90 /* Record */ = {isa = PBXFileReference; lastKnownFileType = text; path = Record; sourceTree = "<group>"; };
+		C4AE51E320931353009DCF90 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		C4AE51E7209327A4009DCF90 /* Refresh-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Refresh-Bridging-Header.h"; sourceTree = "<group>"; };
+		C4AE51E8209327A5009DCF90 /* ZHRefreshRunTime.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZHRefreshRunTime.h; sourceTree = "<group>"; };
+		C4AE51E9209327A5009DCF90 /* ZHRefreshRunTime.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZHRefreshRunTime.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +92,7 @@
 		C41A38442092CC450006444B /* ZHRefresh */ = {
 			isa = PBXGroup;
 			children = (
+				C4AE51E120930C72009DCF90 /* Record */,
 				C48350542092F06600DB253B /* ZHRefresh.bundle */,
 				C41A38472092CD420006444B /* Base */,
 				C41A384A2092CD7D0006444B /* Custom */,
@@ -132,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				C48350592092F22A00DB253B /* UIScrollView+ZHRefresh.swift */,
+				C4AE51E320931353009DCF90 /* UIView+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -139,7 +149,10 @@
 		C483505B2092F4B300DB253B /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				C4AE51E7209327A4009DCF90 /* Refresh-Bridging-Header.h */,
 				C483505C2092F4CB00DB253B /* ZHRefreshKeys.swift */,
+				C4AE51E8209327A5009DCF90 /* ZHRefreshRunTime.h */,
+				C4AE51E9209327A5009DCF90 /* ZHRefreshRunTime.m */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -154,6 +167,7 @@
 				C41A382B2092CC2E0006444B /* Sources */,
 				C41A382C2092CC2E0006444B /* Frameworks */,
 				C41A382D2092CC2E0006444B /* Resources */,
+				C4AE51E02092FBE5009DCF90 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -176,6 +190,7 @@
 				TargetAttributes = {
 					C41A382E2092CC2E0006444B = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 0930;
 					};
 				};
 			};
@@ -202,6 +217,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4AE51E220930C72009DCF90 /* Record in Resources */,
 				C41A383D2092CC2E0006444B /* LaunchScreen.storyboard in Resources */,
 				C48350552092F06600DB253B /* ZHRefresh.bundle in Resources */,
 				C41A383A2092CC2E0006444B /* Assets.xcassets in Resources */,
@@ -210,6 +226,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C4AE51E02092FBE5009DCF90 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n\nTAGS=\"TODO:|FIXME:\"\necho \"searching ${SRCROOT} for ${TAGS}\"\nfind \"${SRCROOT}\" \\( -name \"*.swift\" \\) -print0 | xargs -0 egrep --with-filename --line-number --only-matching \"($TAGS).*\\$\" | perl -p -e \"s/($TAGS)/ warning: \\$1/\"";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C41A382B2092CC2E0006444B /* Sources */ = {
@@ -220,10 +252,12 @@
 				C41A38352092CC2E0006444B /* ViewController.swift in Sources */,
 				C48350512092EF1F00DB253B /* ZHRefreshNormalHeader.swift in Sources */,
 				C483505D2092F4CB00DB253B /* ZHRefreshKeys.swift in Sources */,
+				C4AE51EA209327A5009DCF90 /* ZHRefreshRunTime.m in Sources */,
 				C483505A2092F22A00DB253B /* UIScrollView+ZHRefresh.swift in Sources */,
 				C41A38332092CC2E0006444B /* AppDelegate.swift in Sources */,
 				C41A38542092EE060006444B /* ZHRefreshStateHeader.swift in Sources */,
 				C41A38502092EB8C0006444B /* ZHRefreshHeader.swift in Sources */,
+				C4AE51E420931353009DCF90 /* UIView+Extension.swift in Sources */,
 				C41A38492092CD420006444B /* ZHRefreshComponent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -368,6 +402,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G6WGUJ4M73;
 				INFOPLIST_FILE = Refresh/Info.plist;
@@ -377,6 +412,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = summer.Refresh;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Refresh/ZHRefresh/Tool/Refresh-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -386,6 +423,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G6WGUJ4M73;
 				INFOPLIST_FILE = Refresh/Info.plist;
@@ -395,6 +433,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = summer.Refresh;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Refresh/ZHRefresh/Tool/Refresh-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
