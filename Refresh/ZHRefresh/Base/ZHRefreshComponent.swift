@@ -41,8 +41,12 @@ enum ZHRefreshState {
     case nomoreData
 }
 
-/// 进入刷新状态的回调
+/// 正在刷新的回调
 typealias ZHRefreshComponentRefreshingBlock = () -> Void
+/// 开始刷新后的回调(进入刷新状态后的回调)
+typealias ZHRefreshComponentbeiginRefreshingCompletionBlock = () -> Void
+/// 结束刷新后的回调
+typealias ZHRefreshComponentEndRefreshingCompletionBlock = () -> Void
 
 /// 刷新控件的基类
 class ZHRefreshComponent: UIView {
@@ -52,12 +56,23 @@ class ZHRefreshComponent: UIView {
     private weak var _scrollView: UIScrollView!
     /// 正在刷新的回调
     var refreshingBlock: ZHRefreshComponentRefreshingBlock?
+    /// 开始刷新后的回调(进入刷新状态后的回调)
+    var beginRefreshingCompletionBlock: ZHRefreshComponentbeiginRefreshingCompletionBlock?
+    /// 结束刷新的回调
+    var endRefreshingCompletionBlock: ZHRefreshComponentEndRefreshingCompletionBlock?
     /// 回调对象
     var refreshTarget: Any?
     /// 回调方法
     var refreshAction: Selector?
     /// 刷新状态, 一般交给子类内部实现, 默认是普通状态
-    var state: ZHRefreshState = .idle
+    var state: ZHRefreshState = .idle {
+        didSet {
+            /// 加入主队列的目的是等setState: 方法调用完毕后, 设置完文字后再去布局子控件
+            DispatchQueue.main.async {
+                self.setNeedsLayout()
+            }
+        }
+    }
     /// 手势
     var pan: UIPanGestureRecognizer!
 
@@ -75,9 +90,12 @@ class ZHRefreshComponent: UIView {
                 refreshBlock()
             }
             if let target = self.refreshTarget, let action = self.refreshAction {
-                if ZHRefreshRunTime.target(target, canPerform: action) {
-                    ZHRefreshRunTime.target(target, perform: action)
+                if ZHRefreshRuntime.target(target, canPerform: action) {
+                    ZHRefreshRuntime.target(target, perform: action, view: self)
                 }
+            }
+            if let beginRefreshBlock = self.beginRefreshingCompletionBlock {
+                beginRefreshBlock()
             }
         }
     }
@@ -100,9 +118,21 @@ class ZHRefreshComponent: UIView {
         }
     }
 
+    func beginRefreshingWithCompletionBlock(completionBlock: @escaping () -> Void) {
+        self.beginRefreshingCompletionBlock = completionBlock
+        self.beginRefreshing()
+    }
+
     /// 结束刷新状态
     func endRefreshing() {
-        self.state = .idle
+        DispatchQueue.main.async {
+            self.state = .idle
+        }
+    }
+
+    func endRefreshingWithCompletionBlock(completionBlock: @escaping () -> Void) {
+        self.endRefreshingCompletionBlock = completionBlock
+        self.endRefreshing()
     }
 
     /// 是否正在刷新
@@ -172,13 +202,13 @@ class ZHRefreshComponent: UIView {
 
         /// 记录scrollView
         if let scrollView = superView as? UIScrollView {
-           _scrollView = scrollView
+            _scrollView = scrollView
             /// 设置永远支持垂直弹簧效果 否则不会出发UIScrollViewDelegate的方法, KVO也会失效
-           _scrollView.alwaysBounceVertical = true
+            _scrollView.alwaysBounceVertical = true
             /// 记录UIScrollView最开始的contentInset
-           _scrollViewOriginalInset = self.scrollView.contentInset
+            _scrollViewOriginalInset = self.scrollView.contentInset
             /// 添加监听
-           self.addObservers()
+            self.addObservers()
         }
     }
 
@@ -242,3 +272,4 @@ class ZHRefreshComponent: UIView {
         }
     }
 }
+

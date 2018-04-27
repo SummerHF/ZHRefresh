@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ZHRefreshRunTime : NSObject
+@interface ZHRefreshRuntime : NSObject
 
 /** objc_msgSend不能使用纯OC实现 这里借助OC来完成 */
 +(BOOL)target:(id)target canPerformSelector:(SEL)selctor;
 /** 发送消息 */
-+(void)target:(id)target performSelector:(SEL)selctor;
++(void)target:(id)target performSelector:(SEL)selctor view:(UIView *)view;
 
 @end
