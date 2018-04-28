@@ -8,6 +8,7 @@ disabled_rules: # rule identifiers to exclude from running
   - weak_delegate
   - trailing_whitespace
   - large_tuple
+  - type_name
 #   - colon
 #   - comma
 #   - control_statement

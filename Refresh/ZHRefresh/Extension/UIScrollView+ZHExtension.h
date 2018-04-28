@@ -1,4 +1,4 @@
-//  ZHRefreshRunTime.h
+//  UIScrollView+ZHExtension.h
 //  Refresh
 //
 //  Created by SummerHF on 27/04/2018.
@@ -27,11 +27,20 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ZHRefreshRuntime : NSObject
+@interface UIScrollView (ZHExtension)
 
-/** objc_msgSend不能使用纯OC实现 这里借助OC来完成 */
-+(BOOL)target:(id)target canPerformSelector:(SEL)selctor;
-/** 发送消息 */
-+(void)target:(id)target performSelector:(SEL)selctor view:(UIView *)view;
+@property(nonatomic, readonly) UIEdgeInsets zh_inset;
+
+@property(nonatomic, assign) CGFloat zh_insertT;
+@property(nonatomic, assign) CGFloat zh_insertB;
+@property(nonatomic, assign) CGFloat zh_insertL;
+@property(nonatomic, assign) CGFloat zh_insertR;
+
+@property(nonatomic, assign) CGFloat zh_offsetX;
+@property(nonatomic, assign) CGFloat zh_offsetY;
+
+@property(nonatomic, assign) CGFloat zh_contentW;
+@property(nonatomic, assign) CGFloat zh_contentH;
+
 
 @end

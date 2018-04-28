@@ -51,7 +51,7 @@ typealias ZHRefreshComponentEndRefreshingCompletionBlock = () -> Void
 /// 刷新控件的基类
 class ZHRefreshComponent: UIView {
     /// 记录scrollView刚开始的inset
-    private var _scrollViewOriginalInset: UIEdgeInsets = UIEdgeInsets.zero
+    var _scrollViewOriginalInset: UIEdgeInsets = UIEdgeInsets.zero
     /// 父控件
     private weak var _scrollView: UIScrollView!
     /// 正在刷新的回调
@@ -64,6 +64,42 @@ class ZHRefreshComponent: UIView {
     var refreshTarget: Any?
     /// 回调方法
     var refreshAction: Selector?
+    /// 手势
+    var pan: UIPanGestureRecognizer?
+
+    // MARK: - Set & Get 交给子类去访问
+
+    /// 记录scrollView刚开始的inset, 只读属性
+    var scrollViewOriginalInset: UIEdgeInsets {
+        return _scrollViewOriginalInset
+    }
+    /// 父控件
+    var scrollView: UIScrollView {
+        return _scrollView
+    }
+
+    /// 拉拽的百分比(交给子类重写)
+    var pullingPercent: CGFloat = 0.0 {
+        didSet {
+            if self.isRefreshing() { return }
+            if self.automaticallyChangeAlpha {
+                self.alpha = pullingPercent
+            }
+        }
+    }
+
+    /// 根据拖拽比例自动切换透明度, 默认是false
+    var automaticallyChangeAlpha: Bool = false {
+        didSet {
+            if self.isRefreshing() { return }
+            if automaticallyChangeAlpha {
+                self.alpha = self.pullingPercent
+            } else {
+                self.alpha = 1.0
+            }
+        }
+    }
+
     /// 刷新状态, 一般交给子类内部实现, 默认是普通状态
     var state: ZHRefreshState = .idle {
         didSet {
@@ -73,8 +109,6 @@ class ZHRefreshComponent: UIView {
             }
         }
     }
-    /// 手势
-    var pan: UIPanGestureRecognizer!
 
     /// 设置回调对象和回调方法
     func setRefreshing(target: Any, action: Selector) {
@@ -140,39 +174,6 @@ class ZHRefreshComponent: UIView {
         return self.state == .refreshing || self.state == .willRefresh
     }
 
-    // MARK: - 交给子类去访问
-
-    /// 记录scrollView刚开始的inset, 只读属性
-    var scrollViewOriginalInset: UIEdgeInsets {
-        return _scrollViewOriginalInset
-    }
-    /// 父控件
-    var scrollView: UIScrollView {
-        return _scrollView
-    }
-
-    // MARK: - 其他
-    /// 拉拽的百分比(交给子类重写)
-    var pullingPercent: CGFloat = 0.0 {
-        didSet {
-            if self.isRefreshing() { return }
-            if self.automaticallyChangeAlpha {
-                self.alpha = pullingPercent
-            }
-        }
-    }
-    /// 根据拖拽比例自动切换透明度, 默认是false
-    var automaticallyChangeAlpha: Bool = false {
-        didSet {
-            if self.isRefreshing() { return }
-            if automaticallyChangeAlpha {
-                self.alpha = self.pullingPercent
-            } else {
-                self.alpha = 1.0
-            }
-        }
-    }
-
     // MARK: - 初始化
 
     required init?(coder aDecoder: NSCoder) {
@@ -186,8 +187,8 @@ class ZHRefreshComponent: UIView {
     }
 
     override func layoutSubviews() {
-        super.layoutSubviews()
         self.placeSubViews()
+        super.layoutSubviews()
     }
 
     override func willMove(toSuperview newSuperview: UIView?) {
@@ -195,13 +196,15 @@ class ZHRefreshComponent: UIView {
         guard let superView = newSuperview else { return }
         /// 如果不是UIScrollView, 不做任何事情
         if !superView.isKind(of: UIScrollView.self) { return }
-        /// 新的父控件
-        /// 宽度
-        self.zh_w = superView.zh_w
-        self.zh_x = 0
-
+        /// 旧的父控件移除监听
+        self.removeObservers()
         /// 记录scrollView
         if let scrollView = superView as? UIScrollView {
+            /// 新的父控件
+            /// 宽度
+            self.zh_w = superView.zh_w
+            /// 位置
+            self.zh_x = 0
             _scrollView = scrollView
             /// 设置永远支持垂直弹簧效果 否则不会出发UIScrollViewDelegate的方法, KVO也会失效
             _scrollView.alwaysBounceVertical = true
@@ -247,14 +250,14 @@ class ZHRefreshComponent: UIView {
         self.scrollView.addObserver(self, forKeyPath: ZHRefreshKeys.contentOffset, options: options, context: nil)
         self.scrollView.addObserver(self, forKeyPath: ZHRefreshKeys.contentSize, options: options, context: nil)
         self.pan = self.scrollView.panGestureRecognizer
-        self.pan.addObserver(self, forKeyPath: ZHRefreshKeys.panState, options: options, context: nil)
+        self.pan?.addObserver(self, forKeyPath: ZHRefreshKeys.panState, options: options, context: nil)
     }
 
     /// 移除监听
     func removeObservers() {
         self.superview?.removeObserver(self, forKeyPath: ZHRefreshKeys.contentOffset)
         self.superview?.removeObserver(self, forKeyPath: ZHRefreshKeys.contentSize)
-        self.pan.removeObserver(self, forKeyPath: ZHRefreshKeys.panState)
+        self.pan?.removeObserver(self, forKeyPath: ZHRefreshKeys.panState)
         self.pan = nil
     }
 
@@ -272,4 +275,3 @@ class ZHRefreshComponent: UIView {
         }
     }
 }
-

@@ -27,16 +27,29 @@
 
 import UIKit
 
+/// 输出调试信息
+public func printf<T>(_ message: T, fileName: String = #file, methodName: String = #function, lineNumber: Int = #line) {
+    #if DEBUG
+    print("[函数名 : \((fileName as NSString).lastPathComponent) \(methodName)]-->[行号 : \(lineNumber)]\n--->> \(message)")
+    #endif
+}
+
 /// Key - Value
 struct ZHRefreshKeys {
 
     /// key path 
     static var header = "header"
-    static var contentOffset = "contentOffset"
-    static var contentInSet = "contentInset"
-    static var contentSize = "contentSize"
-    static var panState = "state"
+    /// 最后一次下拉刷新存储时间对应的key
+    static let headerLastUpdatedTimeKey = "headerLastUpdatedTimeKey"
+    static let contentOffset = "contentOffset"
+    static let contentInSet = "contentInset"
+    static let contentSize = "contentSize"
+    static let panState = "state"
 
     /// animate duration
-    static var fastAnimateDuration: TimeInterval = 0.25
+    static let fastAnimateDuration: TimeInterval = 0.25
+    static let slowAnimateDuration: TimeInterval = 0.4
+    /// height and width
+    /// 刷新控件的高度
+    static let headerHeight: CGFloat = 54.0
 }
