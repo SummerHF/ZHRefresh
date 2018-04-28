@@ -1,7 +1,7 @@
-//  ZHRefreshKeys.swift
+//  ZHRefreshConst.swift
 //  Refresh
 //
-//  Created by SummerHF on 27/04/2018.
+//  Created by SummerHF on 28/04/2018.
 //
 //
 //  Copyright (c) 2018 SummerHF(https://github.com/summerhf)
@@ -27,31 +27,8 @@
 
 import UIKit
 
-/// 输出调试信息
-public func printf<T>(_ message: T, fileName: String = #file, methodName: String = #function, lineNumber: Int = #line) {
-    #if DEBUG
-    print("[函数名 : \((fileName as NSString).lastPathComponent) \(methodName)]-->[行号 : \(lineNumber)]\n--->> \(message)")
-    #endif
-}
+/// 字体大小
+let ZHRefreshLableFont = UIFont.boldSystemFont(ofSize: 14)
+/// 文字颜色
+let ZHRefreshLableTextColor = UIColor(red: 90/255.0, green: 90/255.0, blue: 90/255.0, alpha: 1.0)
 
-/// Key - Value
-struct ZHRefreshKeys {
-
-    static let bundleName = "ZHRefresh.bundle"
-    /// key path 
-    static var header = "header"
-    /// 最后一次下拉刷新存储时间对应的key
-    static let headerLastUpdatedTimeKey = "headerLastUpdatedTimeKey"
-    static let contentOffset = "contentOffset"
-    static let contentInSet = "contentInset"
-    static let contentSize = "contentSize"
-    static let panState = "state"
-
-    /// animate duration
-    static let fastAnimateDuration: TimeInterval = 0.25
-    static let slowAnimateDuration: TimeInterval = 0.4
-    /// height and width
-    /// 刷新控件的高度
-    static let headerHeight: CGFloat = 54.0
-    static let lableLeftInset: CGFloat = 25.0
-}

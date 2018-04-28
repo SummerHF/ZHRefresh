@@ -27,6 +27,35 @@
 
 import UIKit
 
+extension UIImage {
+
+    /// 从bundle中提取照片
+    static func bundleImage(name: String) -> UIImage? {
+        let string = (ZHRefreshKeys.bundleName as NSString).appendingPathComponent(name)
+        return UIImage(named: string)
+    }
+
+    /// 从指定bundle中提取照片
+    static func appointBundleImage(bundleName: String = ZHRefreshKeys.bundleName, name: String) -> UIImage? {
+        let string = bundleName + "/\(name)"
+        return UIImage(named: string)
+    }
+}
+
+extension UILabel {
+    
+    /// 快速创建lable
+    static func zh_lable() -> UILabel {
+        let lable = UILabel()
+        lable.font = ZHRefreshLableFont
+        lable.textColor = ZHRefreshLableTextColor
+        lable.autoresizingMask = [.flexibleWidth]
+        lable.textAlignment = .center
+        lable.backgroundColor = UIColor.clear
+        return lable
+    }
+}
+
 extension UIView {
 
     var zh_x: CGFloat {

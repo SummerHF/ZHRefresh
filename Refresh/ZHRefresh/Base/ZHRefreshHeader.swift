@@ -33,7 +33,7 @@ class ZHRefreshHeader: ZHRefreshComponent {
     /// 插入的偏移量
     private var insertDelta: CGFloat = 0.0
     /// 这个Key用来存储上一次下拉刷新成功的时间
-    private var lastUpdatedTimeKey: String = ZHRefreshKeys.headerLastUpdatedTimeKey
+    var lastUpdatedTimeKey: String = ZHRefreshKeys.headerLastUpdatedTimeKey
 
     // MARK: - Set & Get
 

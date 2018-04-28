@@ -30,12 +30,35 @@ import UIKit
 /// 默认的下拉刷新控件
 class ZHRefreshNormalHeader: ZHRefreshStateHeader {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
-
+//    /// 箭头指示
+//    private lazy var arrowView: UIImageView = {
+//        let image = UIImage.bundleImage(name: "arrow")
+//        let imageView = UIImageView(image: image)
+//        return imageView
+//    }()
+//
+//    /// 菊花
+//    private weak var loadingView: UIActivityIndicatorView?
+//
+//    /// 菊花样式
+//    var activityStyle: UIActivityIndicatorViewStyle = .gray {
+//        didSet {
+//            self.loadingView = nil
+//            self.setNeedsLayout()
+//        }
+//    }
+//
+//    // MARK: - 重写父类的方法
+//
+//    override func prepare() {
+//        super.prepare()
+//        self.activityStyle = .gray
+//    }
+//
+//    override func placeSubViews() {
+//        var arrowCenterX: CGFloat = self.zh_w * 0.5
+//        if <#condition#> {
+//            <#code#>
+//        }
+//    }
 }
