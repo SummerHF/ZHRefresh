@@ -29,36 +29,101 @@ import UIKit
 
 /// 默认的下拉刷新控件
 class ZHRefreshNormalHeader: ZHRefreshStateHeader {
+    private var _arrowView: UIImageView?
+    private var _loadingView: UIActivityIndicatorView?
+    /// 默认`.gray`
+    var activityStyle: UIActivityIndicatorViewStyle = .gray {
+        didSet {
+            self._loadingView = nil
+            self.setNeedsLayout()
+        }
+    }
+    /// 箭头
+    var arrowView: UIImageView! {
+        if _arrowView == nil {
+           let image = UIImage.bundleImage(name: "arrow")
+           _arrowView = UIImageView(image: image)
+           self.addSubview(_arrowView!)
+        }
+        return _arrowView
+    }
+    /// 菊花
+    var loadingView: UIActivityIndicatorView! {
+        if _loadingView == nil {
+            _loadingView = UIActivityIndicatorView(activityIndicatorStyle: activityStyle)
+            self.addSubview(_loadingView!)
+        }
+        return _loadingView
+    }
 
-//    /// 箭头指示
-//    private lazy var arrowView: UIImageView = {
-//        let image = UIImage.bundleImage(name: "arrow")
-//        let imageView = UIImageView(image: image)
-//        return imageView
-//    }()
-//
-//    /// 菊花
-//    private weak var loadingView: UIActivityIndicatorView?
-//
-//    /// 菊花样式
-//    var activityStyle: UIActivityIndicatorViewStyle = .gray {
-//        didSet {
-//            self.loadingView = nil
-//            self.setNeedsLayout()
-//        }
-//    }
-//
-//    // MARK: - 重写父类的方法
-//
-//    override func prepare() {
-//        super.prepare()
-//        self.activityStyle = .gray
-//    }
-//
-//    override func placeSubViews() {
-//        var arrowCenterX: CGFloat = self.zh_w * 0.5
-//        if <#condition#> {
-//            <#code#>
-//        }
-//    }
+    // MARK: - 重写父类的方法
+    override func prepare() {
+        super.prepare()
+        self.activityStyle = .gray
+    }
+
+    override func placeSubViews() {
+        super.placeSubViews()
+        var arrowCenterX = self.zh_w * 0.5
+        if !self.stateLable.isHidden {
+            let stateWidth = self.stateLable.zh_textWidth()
+            var timeWidth: CGFloat = 0.0
+            if !self.lastUpdatedTimeLable.isHidden {
+                timeWidth = self.lastUpdatedTimeLable.zh_textWidth()
+            }
+            let textWidth = max(stateWidth, timeWidth)
+            arrowCenterX -= textWidth / 2.0 + self.lableLeftInset
+        }
+        let arrowCenterY = self.zh_h * 0.5
+        let center = CGPoint(x: arrowCenterX, y: arrowCenterY)
+        if arrowView.constraints.count == 0 {
+            self.arrowView.zh_size = self.arrowView.image!.size
+            self.arrowView.center = center
+        }
+        if self.loadingView.constraints.count == 0 {
+            self.loadingView.center = center
+        }
+        self.arrowView.tintColor = self.stateLable.tintColor
+    }
+
+    override var state: ZHRefreshState {
+        /// check date
+        willSet {
+            if newValue == state { return }
+            super.state = newValue
+        }
+        /// did set
+        didSet {
+            if state == .idle {
+                if oldValue == .refreshing {
+                    self.arrowView.transform = CGAffineTransform.identity
+                    UIView.animate(withDuration: ZHRefreshKeys.slowAnimateDuration, animations: {
+                        self.loadingView.alpha = 0.0
+                    }) { (finished) in
+                        /// 如果执行完动画发现不是`idle`状态, 就直接返回, 进入其他状态
+                        if self.state != .idle { return }
+                        self.loadingView.alpha = 1.0
+                        self.loadingView.stopAnimating()
+                        self.arrowView.isHidden = false
+                    }
+                } else {
+                    self.loadingView.stopAnimating()
+                    self.arrowView.isHidden = false
+                    UIView.animate(withDuration: ZHRefreshKeys.fastAnimateDuration, animations: {
+                        self.arrowView.transform = CGAffineTransform.identity
+                    })
+                }
+            } else if state == .pulling {
+                self.loadingView.stopAnimating()
+                self.arrowView.isHidden = false
+                UIView.animate(withDuration: ZHRefreshKeys.fastAnimateDuration, animations: {
+                    self.arrowView.transform = CGAffineTransform(rotationAngle: 0.000001 - .pi)
+                })
+            } else if state == .refreshing {
+                self.loadingView.alpha = 1.0
+                self.loadingView.startAnimating()
+                self.arrowView.isHidden = true
+            }
+        }
+    }
 }

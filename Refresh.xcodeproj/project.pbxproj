@@ -25,6 +25,7 @@
 		C4AE51E220930C72009DCF90 /* Record in Resources */ = {isa = PBXBuildFile; fileRef = C4AE51E120930C72009DCF90 /* Record */; };
 		C4AE51E420931353009DCF90 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AE51E320931353009DCF90 /* UIView+Extension.swift */; };
 		C4CDCFE1209949770060A885 /* ZHRefreshRunTime.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CDCFDF209949770060A885 /* ZHRefreshRunTime.m */; };
+		C4CDD0282099A0EF0060A885 /* ZHRefreshChiBaoZiHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CDD0272099A0EF0060A885 /* ZHRefreshChiBaoZiHeader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		C4AE51E7209327A4009DCF90 /* Refresh-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Refresh-Bridging-Header.h"; sourceTree = "<group>"; };
 		C4CDCFDF209949770060A885 /* ZHRefreshRunTime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHRefreshRunTime.m; sourceTree = "<group>"; };
 		C4CDCFE0209949770060A885 /* ZHRefreshRunTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHRefreshRunTime.h; sourceTree = "<group>"; };
+		C4CDD0272099A0EF0060A885 /* ZHRefreshChiBaoZiHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZHRefreshChiBaoZiHeader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 		C41A38312092CC2E0006444B /* Refresh */ = {
 			isa = PBXGroup;
 			children = (
+				C4CDD0252099A0860060A885 /* Class */,
 				C41A38442092CC450006444B /* ZHRefresh */,
 				C41A38322092CC2E0006444B /* AppDelegate.swift */,
 				C41A38342092CC2E0006444B /* ViewController.swift */,
@@ -163,6 +166,22 @@
 				C483505C2092F4CB00DB253B /* ZHRefreshKeys.swift */,
 			);
 			path = Tool;
+			sourceTree = "<group>";
+		};
+		C4CDD0252099A0860060A885 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				C4CDD0262099A0860060A885 /* DIY */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
+		C4CDD0262099A0860060A885 /* DIY */ = {
+			isa = PBXGroup;
+			children = (
+				C4CDD0272099A0EF0060A885 /* ZHRefreshChiBaoZiHeader.swift */,
+			);
+			path = DIY;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,6 +284,7 @@
 				C48176252094097400FF322D /* UIScrollView+ZHExtension.m in Sources */,
 				C41A38542092EE060006444B /* ZHRefreshStateHeader.swift in Sources */,
 				C41A38502092EB8C0006444B /* ZHRefreshHeader.swift in Sources */,
+				C4CDD0282099A0EF0060A885 /* ZHRefreshChiBaoZiHeader.swift in Sources */,
 				C4AE51E420931353009DCF90 /* UIView+Extension.swift in Sources */,
 				C41A38492092CD420006444B /* ZHRefreshComponent.swift in Sources */,
 				C48176492094669400FF322D /* ZHRefreshConst.swift in Sources */,

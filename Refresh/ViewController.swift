@@ -8,7 +8,16 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+
+    lazy var textLable: UILabel = {
+        let lable = UILabel()
+        lable.backgroundColor = UIColor.black
+        lable.text = "海飞"
+        lable.textColor = UIColor.white
+        lable.textAlignment = .center
+        return lable
+    }()
 
     lazy var tableView: UITableView = {
         let view = UITableView(frame: self.view.bounds)
@@ -23,19 +32,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        tableView.header = ZHRefreshStateHeader.headerWithRefreshing {
+        tableView.header = ZHRefreshChiBaoZiHeader.headerWithRefreshing {
             printf("Test")
             DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
                 self.tableView.header?.endRefreshing()
             })
         }
-
         self.view.addSubview(tableView)
+
     }
 
     // MARK: - dataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-         return 4
+         return 100
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -52,11 +61,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
 
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        printf(scrollView.zh_inset)
+        printf(scrollView.zh_offsetY)
+    }
+
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         printf(self.tableView.frame)
-        printf(self.tableView.header!.frame)
-        printf(self.tableView.header?.scrollView.contentOffset)
-        printf(self.tableView.header?.scrollView.contentInset)
+//        printf(self.tableView.header!.frame)
+//        printf(self.tableView.header?.scrollView.contentOffset)
+//        printf(self.tableView.header?.scrollView.contentInset)
     }
 }

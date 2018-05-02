@@ -51,3 +51,9 @@
 + (NSString *)zh_localizedStringForKey:(NSString *)key value:(NSString *)value;
 
 @end
+
+@interface UILabel (ZHExtension)
+
+- (CGFloat)zh_textWidth;
+
+@end

@@ -141,7 +141,6 @@ class ZHRefreshHeader: ZHRefreshComponent {
         _scrollViewOriginalInset = self.scrollView.zh_inset
         /// 当前的contentOffset
         let offsetY = self.scrollView.zh_offsetY
-        printf(offsetY)
         /// 头部控件刚好出现的offsetY
         let happenOffsetY = -self.scrollViewOriginalInset.top
         /// 如果向上滚动到看不见头部控件, 直接返回
@@ -167,5 +166,6 @@ class ZHRefreshHeader: ZHRefreshComponent {
             self.pullingPercent = pullingPercent
         }
         printf("originalInset:\(self.scrollViewOriginalInset)offsetY: \(offsetY), happenOffsetY:\(happenOffsetY)")
+        printf("contentInset:\(self.scrollView.contentInset)offsetY: \(offsetY), happenOffsetY:\(happenOffsetY)")
     }
 }
