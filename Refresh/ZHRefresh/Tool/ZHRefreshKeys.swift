@@ -40,6 +40,7 @@ struct ZHRefreshKeys {
     static let bundleName = "ZHRefresh.bundle"
     /// key path 
     static var header = "header"
+    static var footer = "header"
     /// 最后一次下拉刷新存储时间对应的key
     static let headerLastUpdatedTimeKey = "headerLastUpdatedTimeKey"
     static let contentOffset = "contentOffset"

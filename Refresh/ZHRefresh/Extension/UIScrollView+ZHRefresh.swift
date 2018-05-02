@@ -28,7 +28,8 @@
 import UIKit
 
 extension UIScrollView {
-
+    
+    /// header
     @objc dynamic var header: ZHRefreshHeader? {
         get {
             return objc_getAssociatedObject(self, &ZHRefreshKeys.header) as? ZHRefreshHeader
@@ -46,17 +47,23 @@ extension UIScrollView {
             }
         }
     }
-}
 
-/* old method
- //            if header != nil && header != newValue, let value = header {
- //                /// 移除旧值
- //                self.header.removeFromSuperview()
- //                self.addSubview(header)
- //                /// 存储新的
- //                /// KVO
- //                self.willChangeValue(forKey: ZHRefreshKeys.header)
- //                objc_setAssociatedObject(self, &ZHRefreshKeys.header, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_ASSIGN)
- //                self.didChangeValue(forKey: ZHRefreshKeys.header)
- //            }
-*/
+    /// footer
+    @objc dynamic var footer: ZHRefreshFooter? {
+        get {
+            return objc_getAssociatedObject(self, &ZHRefreshKeys.footer) as? ZHRefreshFooter
+        }
+        set {
+            if let newFooter = newValue {
+                if let oldFooter = footer {
+                    /// 如果有旧值, 删除它
+                    oldFooter.removeFromSuperview()
+                }
+                /// 添加新值
+                self.insertSubview(newFooter, at: 0)
+                /// 存储新值
+                objc_setAssociatedObject(self, &ZHRefreshKeys.footer, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_ASSIGN)
+            }
+        }
+    }
+}

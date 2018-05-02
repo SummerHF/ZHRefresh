@@ -26,6 +26,7 @@
 		C4AE51E420931353009DCF90 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AE51E320931353009DCF90 /* UIView+Extension.swift */; };
 		C4CDCFE1209949770060A885 /* ZHRefreshRunTime.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CDCFDF209949770060A885 /* ZHRefreshRunTime.m */; };
 		C4CDD0282099A0EF0060A885 /* ZHRefreshChiBaoZiHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CDD0272099A0EF0060A885 /* ZHRefreshChiBaoZiHeader.swift */; };
+		C4CDD02A2099ACFA0060A885 /* ZHRefreshFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CDD0292099ACFA0060A885 /* ZHRefreshFooter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 		C4CDCFDF209949770060A885 /* ZHRefreshRunTime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHRefreshRunTime.m; sourceTree = "<group>"; };
 		C4CDCFE0209949770060A885 /* ZHRefreshRunTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHRefreshRunTime.h; sourceTree = "<group>"; };
 		C4CDD0272099A0EF0060A885 /* ZHRefreshChiBaoZiHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZHRefreshChiBaoZiHeader.swift; sourceTree = "<group>"; };
+		C4CDD0292099ACFA0060A885 /* ZHRefreshFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZHRefreshFooter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 			children = (
 				C41A38482092CD420006444B /* ZHRefreshComponent.swift */,
 				C41A384F2092EB8C0006444B /* ZHRefreshHeader.swift */,
+				C4CDD0292099ACFA0060A885 /* ZHRefreshFooter.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C48350532092EF4700DB253B /* ZHRefreshGifHeader.swift in Sources */,
+				C4CDD02A2099ACFA0060A885 /* ZHRefreshFooter.swift in Sources */,
 				C41A38352092CC2E0006444B /* ViewController.swift in Sources */,
 				C48350512092EF1F00DB253B /* ZHRefreshNormalHeader.swift in Sources */,
 				C483505D2092F4CB00DB253B /* ZHRefreshKeys.swift in Sources */,
