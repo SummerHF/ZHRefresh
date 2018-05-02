@@ -27,6 +27,10 @@
 
 import UIKit
 
+/// 拓展的工具类
+
+// MARK: - UIImage
+
 extension UIImage {
 
     /// 从bundle中提取照片
@@ -42,6 +46,8 @@ extension UIImage {
     }
 }
 
+// MARK: - UILabel
+
 extension UILabel {
     
     /// 快速创建lable
@@ -55,6 +61,8 @@ extension UILabel {
         return lable
     }
 }
+
+// MARK: - UIView
 
 extension UIView {
 

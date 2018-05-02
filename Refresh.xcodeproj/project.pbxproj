@@ -24,7 +24,7 @@
 		C483505D2092F4CB00DB253B /* ZHRefreshKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = C483505C2092F4CB00DB253B /* ZHRefreshKeys.swift */; };
 		C4AE51E220930C72009DCF90 /* Record in Resources */ = {isa = PBXBuildFile; fileRef = C4AE51E120930C72009DCF90 /* Record */; };
 		C4AE51E420931353009DCF90 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AE51E320931353009DCF90 /* UIView+Extension.swift */; };
-		C4AE51EA209327A5009DCF90 /* ZHRefreshRunTime.m in Sources */ = {isa = PBXBuildFile; fileRef = C4AE51E9209327A5009DCF90 /* ZHRefreshRunTime.m */; };
+		C4CDCFE1209949770060A885 /* ZHRefreshRunTime.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CDCFDF209949770060A885 /* ZHRefreshRunTime.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,8 +49,8 @@
 		C4AE51E120930C72009DCF90 /* Record */ = {isa = PBXFileReference; lastKnownFileType = text; path = Record; sourceTree = "<group>"; };
 		C4AE51E320931353009DCF90 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		C4AE51E7209327A4009DCF90 /* Refresh-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Refresh-Bridging-Header.h"; sourceTree = "<group>"; };
-		C4AE51E8209327A5009DCF90 /* ZHRefreshRunTime.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZHRefreshRunTime.h; sourceTree = "<group>"; };
-		C4AE51E9209327A5009DCF90 /* ZHRefreshRunTime.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZHRefreshRunTime.m; sourceTree = "<group>"; };
+		C4CDCFDF209949770060A885 /* ZHRefreshRunTime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHRefreshRunTime.m; sourceTree = "<group>"; };
+		C4CDCFE0209949770060A885 /* ZHRefreshRunTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHRefreshRunTime.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,8 +145,8 @@
 		C48350562092F18300DB253B /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				C48350592092F22A00DB253B /* UIScrollView+ZHRefresh.swift */,
 				C4AE51E320931353009DCF90 /* UIView+Extension.swift */,
+				C48350592092F22A00DB253B /* UIScrollView+ZHRefresh.swift */,
 				C48176232094097400FF322D /* UIScrollView+ZHExtension.h */,
 				C48176242094097400FF322D /* UIScrollView+ZHExtension.m */,
 			);
@@ -157,10 +157,10 @@
 			isa = PBXGroup;
 			children = (
 				C4AE51E7209327A4009DCF90 /* Refresh-Bridging-Header.h */,
+				C4CDCFE0209949770060A885 /* ZHRefreshRunTime.h */,
+				C4CDCFDF209949770060A885 /* ZHRefreshRunTime.m */,
 				C48176482094669400FF322D /* ZHRefreshConst.swift */,
 				C483505C2092F4CB00DB253B /* ZHRefreshKeys.swift */,
-				C4AE51E8209327A5009DCF90 /* ZHRefreshRunTime.h */,
-				C4AE51E9209327A5009DCF90 /* ZHRefreshRunTime.m */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -260,7 +260,6 @@
 				C41A38352092CC2E0006444B /* ViewController.swift in Sources */,
 				C48350512092EF1F00DB253B /* ZHRefreshNormalHeader.swift in Sources */,
 				C483505D2092F4CB00DB253B /* ZHRefreshKeys.swift in Sources */,
-				C4AE51EA209327A5009DCF90 /* ZHRefreshRunTime.m in Sources */,
 				C483505A2092F22A00DB253B /* UIScrollView+ZHRefresh.swift in Sources */,
 				C41A38332092CC2E0006444B /* AppDelegate.swift in Sources */,
 				C48176252094097400FF322D /* UIScrollView+ZHExtension.m in Sources */,
@@ -269,6 +268,7 @@
 				C4AE51E420931353009DCF90 /* UIView+Extension.swift in Sources */,
 				C41A38492092CD420006444B /* ZHRefreshComponent.swift in Sources */,
 				C48176492094669400FF322D /* ZHRefreshConst.swift in Sources */,
+				C4CDCFE1209949770060A885 /* ZHRefreshRunTime.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

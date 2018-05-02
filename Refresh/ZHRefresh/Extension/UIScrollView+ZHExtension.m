@@ -32,6 +32,8 @@
 
 static BOOL gt_ios_11_;
 
+#pragma mark - UIScrollView + ZHExtension
+
 @implementation UIScrollView (ZHExtension)
 
 + (void)load {
@@ -154,4 +156,50 @@ static BOOL gt_ios_11_;
 }
 
 @end
+
+#pragma mark - NSBundle + ZHExtension
+
+@implementation NSBundle (ZHExtension)
+
++ (instancetype)zh_refreshBundle {
+    static NSBundle *refreshBundle = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"ZHRefresh" ofType:@"bundle"];
+        refreshBundle = [NSBundle bundleWithPath:path];
+    });
+    return refreshBundle;
+}
+
++ (NSString *)zh_localizedStringForKey:(NSString *)key {
+    return [self zh_localizedStringForKey:key value:nil];
+}
+
++ (NSString *)zh_localizedStringForKey:(NSString *)key value:(NSString *)value {
+    static NSBundle * bundle = nil;
+    if (bundle == nil) {
+        /// （iOS获取的语言字符串比较不稳定）目前框架只处理en、zh-Hans、zh-Hant三种情况，其他按照系统默认处理
+        NSString *language = [NSLocale preferredLanguages].firstObject;
+        if ([language hasPrefix:@"en"]) {
+            language = @"en";
+        } else if ([language hasPrefix:@"zh"]) {
+            if ([language rangeOfString:@"Hans"].location != NSNotFound) {
+                /// 简体中文
+                language = @"zh-Hans";
+            } else {
+                /// zh-Hant\zh-HK\zh-TW, 繁体中文
+                language = @"zh-Hant";
+            }
+        } else {
+            language = @"en";
+        }
+        NSString * resourcePath = [[NSBundle zh_refreshBundle] pathForResource:language ofType:@"lproj"];
+        bundle = [NSBundle bundleWithPath:resourcePath];
+    }
+    value = [bundle localizedStringForKey:key value:value table:nil];
+    return [[NSBundle mainBundle] localizedStringForKey:key value:value table:nil];
+}
+
+@end
+
 #pragma clang diagnostic pop

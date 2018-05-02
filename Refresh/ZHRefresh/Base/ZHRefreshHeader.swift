@@ -98,14 +98,14 @@ class ZHRefreshHeader: ZHRefreshComponent {
 
     /// 类方法, 快速的创建带有正在刷新回调的下拉刷新控件
     static func headerWithRefreshing(block: @escaping ZHRefreshComponentRefreshingBlock) -> ZHRefreshHeader {
-        let header = ZHRefreshHeader()
+        let header = self.init()
         header.refreshingBlock = block
         return header
     }
 
     /// 类方法, 快速的创建下拉刷新控件
     static func headerWithRefresing(target: Any, action: Selector) -> ZHRefreshHeader {
-        let header = ZHRefreshHeader()
+        let header = self.init()
         header.setRefreshing(target: target, action: action)
         return header
     }
@@ -141,6 +141,7 @@ class ZHRefreshHeader: ZHRefreshComponent {
         _scrollViewOriginalInset = self.scrollView.zh_inset
         /// 当前的contentOffset
         let offsetY = self.scrollView.zh_offsetY
+        printf(offsetY)
         /// 头部控件刚好出现的offsetY
         let happenOffsetY = -self.scrollViewOriginalInset.top
         /// 如果向上滚动到看不见头部控件, 直接返回

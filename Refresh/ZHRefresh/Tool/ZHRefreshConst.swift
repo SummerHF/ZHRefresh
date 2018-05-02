@@ -31,4 +31,3 @@ import UIKit
 let ZHRefreshLableFont = UIFont.boldSystemFont(ofSize: 14)
 /// 文字颜色
 let ZHRefreshLableTextColor = UIColor(red: 90/255.0, green: 90/255.0, blue: 90/255.0, alpha: 1.0)
-

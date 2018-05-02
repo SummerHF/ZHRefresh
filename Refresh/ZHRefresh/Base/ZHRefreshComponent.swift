@@ -184,6 +184,7 @@ class ZHRefreshComponent: UIView {
         super.init(frame: frame)
         /// 准备工作
         self.prepare()
+        self.backgroundColor = UIColor.yellow
     }
 
     override func layoutSubviews() {

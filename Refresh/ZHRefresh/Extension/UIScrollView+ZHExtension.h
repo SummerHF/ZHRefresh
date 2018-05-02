@@ -42,5 +42,12 @@
 @property(nonatomic, assign) CGFloat zh_contentW;
 @property(nonatomic, assign) CGFloat zh_contentH;
 
+@end
+
+@interface NSBundle (ZHExtension)
+
++ (instancetype)zh_refreshBundle;
++ (NSString *)zh_localizedStringForKey:(NSString *)key;
++ (NSString *)zh_localizedStringForKey:(NSString *)key value:(NSString *)value;
 
 @end

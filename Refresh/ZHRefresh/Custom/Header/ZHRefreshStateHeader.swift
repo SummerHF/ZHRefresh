@@ -36,7 +36,7 @@ class ZHRefreshStateHeader: ZHRefreshHeader {
 
     var lastUpdatedTimeTextBlcok: lastUpdatedTimeTextBlock?
 
-    private weak var _lastUpdatedTimeLable: UILabel?
+    private var _lastUpdatedTimeLable: UILabel?
     /// 显示上一次刷新时间的lable
     var lastUpdatedTimeLable: UILabel! {
         if _lastUpdatedTimeLable == nil {
@@ -47,7 +47,7 @@ class ZHRefreshStateHeader: ZHRefreshHeader {
     }
 
     /// 显示刷新状态的lable
-    private weak var _stateLable: UILabel?
+    private var _stateLable: UILabel?
     var stateLable: UILabel! {
         if _stateLable == nil {
            _stateLable = UILabel.zh_lable()
@@ -58,6 +58,7 @@ class ZHRefreshStateHeader: ZHRefreshHeader {
 
     // MARK: - 状态相关
 
+    /// 文字距离圈圈, 箭头的距离
     var lableLeftInset: CGFloat = 0.0
     /// 所有状态对应的文字
     private var stateTitles: [ZHRefreshState: String] = [ZHRefreshState: String]()
@@ -102,9 +103,11 @@ class ZHRefreshStateHeader: ZHRefreshHeader {
                 let timeStr = formatter.string(from: time)
                 printf(timeStr)
                 printf(isToday)
-                self.lastUpdatedTimeLable.text = "你好啊"
+                /// 显示日期
+                let desc: String = isToday ? Bundle.zh_localizedString(forKey: ZHRefreshKeys.headerDateTodayText) : ""
+                self.lastUpdatedTimeLable.text = String(format: "%@%@%@", arguments: [Bundle.zh_localizedString(forKey: ZHRefreshKeys.headerLastTimeText), desc, timeStr])
             } else {
-                self.lastUpdatedTimeLable.text = "朱海飞"
+                self.lastUpdatedTimeLable.text = String(format: "%@%@", arguments: [Bundle.zh_localizedString(forKey: ZHRefreshKeys.headerLastTimeText), Bundle.zh_localizedString(forKey: ZHRefreshKeys.headerNoneLastDateText)])
             }
         }
     }
@@ -120,6 +123,51 @@ class ZHRefreshStateHeader: ZHRefreshHeader {
     override func prepare() {
         super.prepare()
         self.lableLeftInset = ZHRefreshKeys.lableLeftInset
-        
+        self.set(title: Bundle.zh_localizedString(forKey: ZHRefreshKeys.headerIdleText), for: .idle)
+        self.set(title: Bundle.zh_localizedString(forKey: ZHRefreshKeys.headerPullingText), for: .pulling)
+        self.set(title: Bundle.zh_localizedString(forKey: ZHRefreshKeys.headerRefreshingText), for: .refreshing)
+    }
+
+    override func placeSubViews() {
+        super.placeSubViews()
+        if self.stateLable.isHidden { return }
+        let noConstraintOnStatusLable: Bool = self.stateLable.constraints.count == 0
+        if self.lastUpdatedTimeLable.isHidden {
+            /// 状态
+            if noConstraintOnStatusLable {
+                self.stateLable.frame = self.bounds
+            }
+        } else {
+            let stateLableH: CGFloat  = self.zh_h * 0.5
+            /// 状态
+            if noConstraintOnStatusLable {
+                self.stateLable.zh_x = 0
+                self.stateLable.zh_y = 0
+                self.stateLable.zh_w = self.zh_w
+                self.stateLable.zh_h = stateLableH
+            }
+            /// 更新时间
+            if self.lastUpdatedTimeLable.constraints.count == 0 {
+                self.lastUpdatedTimeLable.zh_x = 0
+                self.lastUpdatedTimeLable.zh_y = stateLableH
+                self.lastUpdatedTimeLable.zh_w = self.zh_w
+                self.lastUpdatedTimeLable.zh_h = self.zh_h - stateLableH
+            }
+        }
+    }
+
+    override var state: ZHRefreshState {
+        /// check date
+        willSet {
+            if newValue == state { return }
+            super.state = newValue
+        }
+        /// did set
+        didSet {
+            /// 设置状态文字
+            self.stateLable.text = self.stateTitles[state]
+            /// 重新设置key(重新显示时间)
+            lastUpdatedTimeKey = ZHRefreshKeys.headerLastUpdatedTimeKey
+        }
     }
 }

@@ -54,4 +54,21 @@ struct ZHRefreshKeys {
     /// 刷新控件的高度
     static let headerHeight: CGFloat = 54.0
     static let lableLeftInset: CGFloat = 25.0
+    /// 本地化
+    static let headerIdleText = "ZHRefreshHeaderIdleText"
+    static let headerPullingText = "ZHRefreshHeaderPullingText"
+    static let headerRefreshingText = "ZHRefreshHeaderRefreshingText"
+
+    static let autoFooterIdleText = "ZHRefreshAutoFooterIdleText"
+    static let autoFooterRefreshingText = "ZHRefreshAutoFooterRefreshingText"
+    static let autoFooterNoMoreDataText = "ZHRefreshAutoFooterNoMoreDataText"
+
+    static let backFooterIdleText = "ZHRefreshBackFooterIdleText"
+    static let backFooterPullingText = "ZHRefreshBackFooterPullingText"
+    static let backFooterRefreshingText = "ZHRefreshBackFooterRefreshingText"
+    static let backFooterNoMoreDataText = "ZHRefreshBackFooterNoMoreDataText"
+
+    static let headerLastTimeText = "ZHRefreshHeaderLastTimeText"
+    static let headerDateTodayText = "ZHRefreshHeaderDateTodayText"
+    static let headerNoneLastDateText = "ZHRefreshHeaderNoneLastDateText"
 }

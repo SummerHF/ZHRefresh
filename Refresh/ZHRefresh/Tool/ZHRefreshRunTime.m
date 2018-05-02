@@ -34,11 +34,11 @@
 
 @implementation ZHRefreshRuntime
 
-+(BOOL)target:(id)target canPerformSelector:(SEL)selctor {
++ (BOOL)target:(id)target canPerformSelector:(SEL)selctor {
     return [target respondsToSelector:selctor];
 }
 
-+(void)target:(id)target performSelector:(SEL)selctor view:(UIView *)view {
++ (void)target:(id)target performSelector:(SEL)selctor view:(UIView *)view {
     ZHRefreshMsgSend(ZHRefreshMsgTarget(target), selctor, view);
 }
 

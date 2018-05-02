@@ -31,3 +31,9 @@
 /// 相反，layoutifneeded方法是一个同步调用，它告诉系统您想要一个视图和它的子视图的布局和重画，并且您希望它在不等待更新周期的情况下立即完成。当对该方法的调用完成时，该布局已经根据在方法调用之前已经注意到的所有更改进行了调整和绘制。
 /// 所以，简洁地说，layoutifneed说请立即更新，而setNeedsLayout说请更新，但是你可以等到下一个更新周期。
 /// http://www.iosinsight.com/setneedslayout-vs-layoutifneeded-explained/
+/// Assigning a property to itself
+/// - https://stackoverflow.com/questions/31930257/what-if-i-want-to-assign-a-property-to-itself
+/// - 使用临时变量
+/// scrollView contentInset explain
+/// - http://blog.fujianjin6471.com/2015/07/27/gain-an-insight-into-contentInset-of-scroll-view.html
+/// - https://fizzbuzzer.com/understanding-the-contentoffset-and-contentinset-properties-of-the-uiscrollview-class/
