@@ -32,14 +32,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        tableView.header = ZHRefreshChiBaoZiHeader.headerWithRefreshing {
-            printf("Test")
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-                self.tableView.header?.endRefreshing()
-            })
+//        tableView.header = ZHRefreshChiBaoZiHeader.headerWithRefreshing {
+//            printf("Test")
+//            DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+//                self.tableView.header?.endRefreshing()
+//            })
+//        }
+        tableView.footer = ZHRefreshFooter.footerWithRefreshing {
+            printf("footer Test")
         }
         self.view.addSubview(tableView)
-
     }
 
     // MARK: - dataSource

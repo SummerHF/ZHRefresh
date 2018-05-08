@@ -1,7 +1,7 @@
-//  UIScrollView+ZHExtension.h
+//  ZHRefreshBackFooter.swift
 //  Refresh
 //
-//  Created by SummerHF on 27/04/2018.
+//  Created by SummerHF on 08/05/2018.
 //
 //
 //  Copyright (c) 2018 SummerHF(https://github.com/summerhf)
@@ -25,41 +25,17 @@
 //  THE SOFTWARE.
 //
 
-#import <UIKit/UIKit.h>
+import UIKit
 
-@interface UIScrollView (ZHExtension)
+/// 会回弹到底部的上拉刷新控件
+class ZHRefreshBackFooter: ZHRefreshFooter {
 
-@property(nonatomic, readonly) UIEdgeInsets zh_inset;
+    /*
+    // Only override draw() if you perform custom drawing.
+    // An empty implementation adversely affects performance during animation.
+    override func draw(_ rect: CGRect) {
+        // Drawing code 
+    }
+    */
 
-@property(nonatomic, assign) CGFloat zh_insertT;
-@property(nonatomic, assign) CGFloat zh_insertB;
-@property(nonatomic, assign) CGFloat zh_insertL;
-@property(nonatomic, assign) CGFloat zh_insertR;
-
-@property(nonatomic, assign) CGFloat zh_offsetX;
-@property(nonatomic, assign) CGFloat zh_offsetY;
-
-@property(nonatomic, assign) CGFloat zh_contentW;
-@property(nonatomic, assign) CGFloat zh_contentH;
-
-#pragma mark - other
-
-@property(nonatomic, copy)void (^zh_reloadDataBlock)(NSInteger totalCount);
-
-- (NSInteger)zh_totalCount;
-
-@end
-
-@interface NSBundle (ZHExtension)
-
-+ (instancetype)zh_refreshBundle;
-+ (NSString *)zh_localizedStringForKey:(NSString *)key;
-+ (NSString *)zh_localizedStringForKey:(NSString *)key value:(NSString *)value;
-
-@end
-
-@interface UILabel (ZHExtension)
-
-- (CGFloat)zh_textWidth;
-
-@end
+}

@@ -26,12 +26,13 @@
 //
 
 #import "UIScrollView+ZHExtension.h"
+#import <objc/runtime.h>
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wunguarded-availability-new"
 
 static BOOL gt_ios_11_;
-
+static NSString  *const ZHRefreshReloadDataKey = @"ZHRefreshReloadDataKey";
 #pragma mark - UIScrollView + ZHExtension
 
 @implementation UIScrollView (ZHExtension)
@@ -153,6 +154,93 @@ static BOOL gt_ios_11_;
     CGSize size = self.contentSize;
     size.height = zh_contentH;
     self.contentSize = size;
+}
+
+#pragma mark - other
+
+/** 计算tableView或者collectionView的cell总个数*/
+
+- (NSInteger)zh_totalCount {
+    NSInteger totalCount = 0;
+    if ([self isKindOfClass:[UITableView class]]) {
+        UITableView *tableView = (UITableView *)self;
+        for (NSInteger section = 0; section < tableView.numberOfSections; section++) {
+            totalCount += [tableView numberOfRowsInSection:section];
+        }
+    } else if ([self isKindOfClass:[UICollectionView class]]) {
+        UICollectionView * collectionView = (UICollectionView *)self;
+        for (NSInteger section = 0; section < collectionView.numberOfSections; section++) {
+            totalCount += [collectionView numberOfItemsInSection:section];
+        }
+    }
+    return totalCount;
+}
+
+- (void)setZh_reloadDataBlock:(void (^)(NSInteger))zh_reloadDataBlock {
+    /// KVO zh_reloadDataBlock属性发生了改变
+    [self willChangeValueForKey:@"zh_reloadDataBlock"];
+    objc_setAssociatedObject(self, &ZHRefreshReloadDataKey, zh_reloadDataBlock, OBJC_ASSOCIATION_COPY_NONATOMIC);
+    [self didChangeValueForKey:@"zh_reloadDataBlock"];
+}
+
+-(void (^)(NSInteger))zh_reloadDataBlock {
+    return objc_getAssociatedObject(self, &ZHRefreshReloadDataKey);
+}
+
+- (void)executeReloadDataBlock {
+    /// 如果zh_reloadDataBlock属性不为空, 那么调用block并且回调cell总个数
+    !self.zh_reloadDataBlock ? : self.zh_reloadDataBlock(self.zh_totalCount);
+}
+
+@end
+
+#pragma mark - NSObject (ZHExtension) 
+
+@implementation NSObject (ZHExtension)
+
+/**hook实例方法*/
++ (void)exchangeInstanceMethod:(SEL)methond1 method2:(SEL)method2 {
+    method_exchangeImplementations(class_getInstanceMethod(self, methond1), class_getInstanceMethod(self, method2));
+}
+
+/**hook类方法*/
++ (void)exchangeClassMethod:(SEL)methond1 method2:(SEL)method2 {
+    method_exchangeImplementations(class_getClassMethod(self, methond1), class_getClassMethod(self, method2));
+}
+
+@end
+
+#pragma mark - UITableView (ZHExtension)
+
+@implementation UITableView (ZHExtension)
+
++ (void)load {
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        [self exchangeInstanceMethod:@selector(reloadData) method2:@selector(zh_reloadData)];
+    });
+}
+
+- (void)zh_reloadData {
+    [self zh_reloadData];
+    [self executeReloadDataBlock];
+}
+
+@end
+
+
+@implementation UICollectionView (ZHExtension)
+
++ (void)load {
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        [self exchangeInstanceMethod:@selector(reloadData) method2:@selector(zh_reloadData)];
+    });
+}
+
+- (void)zh_reloadData {
+    [self zh_reloadData];
+    [self executeReloadDataBlock];
 }
 
 @end
