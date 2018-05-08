@@ -30,12 +30,19 @@ import UIKit
 /// 会回弹到底部的上拉刷新控件
 class ZHRefreshBackFooter: ZHRefreshFooter {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code 
+    // MARK: - 重写父类的方法
+    
+    override func willMove(toSuperview newSuperview: UIView?) {
+        super.willMove(toSuperview: newSuperview)
+        self.scrollViewContentSizeDid(change: nil)
     }
-    */
 
+    // MARK: - 实现父类的方法
+    override func scrollViewContentOffsetDid(change: [NSKeyValueChangeKey : Any]) {
+        super.scrollViewContentOffsetDid(change: change)
+        if self.state == .refreshing { return }
+        _scrollViewOriginalInset = self.scrollView.zh_inset
+        /// 当前的contentOffSet
+
+    }
 }

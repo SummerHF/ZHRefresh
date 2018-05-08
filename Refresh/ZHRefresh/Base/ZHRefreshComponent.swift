@@ -239,7 +239,7 @@ class ZHRefreshComponent: UIView {
     /// 当scrollView的contentOffset发生改变的时候调用
     func scrollViewContentOffsetDid(change: [NSKeyValueChangeKey: Any]) {}
     /// 当scrollView的contentSize发生改变的时候调用
-    func scrollViewContentSizeDid(change: [NSKeyValueChangeKey: Any]) {}
+    func scrollViewContentSizeDid(change: [NSKeyValueChangeKey: Any]?) {}
     /// 当scrollView的拖拽状态发生改变的时候调用
     func scrollViewPanStateDid(change: [NSKeyValueChangeKey: Any]) {}
 
