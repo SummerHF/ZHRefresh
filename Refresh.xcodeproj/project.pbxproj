@@ -15,6 +15,7 @@
 		C41A38492092CD420006444B /* ZHRefreshComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41A38482092CD420006444B /* ZHRefreshComponent.swift */; };
 		C41A38502092EB8C0006444B /* ZHRefreshHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41A384F2092EB8C0006444B /* ZHRefreshHeader.swift */; };
 		C41A38542092EE060006444B /* ZHRefreshStateHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41A38532092EE060006444B /* ZHRefreshStateHeader.swift */; };
+		C42F12D920A2A5570037B32C /* ZHRefreshBackStateFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42F12D820A2A5570037B32C /* ZHRefreshBackStateFooter.swift */; };
 		C48176252094097400FF322D /* UIScrollView+ZHExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = C48176242094097400FF322D /* UIScrollView+ZHExtension.m */; };
 		C48176492094669400FF322D /* ZHRefreshConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48176482094669400FF322D /* ZHRefreshConst.swift */; };
 		C48350512092EF1F00DB253B /* ZHRefreshNormalHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48350502092EF1F00DB253B /* ZHRefreshNormalHeader.swift */; };
@@ -42,6 +43,7 @@
 		C41A38482092CD420006444B /* ZHRefreshComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHRefreshComponent.swift; sourceTree = "<group>"; };
 		C41A384F2092EB8C0006444B /* ZHRefreshHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZHRefreshHeader.swift; sourceTree = "<group>"; };
 		C41A38532092EE060006444B /* ZHRefreshStateHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZHRefreshStateHeader.swift; sourceTree = "<group>"; };
+		C42F12D820A2A5570037B32C /* ZHRefreshBackStateFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZHRefreshBackStateFooter.swift; sourceTree = "<group>"; };
 		C48176232094097400FF322D /* UIScrollView+ZHExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+ZHExtension.h"; sourceTree = "<group>"; };
 		C48176242094097400FF322D /* UIScrollView+ZHExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+ZHExtension.m"; sourceTree = "<group>"; };
 		C48176482094669400FF322D /* ZHRefreshConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZHRefreshConst.swift; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 		C4BB399C20A19796003D4DB4 /* Back */ = {
 			isa = PBXGroup;
 			children = (
+				C42F12D820A2A5570037B32C /* ZHRefreshBackStateFooter.swift */,
 			);
 			path = Back;
 			sourceTree = "<group>";
@@ -315,6 +318,7 @@
 				C4AE51E420931353009DCF90 /* UIView+Extension.swift in Sources */,
 				C41A38492092CD420006444B /* ZHRefreshComponent.swift in Sources */,
 				C4BB399820A195E7003D4DB4 /* ZHRefreshAutoFooter.swift in Sources */,
+				C42F12D920A2A5570037B32C /* ZHRefreshBackStateFooter.swift in Sources */,
 				C48176492094669400FF322D /* ZHRefreshConst.swift in Sources */,
 				C4CDCFE1209949770060A885 /* ZHRefreshRunTime.m in Sources */,
 			);

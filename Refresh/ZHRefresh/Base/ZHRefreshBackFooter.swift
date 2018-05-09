@@ -29,20 +29,119 @@ import UIKit
 
 /// 会回弹到底部的上拉刷新控件
 class ZHRefreshBackFooter: ZHRefreshFooter {
+    private var lastRefreshCount: Int = 0
+    private var lastBottomDelta: CGFloat = 0.0
 
     // MARK: - 重写父类的方法
-    
     override func willMove(toSuperview newSuperview: UIView?) {
         super.willMove(toSuperview: newSuperview)
         self.scrollViewContentSizeDid(change: nil)
     }
 
     // MARK: - 实现父类的方法
-    override func scrollViewContentOffsetDid(change: [NSKeyValueChangeKey : Any]) {
+    override func scrollViewContentOffsetDid(change: [NSKeyValueChangeKey: Any]) {
         super.scrollViewContentOffsetDid(change: change)
+        /// 如果正在刷新 直接返回
         if self.state == .refreshing { return }
         _scrollViewOriginalInset = self.scrollView.zh_inset
         /// 当前的contentOffSet
+        let currentOffSetY = self.scrollView.zh_offsetY
+        /// 尾部控件刚好出现的offSetY
+        let happenOffSetY = self.happenOffSetY()
+        /// 如果是向下滚动到看不见尾部控件, 直接返回
+        if  currentOffSetY <= happenOffSetY { return }
+        let pullingPercent = (currentOffSetY - happenOffSetY) / self.zh_h
+        /// 如果是全部加载完毕
+        if self.state == .nomoreData {
+            self.pullingPercent = pullingPercent
+            return
+        }
+        if self.scrollView.isDragging {
+            self.pullingPercent = pullingPercent
+            // 普通和即将刷新的临界点
+            let normalPullingOffSetY = happenOffSetY + self.zh_h
+            if self.state == .idle && currentOffSetY > normalPullingOffSetY {
+                /// 转为即将刷新状态
+                self.state = .pulling
+            } else if self.state == .pulling && currentOffSetY <= normalPullingOffSetY {
+                /// 转为普通状态
+                self.state = .idle
+            }
+        } else if self.state == .pulling {
+            /// 开始刷新
+            self.beginRefreshing()
+        } else if pullingPercent < 1 {
+            self.pullingPercent = pullingPercent
+        }
+    }
 
+    override func scrollViewContentSizeDid(change: [NSKeyValueChangeKey : Any]?) {
+        super.scrollViewContentSizeDid(change: change)
+        /// 内容高度
+        let contentHeight = self.scrollView.zh_contentH + self.ignoredScrollViewContentInsetBottom
+        /// scrollView height
+        let scrollHeight = self.scrollView.zh_h - self.scrollViewOriginalInset.top - self.scrollViewOriginalInset.bottom + self.ignoredScrollViewContentInsetBottom
+        self.zh_y = max(contentHeight, scrollHeight)
+    }
+
+    override var state: ZHRefreshState {
+        /// check date
+        willSet {
+            if newValue == state { return }
+            super.state = newValue
+        }
+        /// 更具状态设置属性
+        didSet {
+            if state == .nomoreData || state == .idle {
+                /// 刷新完毕
+                if oldValue == .refreshing {
+                    UIView.animate(withDuration: ZHRefreshKeys.slowAnimateDuration, animations: {
+                        self.scrollView.zh_insertB -= self.lastBottomDelta
+                        if self.automaticallyChangeAlpha { self.alpha = 0.0 }
+                    }) { (finished) in
+                        self.pullingPercent = 0.0
+                        if let endRefreshBlock = self.endRefreshingCompletionBlock {
+                            endRefreshBlock()
+                        }
+                    }
+                }
+                let deltaH = self.heightForContentBreakView()
+                /// 刚刷新完毕
+                if oldValue == .refreshing && deltaH > 0 && self.scrollView.zh_totalCount() != self.lastRefreshCount {
+                    self.scrollView.zh_offsetY = self.scrollView.zh_offsetY
+                }
+            } else if state == .refreshing {
+                self.lastRefreshCount = self.scrollView.zh_totalCount()
+                UIView.animate(withDuration: ZHRefreshKeys.fastAnimateDuration, animations: {
+                    var bottom = self.zh_h + self.scrollViewOriginalInset.bottom
+                    let deltaH = self.heightForContentBreakView()
+                    /// 如果内容高度小于view的高度
+                    if  deltaH < 0 {
+                        bottom -= deltaH
+                    }
+                    self.lastBottomDelta = bottom - self.scrollView.zh_insertB
+                    self.scrollView.zh_insertB = bottom
+                    self.scrollView.zh_offsetY = self.happenOffSetY() + self.zh_h
+                }) { (finished) in
+                    self.executeRefreshingCallBack()
+                }
+            }
+        }
+    }
+
+    private func happenOffSetY() -> CGFloat {
+        let deltaH = self.heightForContentBreakView()
+        if  deltaH > 0 {
+            /// 上拉加载更多的控件在可视区域内
+            return deltaH - self.scrollViewOriginalInset.top
+        } else {
+            return -self.scrollViewOriginalInset.top
+        }
+    }
+
+    /// 获得scrollView的内容超出view的高度
+    private func heightForContentBreakView() -> CGFloat {
+        let height = self.scrollView.frame.size.height - self.scrollViewOriginalInset.top - self.scrollViewOriginalInset.bottom
+        return self.scrollView.contentSize.height - height
     }
 }

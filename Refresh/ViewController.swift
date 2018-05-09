@@ -38,15 +38,17 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 //                self.tableView.header?.endRefreshing()
 //            })
 //        }
-        tableView.footer = ZHRefreshFooter.footerWithRefreshing {
-            printf("footer Test")
+        tableView.footer = ZHRefreshBackFooter.footerWithRefreshing {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                self.tableView.header?.endRefreshing()
+            })
         }
         self.view.addSubview(tableView)
     }
 
     // MARK: - dataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-         return 100
+         return 10
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
