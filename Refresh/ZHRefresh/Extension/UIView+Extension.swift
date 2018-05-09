@@ -57,7 +57,7 @@ extension UILabel {
         lable.textColor = ZHRefreshLableTextColor
         lable.autoresizingMask = [.flexibleWidth]
         lable.textAlignment = .center
-        lable.backgroundColor = UIColor.clear
+        lable.backgroundColor = UIColor.purple
         return lable
     }
 }

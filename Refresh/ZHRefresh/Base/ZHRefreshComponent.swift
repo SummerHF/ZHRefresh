@@ -53,7 +53,12 @@ class ZHRefreshComponent: UIView {
     /// 记录scrollView刚开始的inset
     var _scrollViewOriginalInset: UIEdgeInsets = UIEdgeInsets.zero
     /// 父控件
-    private weak var _scrollView: UIScrollView!
+    private weak var _scrollView: UIScrollView! {
+        didSet {
+            /// 初始化状态
+            self.state = .idle
+        }
+    }
     /// 正在刷新的回调
     var refreshingBlock: ZHRefreshComponentRefreshingBlock?
     /// 开始刷新后的回调(进入刷新状态后的回调)

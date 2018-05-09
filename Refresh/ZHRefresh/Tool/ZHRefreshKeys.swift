@@ -54,7 +54,7 @@ struct ZHRefreshKeys {
     /// height and width
     /// 刷新控件的高度
     static let headerHeight: CGFloat = 54.0
-    static let footerHeight: CGFloat = 54.0
+    static let footerHeight: CGFloat = 44.0
     static let lableLeftInset: CGFloat = 25.0
     /// 本地化
     static let headerIdleText = "ZHRefreshHeaderIdleText"

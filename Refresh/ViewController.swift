@@ -24,23 +24,23 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         view.backgroundColor = UIColor.red
         view.delegate = self
         view.dataSource = self
-        view.rowHeight = 64
+//        view.rowHeight = 64
         return view
     }()
 
     override func viewDidLoad() {
 
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+// Do any additional setup after loading the view, typically from a nib.
 //        tableView.header = ZHRefreshChiBaoZiHeader.headerWithRefreshing {
 //            printf("Test")
 //            DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
 //                self.tableView.header?.endRefreshing()
 //            })
 //        }
-        tableView.footer = ZHRefreshBackFooter.footerWithRefreshing {
+        tableView.footer = ZHRefreshBackStateFooter.footerWithRefreshing {
             DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-                self.tableView.header?.endRefreshing()
+                self.tableView.footer?.endRefreshing()
             })
         }
         self.view.addSubview(tableView)

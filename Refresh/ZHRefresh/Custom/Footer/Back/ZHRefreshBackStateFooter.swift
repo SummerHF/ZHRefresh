@@ -29,13 +29,56 @@ import UIKit
 
 /// 带有状态文字的上拉刷新控件
 class ZHRefreshBackStateFooter: ZHRefreshBackFooter {
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    /// 文字距离圈圈, 箭头的距离
+    var lableLeftInset: CGFloat = 0.0
+    private var _stateLbale: UILabel?
+    private var stateTitles: [ZHRefreshState: String] = [ZHRefreshState: String]()
+    /// 显示刷新状态的lable
+    var stateLable: UILabel! {
+        if _stateLbale == nil {
+           _stateLbale = UILabel.zh_lable()
+           self.addSubview(_stateLbale!)
+        }
+        return _stateLbale
     }
-    */
+    /// 设置state状态下的文字
+    func set(title: String, for state: ZHRefreshState) {
+         self.stateTitles[state] = title
+         self.stateLable.text = self.stateTitles[state]
+    }
 
+    /// 获取state状态下的的title
+    func titlelFor(state: ZHRefreshState) -> String? {
+         return self.stateTitles[state]
+    }
+
+    // MARK: - override
+    override func prepare() {
+        super.prepare()
+        /// 初始化间剧
+        self.lableLeftInset = ZHRefreshKeys.lableLeftInset
+        /// 初始化文字
+        self.set(title: Bundle.zh_localizedString(forKey: ZHRefreshKeys.backFooterIdleText), for: .idle)
+        self.set(title: Bundle.zh_localizedString(forKey: ZHRefreshKeys.backFooterPullingText), for: .pulling)
+        self.set(title: Bundle.zh_localizedString(forKey: ZHRefreshKeys.backFooterRefreshingText), for: .refreshing)
+        self.set(title: Bundle.zh_localizedString(forKey: ZHRefreshKeys.backFooterNoMoreDataText), for: .nomoreData)
+
+    }
+
+    override func placeSubViews() {
+        super.placeSubViews()
+        if self.stateLable.constraints.count > 0 { return }
+        /// 状态标签
+        self.stateLable.frame = self.bounds
+    }
+
+    override var state: ZHRefreshState {
+//        willSet {
+//            if newValue == state { return }
+//            super.state = state
+//        }
+        didSet {
+            self.stateLable.text = self.stateTitles[state]
+        }
+    }
 }

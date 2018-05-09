@@ -75,7 +75,7 @@ class ZHRefreshBackFooter: ZHRefreshFooter {
         }
     }
 
-    override func scrollViewContentSizeDid(change: [NSKeyValueChangeKey : Any]?) {
+    override func scrollViewContentSizeDid(change: [NSKeyValueChangeKey: Any]?) {
         super.scrollViewContentSizeDid(change: change)
         /// 内容高度
         let contentHeight = self.scrollView.zh_contentH + self.ignoredScrollViewContentInsetBottom
@@ -90,7 +90,7 @@ class ZHRefreshBackFooter: ZHRefreshFooter {
             if newValue == state { return }
             super.state = newValue
         }
-        /// 更具状态设置属性
+        /// 根据状态设置属性
         didSet {
             if state == .nomoreData || state == .idle {
                 /// 刷新完毕
@@ -111,6 +111,7 @@ class ZHRefreshBackFooter: ZHRefreshFooter {
                     self.scrollView.zh_offsetY = self.scrollView.zh_offsetY
                 }
             } else if state == .refreshing {
+                /// 记录刷新前的数量
                 self.lastRefreshCount = self.scrollView.zh_totalCount()
                 UIView.animate(withDuration: ZHRefreshKeys.fastAnimateDuration, animations: {
                     var bottom = self.zh_h + self.scrollViewOriginalInset.bottom
