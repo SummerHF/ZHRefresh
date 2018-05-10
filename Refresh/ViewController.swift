@@ -38,7 +38,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 //                self.tableView.header?.endRefreshing()
 //            })
 //        }
-        tableView.footer = ZHRefreshAutoStateFooter.footerWithRefreshing {
+        tableView.footer = ZHRefreshAutoNormalFooter.footerWithRefreshing {
             DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
                 self.tableView.footer?.endRefreshingWithNoMoreData()
             })

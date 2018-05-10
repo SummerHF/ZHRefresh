@@ -50,6 +50,7 @@ class ZHRefreshAutoStateFooter: ZHRefreshAutoFooter {
     }
     
     // MARK: - override
+    
     override func prepare() {
         super.prepare()
         /// 初始化间距
