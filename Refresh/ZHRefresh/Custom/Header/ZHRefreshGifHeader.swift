@@ -54,8 +54,10 @@ class ZHRefreshGifHeader: ZHRefreshStateHeader {
          self.stateImages[state] = images
          self.stateDurations[state] = duration
          if let image = images.first {
-            /// 更具图片设置控件的高度
-            self.zh_h = image.size.height
+            /// 根据图片设置控件的高度
+            if image.size.height > self.zh_h {
+                self.zh_h = image.size.height
+            }
          }
     }
 
@@ -72,7 +74,6 @@ class ZHRefreshGifHeader: ZHRefreshStateHeader {
 
     override var pullingPercent: CGFloat {
         didSet {
-            super.pullingPercent = pullingPercent
             if let images = self.stateImages[.idle] {
                 if self.state != .idle || images.count == 0 { return }
                 self.gifImageView.stopAnimating()
