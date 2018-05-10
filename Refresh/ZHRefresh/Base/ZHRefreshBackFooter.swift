@@ -85,16 +85,15 @@ class ZHRefreshBackFooter: ZHRefreshFooter {
     }
 
     override var state: ZHRefreshState {
-        /// check date
-        willSet {
-            if newValue == state { return }
-            super.state = newValue
+        get {
+           return super.state
         }
-        /// 根据状态设置属性
-        didSet {
-            if state == .nomoreData || state == .idle {
+        set {
+            guard let oldState = check(newState: newValue, oldState: state) else { return }
+            super.state = newValue
+            if newValue == .nomoreData || state == .idle {
                 /// 刷新完毕
-                if oldValue == .refreshing {
+                if oldState == .refreshing {
                     UIView.animate(withDuration: ZHRefreshKeys.slowAnimateDuration, animations: {
                         self.scrollView.zh_insertB -= self.lastBottomDelta
                         if self.automaticallyChangeAlpha { self.alpha = 0.0 }
@@ -107,10 +106,10 @@ class ZHRefreshBackFooter: ZHRefreshFooter {
                 }
                 let deltaH = self.heightForContentBreakView()
                 /// 刚刷新完毕
-                if oldValue == .refreshing && deltaH > 0 && self.scrollView.zh_totalCount() != self.lastRefreshCount {
+                if oldState == .refreshing && deltaH > 0 && self.scrollView.zh_totalCount() != self.lastRefreshCount {
                     self.scrollView.zh_offsetY = self.scrollView.zh_offsetY
                 }
-            } else if state == .refreshing {
+            } else if newValue == .refreshing {
                 /// 记录刷新前的数量
                 self.lastRefreshCount = self.scrollView.zh_totalCount()
                 UIView.animate(withDuration: ZHRefreshKeys.fastAnimateDuration, animations: {

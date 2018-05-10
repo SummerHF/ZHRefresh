@@ -39,6 +39,8 @@ enum ZHRefreshState {
     case willRefresh
     /**所有数据加载完毕, 没有更多的数据了*/
     case nomoreData
+    /**初始状态 刚创建的时候 状态会从none--->idle*/
+    case none
 }
 
 /// 正在刷新的回调
@@ -106,7 +108,7 @@ class ZHRefreshComponent: UIView {
     }
 
     /// 内部维护的状态
-    private var _state: ZHRefreshState = .idle
+    private var _state: ZHRefreshState = .none
     /// 刷新状态, 一般交给子类内部实现, 默认是普通状态 (通过该方式模拟oc的set and get)
     var state: ZHRefreshState {
         get {
@@ -293,6 +295,6 @@ class ZHRefreshComponent: UIView {
 
     /// - return: 如果两者相同 返回nil, 如果两者不相同, 返回旧的状态
     func check(newState: ZHRefreshState, oldState: ZHRefreshState) -> ZHRefreshState? {
-        return newState == oldState ? nil : oldState
+         return newState == oldState ? nil : oldState
     }
 }

@@ -73,12 +73,13 @@ class ZHRefreshBackStateFooter: ZHRefreshBackFooter {
     }
 
     override var state: ZHRefreshState {
-        willSet {
-            if newValue == state { return }
-            super.state = state
+        get {
+           return super.state
         }
-        didSet {
-            self.stateLable.text = self.stateTitles[state]
+        set {
+            guard check(newState: newValue, oldState: state) != nil else { return }
+            super.state = newValue
+            self.stateLable.text = self.stateTitles[newValue]
         }
     }
 }
