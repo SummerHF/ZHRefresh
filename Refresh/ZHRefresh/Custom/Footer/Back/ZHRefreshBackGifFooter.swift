@@ -67,6 +67,7 @@ class ZHRefreshBackGifFooter: ZHRefreshBackStateFooter {
     }
 
     // MARK: - override method
+    
     override func prepare() {
         super.prepare()
         /// 初始化间距

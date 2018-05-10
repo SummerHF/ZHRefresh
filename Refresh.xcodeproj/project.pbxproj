@@ -36,6 +36,7 @@
 		C4CDCFE1209949770060A885 /* ZHRefreshRunTime.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CDCFDF209949770060A885 /* ZHRefreshRunTime.m */; };
 		C4CDD0282099A0EF0060A885 /* ZHRefreshChiBaoZiHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CDD0272099A0EF0060A885 /* ZHRefreshChiBaoZiHeader.swift */; };
 		C4CDD02A2099ACFA0060A885 /* ZHRefreshFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CDD0292099ACFA0060A885 /* ZHRefreshFooter.swift */; };
+		D01F9DA420A489B60006CAFE /* ZHRefreshChiBaoZiAutoFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01F9DA320A489B60006CAFE /* ZHRefreshChiBaoZiAutoFooter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +74,7 @@
 		C4CDCFE0209949770060A885 /* ZHRefreshRunTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHRefreshRunTime.h; sourceTree = "<group>"; };
 		C4CDD0272099A0EF0060A885 /* ZHRefreshChiBaoZiHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZHRefreshChiBaoZiHeader.swift; sourceTree = "<group>"; };
 		C4CDD0292099ACFA0060A885 /* ZHRefreshFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZHRefreshFooter.swift; sourceTree = "<group>"; };
+		D01F9DA320A489B60006CAFE /* ZHRefreshChiBaoZiAutoFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZHRefreshChiBaoZiAutoFooter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,6 +228,7 @@
 			children = (
 				C4CDD0272099A0EF0060A885 /* ZHRefreshChiBaoZiHeader.swift */,
 				C47BF99920A42DCE00C42546 /* ZHRefreshChiBaoZiFooter.swift */,
+				D01F9DA320A489B60006CAFE /* ZHRefreshChiBaoZiAutoFooter.swift */,
 			);
 			path = DIY;
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 				C41A38332092CC2E0006444B /* AppDelegate.swift in Sources */,
 				C48176252094097400FF322D /* UIScrollView+ZHExtension.m in Sources */,
 				C41A38542092EE060006444B /* ZHRefreshStateHeader.swift in Sources */,
+				D01F9DA420A489B60006CAFE /* ZHRefreshChiBaoZiAutoFooter.swift in Sources */,
 				C47BF99820A4261B00C42546 /* ZHRefreshBackGifFooter.swift in Sources */,
 				C47BF99C20A4310900C42546 /* ZHRefreshAutoStateFooter.swift in Sources */,
 				C41A38502092EB8C0006444B /* ZHRefreshHeader.swift in Sources */,

@@ -29,13 +29,89 @@ import UIKit
 
 /// 带动图的上拉刷新控件
 class ZHRefreshAutoGifFooter: ZHRefreshAutoStateFooter {
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    private var _gifImageView: UIImageView?
+    /// 只读属性
+    var gifImageView: UIImageView! {
+        if _gifImageView == nil {
+            _gifImageView = UIImageView()
+            self.addSubview(_gifImageView!)
+        }
+        return _gifImageView
     }
-    */
-
+    
+    private lazy var stateImages: [ZHRefreshState: [UIImage]] = {
+        let array = [ZHRefreshState: [UIImage]]()
+        return array
+    }()
+    
+    private lazy var stateDurations: [ZHRefreshState: TimeInterval] = {
+        let array = [ZHRefreshState: TimeInterval]()
+        return array
+    }()
+    
+    // MARK: - Public method
+    
+    /// 设置对应状态下的图片 以及动画时间
+    func set(images: [UIImage], duration: TimeInterval, state: ZHRefreshState) {
+        self.stateImages[state] = images
+        self.stateDurations[state] = duration
+        if let image = images.first {
+            /// 根据图片设置控件的高度
+            if image.size.height > self.zh_h {
+                self.zh_h = image.size.height
+            }
+        }
+    }
+    
+    func set(images: [UIImage], state: ZHRefreshState) {
+        set(images: images, duration: TimeInterval(CGFloat(images.count) * 0.1), state: state)
+    }
+    
+    // MARK: - override method
+    
+    override func prepare() {
+        super.prepare()
+        /// 初始化间距
+        self.lableLeftInset = 20
+    }
+    
+    override func placeSubViews() {
+        super.placeSubViews()
+        if gifImageView.constraints.count == 0 {
+            self.gifImageView.frame = self.bounds
+            if self.refreshingTitleHidden {
+                self.gifImageView.contentMode = .center
+            } else {
+                self.gifImageView.contentMode = .right
+                self.gifImageView.zh_w = self.zh_w * 0.5 - self.lableLeftInset - self.stateLable.zh_textWidth() * 0.5
+            }
+        }
+    }
+    
+    override var state: ZHRefreshState {
+        get {
+            return super.state
+        }
+        set {
+            guard check(newState: newValue, oldState: state) != nil else { return }
+            super.state = newValue
+            if newValue == .refreshing {
+                if let images = self.stateImages[newValue], let duration = self.stateDurations[newValue], images.count > 0 {
+                    self.gifImageView.isHidden = false
+                    self.gifImageView.stopAnimating()
+                    if images.count == 1 {
+                        self.gifImageView.image = images.first!
+                    } else {
+                        /// 多张图片
+                        self.gifImageView.animationImages = images
+                        self.gifImageView.animationDuration = duration
+                        self.gifImageView.startAnimating()
+                    }
+                }
+            } else if state == .idle || state == .nomoreData {
+                self.gifImageView.stopAnimating()
+                self.gifImageView.isHidden = true
+            }
+        }
+    }
 }
