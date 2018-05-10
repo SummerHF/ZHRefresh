@@ -29,13 +29,66 @@ import UIKit
 
 /// 带有状态文字的上拉刷新控件
 class ZHRefreshAutoStateFooter: ZHRefreshAutoFooter {
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    /// 文字距离圈圈, 箭头的距离
+    var lableLeftInset: CGFloat = 0.0
+    private var _stateLbale: UILabel?
+    private var stateTitles: [ZHRefreshState: String] = [ZHRefreshState: String]()
+    /// 显示刷新状态的lable
+    var stateLable: UILabel! {
+        if _stateLbale == nil {
+            _stateLbale = UILabel.zh_lable()
+            self.addSubview(_stateLbale!)
+        }
+        return _stateLbale
     }
-    */
-
+    /// 隐藏刷新状态的文字
+    var refreshingTitleHidden: Bool = false 
+    /// 设置state状态下的文字
+    func set(title: String, for state: ZHRefreshState) {
+        self.stateTitles[state] = title
+        self.stateLable.text = self.stateTitles[state]
+    }
+    
+    // MARK: - override
+    override func prepare() {
+        super.prepare()
+        /// 初始化间距
+        self.lableLeftInset = ZHRefreshKeys.lableLeftInset
+        self.set(title: Bundle.zh_localizedString(forKey: ZHRefreshKeys.autoFooterIdleText), for: .idle)
+        self.set(title: Bundle.zh_localizedString(forKey: ZHRefreshKeys.autoFooterRefreshingText), for: .refreshing)
+        self.set(title: Bundle.zh_localizedString(forKey: ZHRefreshKeys.autoFooterNoMoreDataText), for: .nomoreData)
+        /// 监听lable
+        self.stateLable.isUserInteractionEnabled = true
+        self.stateLable.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(stateLableClick)))
+    }
+    
+    @objc private func stateLableClick() {
+        if self.state == .idle {
+            self.beginRefreshing()
+        }
+    }
+    
+    override func placeSubViews() {
+        super.placeSubViews()
+        if self.stateLable.constraints.count == 0 {
+            /// 设置状态标签frame
+            self.stateLable.frame = self.bounds
+        }
+    }
+    
+    override var state: ZHRefreshState {
+        /// 根据状态做事情
+        get {
+            return super.state
+        }
+        set {
+            guard check(newState: newValue, oldState: state) != nil else { return }
+            super.state = newValue
+            if self.refreshingTitleHidden && newValue == .refreshing {
+                self.stateLable.text = nil
+            } else {
+                self.stateLable.text = self.stateTitles[newValue]
+            }
+        }
+    }
 }

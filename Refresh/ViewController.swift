@@ -38,9 +38,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 //                self.tableView.header?.endRefreshing()
 //            })
 //        }
-        tableView.footer = ZHRefreshAutoFooter.footerWithRefreshing {
+        tableView.footer = ZHRefreshAutoStateFooter.footerWithRefreshing {
             DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-                self.tableView.footer?.endRefreshing()
+                self.tableView.footer?.endRefreshingWithNoMoreData()
             })
         }
         self.view.addSubview(tableView)
