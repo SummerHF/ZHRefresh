@@ -19,6 +19,9 @@
 		C47BF99620A4178200C42546 /* ZHRefreshBackNormalFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47BF99520A4178200C42546 /* ZHRefreshBackNormalFooter.swift */; };
 		C47BF99820A4261B00C42546 /* ZHRefreshBackGifFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47BF99720A4261B00C42546 /* ZHRefreshBackGifFooter.swift */; };
 		C47BF99A20A42DCE00C42546 /* ZHRefreshChiBaoZiFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47BF99920A42DCE00C42546 /* ZHRefreshChiBaoZiFooter.swift */; };
+		C47BF99C20A4310900C42546 /* ZHRefreshAutoStateFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47BF99B20A4310900C42546 /* ZHRefreshAutoStateFooter.swift */; };
+		C47BF99E20A4313100C42546 /* ZHRefreshAutoNormalFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47BF99D20A4313100C42546 /* ZHRefreshAutoNormalFooter.swift */; };
+		C47BF9A020A4314F00C42546 /* ZHRefreshAutoGifFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47BF99F20A4314F00C42546 /* ZHRefreshAutoGifFooter.swift */; };
 		C48176252094097400FF322D /* UIScrollView+ZHExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = C48176242094097400FF322D /* UIScrollView+ZHExtension.m */; };
 		C48176492094669400FF322D /* ZHRefreshConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48176482094669400FF322D /* ZHRefreshConst.swift */; };
 		C48350512092EF1F00DB253B /* ZHRefreshNormalHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48350502092EF1F00DB253B /* ZHRefreshNormalHeader.swift */; };
@@ -50,6 +53,9 @@
 		C47BF99520A4178200C42546 /* ZHRefreshBackNormalFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZHRefreshBackNormalFooter.swift; sourceTree = "<group>"; };
 		C47BF99720A4261B00C42546 /* ZHRefreshBackGifFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZHRefreshBackGifFooter.swift; sourceTree = "<group>"; };
 		C47BF99920A42DCE00C42546 /* ZHRefreshChiBaoZiFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZHRefreshChiBaoZiFooter.swift; sourceTree = "<group>"; };
+		C47BF99B20A4310900C42546 /* ZHRefreshAutoStateFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZHRefreshAutoStateFooter.swift; sourceTree = "<group>"; };
+		C47BF99D20A4313100C42546 /* ZHRefreshAutoNormalFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZHRefreshAutoNormalFooter.swift; sourceTree = "<group>"; };
+		C47BF99F20A4314F00C42546 /* ZHRefreshAutoGifFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZHRefreshAutoGifFooter.swift; sourceTree = "<group>"; };
 		C48176232094097400FF322D /* UIScrollView+ZHExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+ZHExtension.h"; sourceTree = "<group>"; };
 		C48176242094097400FF322D /* UIScrollView+ZHExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+ZHExtension.m"; sourceTree = "<group>"; };
 		C48176482094669400FF322D /* ZHRefreshConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZHRefreshConst.swift; sourceTree = "<group>"; };
@@ -190,6 +196,9 @@
 		C4BB399B20A19796003D4DB4 /* Auto */ = {
 			isa = PBXGroup;
 			children = (
+				C47BF99B20A4310900C42546 /* ZHRefreshAutoStateFooter.swift */,
+				C47BF99D20A4313100C42546 /* ZHRefreshAutoNormalFooter.swift */,
+				C47BF99F20A4314F00C42546 /* ZHRefreshAutoGifFooter.swift */,
 			);
 			path = Auto;
 			sourceTree = "<group>";
@@ -323,15 +332,18 @@
 				C48176252094097400FF322D /* UIScrollView+ZHExtension.m in Sources */,
 				C41A38542092EE060006444B /* ZHRefreshStateHeader.swift in Sources */,
 				C47BF99820A4261B00C42546 /* ZHRefreshBackGifFooter.swift in Sources */,
+				C47BF99C20A4310900C42546 /* ZHRefreshAutoStateFooter.swift in Sources */,
 				C41A38502092EB8C0006444B /* ZHRefreshHeader.swift in Sources */,
 				C4BB399A20A195FC003D4DB4 /* ZHRefreshBackFooter.swift in Sources */,
 				C4CDD0282099A0EF0060A885 /* ZHRefreshChiBaoZiHeader.swift in Sources */,
 				C4AE51E420931353009DCF90 /* UIView+Extension.swift in Sources */,
 				C41A38492092CD420006444B /* ZHRefreshComponent.swift in Sources */,
+				C47BF99E20A4313100C42546 /* ZHRefreshAutoNormalFooter.swift in Sources */,
 				C47BF99A20A42DCE00C42546 /* ZHRefreshChiBaoZiFooter.swift in Sources */,
 				C4BB399820A195E7003D4DB4 /* ZHRefreshAutoFooter.swift in Sources */,
 				C42F12D920A2A5570037B32C /* ZHRefreshBackStateFooter.swift in Sources */,
 				C48176492094669400FF322D /* ZHRefreshConst.swift in Sources */,
+				C47BF9A020A4314F00C42546 /* ZHRefreshAutoGifFooter.swift in Sources */,
 				C4CDCFE1209949770060A885 /* ZHRefreshRunTime.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -38,7 +38,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 //                self.tableView.header?.endRefreshing()
 //            })
 //        }
-        tableView.footer = ZHRefreshChiBaoZiFooter.footerWithRefreshing {
+        tableView.footer = ZHRefreshAutoFooter.footerWithRefreshing {
             DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
                 self.tableView.footer?.endRefreshing()
             })
@@ -48,7 +48,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     // MARK: - dataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-         return 10
+         return 20
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
