@@ -55,7 +55,6 @@ class ZHRefreshFooter: ZHRefreshComponent {
         super.prepare()
         /// 设置高度
         self.zh_h = ZHRefreshKeys.footerHeight
-        self.backgroundColor = UIColor.yellow
     }
 
     override func willMove(toSuperview newSuperview: UIView?) {

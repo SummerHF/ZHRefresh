@@ -16,6 +16,8 @@
 		C41A38502092EB8C0006444B /* ZHRefreshHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41A384F2092EB8C0006444B /* ZHRefreshHeader.swift */; };
 		C41A38542092EE060006444B /* ZHRefreshStateHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41A38532092EE060006444B /* ZHRefreshStateHeader.swift */; };
 		C42F12D920A2A5570037B32C /* ZHRefreshBackStateFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42F12D820A2A5570037B32C /* ZHRefreshBackStateFooter.swift */; };
+		C47BF99620A4178200C42546 /* ZHRefreshBackNormalFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47BF99520A4178200C42546 /* ZHRefreshBackNormalFooter.swift */; };
+		C47BF99820A4261B00C42546 /* ZHRefreshBackGifFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47BF99720A4261B00C42546 /* ZHRefreshBackGifFooter.swift */; };
 		C48176252094097400FF322D /* UIScrollView+ZHExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = C48176242094097400FF322D /* UIScrollView+ZHExtension.m */; };
 		C48176492094669400FF322D /* ZHRefreshConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48176482094669400FF322D /* ZHRefreshConst.swift */; };
 		C48350512092EF1F00DB253B /* ZHRefreshNormalHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48350502092EF1F00DB253B /* ZHRefreshNormalHeader.swift */; };
@@ -44,6 +46,8 @@
 		C41A384F2092EB8C0006444B /* ZHRefreshHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZHRefreshHeader.swift; sourceTree = "<group>"; };
 		C41A38532092EE060006444B /* ZHRefreshStateHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZHRefreshStateHeader.swift; sourceTree = "<group>"; };
 		C42F12D820A2A5570037B32C /* ZHRefreshBackStateFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZHRefreshBackStateFooter.swift; sourceTree = "<group>"; };
+		C47BF99520A4178200C42546 /* ZHRefreshBackNormalFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZHRefreshBackNormalFooter.swift; sourceTree = "<group>"; };
+		C47BF99720A4261B00C42546 /* ZHRefreshBackGifFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZHRefreshBackGifFooter.swift; sourceTree = "<group>"; };
 		C48176232094097400FF322D /* UIScrollView+ZHExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+ZHExtension.h"; sourceTree = "<group>"; };
 		C48176242094097400FF322D /* UIScrollView+ZHExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+ZHExtension.m"; sourceTree = "<group>"; };
 		C48176482094669400FF322D /* ZHRefreshConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZHRefreshConst.swift; sourceTree = "<group>"; };
@@ -192,6 +196,8 @@
 			isa = PBXGroup;
 			children = (
 				C42F12D820A2A5570037B32C /* ZHRefreshBackStateFooter.swift */,
+				C47BF99520A4178200C42546 /* ZHRefreshBackNormalFooter.swift */,
+				C47BF99720A4261B00C42546 /* ZHRefreshBackGifFooter.swift */,
 			);
 			path = Back;
 			sourceTree = "<group>";
@@ -305,6 +311,7 @@
 			files = (
 				C48350532092EF4700DB253B /* ZHRefreshGifHeader.swift in Sources */,
 				C4CDD02A2099ACFA0060A885 /* ZHRefreshFooter.swift in Sources */,
+				C47BF99620A4178200C42546 /* ZHRefreshBackNormalFooter.swift in Sources */,
 				C41A38352092CC2E0006444B /* ViewController.swift in Sources */,
 				C48350512092EF1F00DB253B /* ZHRefreshNormalHeader.swift in Sources */,
 				C483505D2092F4CB00DB253B /* ZHRefreshKeys.swift in Sources */,
@@ -312,6 +319,7 @@
 				C41A38332092CC2E0006444B /* AppDelegate.swift in Sources */,
 				C48176252094097400FF322D /* UIScrollView+ZHExtension.m in Sources */,
 				C41A38542092EE060006444B /* ZHRefreshStateHeader.swift in Sources */,
+				C47BF99820A4261B00C42546 /* ZHRefreshBackGifFooter.swift in Sources */,
 				C41A38502092EB8C0006444B /* ZHRefreshHeader.swift in Sources */,
 				C4BB399A20A195FC003D4DB4 /* ZHRefreshBackFooter.swift in Sources */,
 				C4CDD0282099A0EF0060A885 /* ZHRefreshChiBaoZiHeader.swift in Sources */,
