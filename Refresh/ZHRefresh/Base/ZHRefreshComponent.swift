@@ -105,12 +105,18 @@ class ZHRefreshComponent: UIView {
         }
     }
 
-    /// 刷新状态, 一般交给子类内部实现, 默认是普通状态
-    var state: ZHRefreshState = .idle {
-        didSet {
+    /// 内部维护的状态
+    private var _state: ZHRefreshState = .idle
+    /// 刷新状态, 一般交给子类内部实现, 默认是普通状态 (通过该方式模拟oc的set and get)
+    var state: ZHRefreshState {
+        get {
+            return _state
+        }
+        set {
+            _state = newValue
             /// 加入主队列的目的是等setState: 方法调用完毕后, 设置完文字后再去布局子控件
             DispatchQueue.main.async {
-                self.setNeedsLayout()
+            self.setNeedsLayout()
             }
         }
     }
@@ -278,5 +284,15 @@ class ZHRefreshComponent: UIView {
         } else if let change = change, path.isEqual(to: ZHRefreshKeys.panState) {
             self.scrollViewPanStateDid(change: change)
         }
+    }
+
+    /// 检测状态
+
+    /// - parameter newState: 新状态
+    /// - parameter oldState: 旧状态
+
+    /// - return: 如果两者相同 返回nil, 如果两者不相同, 返回旧的状态
+    func check(newState: ZHRefreshState, oldState: ZHRefreshState) -> ZHRefreshState? {
+        return newState == oldState ? nil : oldState
     }
 }

@@ -50,16 +50,16 @@ class ZHRefreshHeader: ZHRefreshComponent {
     }
 
     override var state: ZHRefreshState {
-        /// check date
-        willSet {
-            if newValue == state { return }
-            super.state = newValue
+        get {
+            return super.state
         }
-
-        /// 保存刷新时间
-        didSet {
-            if state == .idle {
-                if oldValue != .refreshing { return }
+        set {
+            /// check state, 相同的state 直接return
+            guard let oldState = check(newState: newValue, oldState: state) else { return }
+            super.state = newValue
+            /// 更具状态做事情
+            if newValue == .idle {
+                if oldState != .refreshing { return }
                 /// save
                 UserDefaults.standard.setValue(Date(), forKey: self.lastUpdatedTimeKey)
                 UserDefaults.standard.synchronize()
@@ -70,12 +70,12 @@ class ZHRefreshHeader: ZHRefreshComponent {
                     if self.automaticallyChangeAlpha { self.alpha = 0.0 }
                 }) { (finished) in
                     self.pullingPercent = 0.0
-                        /// 回调block
+                    /// 回调block
                     if let block = self.endRefreshingCompletionBlock {
                         block()
                     }
                 }
-            } else if state == .refreshing {
+            } else if newValue == .refreshing {
                 DispatchQueue.main.async {
                     UIView.animate(withDuration: ZHRefreshKeys.fastAnimateDuration, animations: {
                         let top = self.scrollViewOriginalInset.top + self.zh_h
@@ -93,7 +93,6 @@ class ZHRefreshHeader: ZHRefreshComponent {
             }
         }
     }
-
     // MARK: - 构造方法
 
     /// 类方法, 快速的创建带有正在刷新回调的下拉刷新控件

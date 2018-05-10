@@ -107,13 +107,13 @@ class ZHRefreshGifHeader: ZHRefreshStateHeader {
 
     override var state: ZHRefreshState {
         /// check date
-        willSet {
-            if newValue == state { return }
-            super.state = newValue
+        get {
+            return super.state
         }
-        /// did set
-        didSet {
-            if state == .pulling || state == .refreshing {
+        set {
+            guard check(newState: newValue, oldState: state) != nil else { return }
+            super.state = newValue
+            if newValue == .pulling || newValue == .refreshing {
                 if let images = self.stateImages[state], let duration = self.stateDurations[state], images.count > 0 {
                     self.gifImageView.stopAnimating()
                     if images.count == 1 {
@@ -125,7 +125,7 @@ class ZHRefreshGifHeader: ZHRefreshStateHeader {
                         self.gifImageView.startAnimating()
                     }
                 }
-            } else if state == .idle {
+            } else if newValue == .idle {
                 self.gifImageView.stopAnimating()
             }
         }

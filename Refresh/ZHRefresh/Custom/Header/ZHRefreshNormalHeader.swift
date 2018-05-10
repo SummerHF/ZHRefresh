@@ -88,14 +88,15 @@ class ZHRefreshNormalHeader: ZHRefreshStateHeader {
 
     override var state: ZHRefreshState {
         /// check date
-        willSet {
-            if newValue == state { return }
-            super.state = newValue
+        get {
+           return super.state
         }
-        /// did set
-        didSet {
-            if state == .idle {
-                if oldValue == .refreshing {
+        /// 更具状态做事情
+        set {
+            guard let oldState = check(newState: newValue, oldState: state) else { return }
+            super.state = newValue
+            if newValue == .idle {
+                if oldState == .refreshing {
                     self.arrowView.transform = CGAffineTransform.identity
                     UIView.animate(withDuration: ZHRefreshKeys.slowAnimateDuration, animations: {
                         self.loadingView.alpha = 0.0
@@ -113,13 +114,13 @@ class ZHRefreshNormalHeader: ZHRefreshStateHeader {
                         self.arrowView.transform = CGAffineTransform.identity
                     })
                 }
-            } else if state == .pulling {
+            } else if newValue == .pulling {
                 self.loadingView.stopAnimating()
                 self.arrowView.isHidden = false
                 UIView.animate(withDuration: ZHRefreshKeys.fastAnimateDuration, animations: {
                     self.arrowView.transform = CGAffineTransform(rotationAngle: 0.000001 - .pi)
                 })
-            } else if state == .refreshing {
+            } else if newValue == .refreshing {
                 self.loadingView.alpha = 1.0
                 self.loadingView.startAnimating()
                 self.arrowView.isHidden = true

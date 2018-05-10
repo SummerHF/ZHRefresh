@@ -33,7 +33,7 @@ typealias lastUpdatedTimeTextBlock = (Date) -> String
 class ZHRefreshStateHeader: ZHRefreshHeader {
 
     // MARK: - 刷新时间相关
-
+    
     var lastUpdatedTimeTextBlcok: lastUpdatedTimeTextBlock?
 
     private var _lastUpdatedTimeLable: UILabel?
@@ -158,16 +158,16 @@ class ZHRefreshStateHeader: ZHRefreshHeader {
 
     override var state: ZHRefreshState {
         /// check date
-        willSet {
-            if newValue == state { return }
-            super.state = newValue
+        get {
+           return super.state
         }
-        /// did set
-        didSet {
+        set {
+            guard check(newState: newValue, oldState: state) != nil else { return }
+            super.state = newValue
             /// 设置状态文字
-            self.stateLable.text = self.stateTitles[state]
+            self.stateLable.text = self.stateTitles[newValue]
             /// 重新设置key(重新显示时间)
-            lastUpdatedTimeKey = ZHRefreshKeys.headerLastUpdatedTimeKey
+            self.lastUpdatedTimeKey = ZHRefreshKeys.headerLastUpdatedTimeKey
         }
     }
 }
