@@ -1,14 +1,14 @@
 <h1 align="center">ZHRefresh</h1>
 
 <p align="center">
-<a href="https://travis-ci.org/SummerHF/ZHNavigationController"><img src="https://img.shields.io/travis/SummerHF/ZHNavigationController.svg?style=flat"></a>
-<a href="https://cocoapods.org/pods/ZHNavigationController"><img src="https://img.shields.io/cocoapods/v/ZHNavigationController.svg?style=flat"></a>
+<a href="https://travis-ci.org/SummerHF/ZHRefresh"><img src="https://img.shields.io/travis/SummerHF/ZHNavigationController.svg?style=flat"></a>
+<a href="https://cocoapods.org/pods/ZHRefresh"><img src="https://img.shields.io/cocoapods/v/ZHNavigationController.svg?style=flat"></a>
 <a><img src="https://img.shields.io/cocoapods/p/ZHNavigationController.svg?style=flat"></a>
 <a><img src="https://img.shields.io/github/license/mashape/apistatus.svg?style=flat"></a>
-<a href="https://cocoapods.org/pods/ZHNavigationController"><img src="https://img.shields.io/badge/swift-4.0-orange.svg?style=flat"></a>
+<a href="https://cocoapods.org/pods/ZHRefresh"><img src="https://img.shields.io/badge/swift-4.0-orange.svg?style=flat"></a>
 </p>
 
-<p align="center">该框架可以快速的让你的每一个控制器都拥有属于自己的<strong>navgationBar</strong>,实现真正意义上的自定制,同时提供<strong>多种手势</strong>,<strong>多种转场动画的支持</strong>,可根据自己的需求自行选择.</p>
+<p align="center"><strong>swift</strong>版本刷新控件,可根据自己的需求自行定制样式</p>
 
 ## Contents
 
