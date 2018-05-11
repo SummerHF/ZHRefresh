@@ -8,7 +8,7 @@
 <a href="https://cocoapods.org/pods/ZHRefresh"><img src="https://img.shields.io/badge/swift-4.0-orange.svg?style=flat"></a>
 </p>
 
-<p align="center"><strong>swift</strong>版本刷新控件,可根据自己的需求自行定制样式</p>
+<p align="center"><strong>Swift</strong>版的刷新控件, <strong>MJRefresh</strong>的翻版</p>
 
 ## Contents
 
@@ -18,6 +18,7 @@
 	
 	
 ### <a id="Getting_Started"></a>Getting Started【开始使用】
+
 
 #### <a id="Features"></a>Features 【能做什么】
 

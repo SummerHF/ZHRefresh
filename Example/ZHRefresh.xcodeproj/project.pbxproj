@@ -9,12 +9,17 @@
 /* Begin PBXBuildFile section */
 		0165B0013153A6F258684D35 /* Pods_ZHRefresh_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 020079373947F8FC37B53A1D /* Pods_ZHRefresh_Example.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
-		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
+		607FACD81AFB9204008FA782 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* MainViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		B6DEA0E23C7E18CF4275A5B3 /* Pods_ZHRefresh_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0975BCC75A8FF9FFB0A63F70 /* Pods_ZHRefresh_Tests.framework */; };
+		C461D40320A568E500F86FD8 /* Example.swift in Sources */ = {isa = PBXBuildFile; fileRef = C461D40220A568E500F86FD8 /* Example.swift */; };
+		C461D41020A573EF00F86FD8 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C461D40D20A573EF00F86FD8 /* CollectionViewController.swift */; };
+		C461D41120A573EF00F86FD8 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C461D40E20A573EF00F86FD8 /* TableViewController.swift */; };
+		C461D41220A573EF00F86FD8 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C461D40F20A573EF00F86FD8 /* WebViewController.swift */; };
+		C461D41720A57C6800F86FD8 /* UIViewController+Dynamic.m in Sources */ = {isa = PBXBuildFile; fileRef = C461D41620A57C6800F86FD8 /* UIViewController+Dynamic.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +41,7 @@
 		607FACD01AFB9204008FA782 /* ZHRefresh_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZHRefresh_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		607FACD71AFB9204008FA782 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		607FACD71AFB9204008FA782 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		607FACDA1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -45,6 +50,13 @@
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		7A00B33C9D171AAE71A9D62F /* ZHRefresh.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = ZHRefresh.podspec; path = ../ZHRefresh.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		90E7353CD4BED80D05F8EB67 /* Pods-ZHRefresh_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZHRefresh_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZHRefresh_Example/Pods-ZHRefresh_Example.release.xcconfig"; sourceTree = "<group>"; };
+		C461D40220A568E500F86FD8 /* Example.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Example.swift; sourceTree = "<group>"; };
+		C461D40D20A573EF00F86FD8 /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		C461D40E20A573EF00F86FD8 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		C461D40F20A573EF00F86FD8 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		C461D41420A57C6800F86FD8 /* ZHRefresh_Example-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ZHRefresh_Example-Bridging-Header.h"; sourceTree = "<group>"; };
+		C461D41520A57C6800F86FD8 /* UIViewController+Dynamic.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Dynamic.h"; sourceTree = "<group>"; };
+		C461D41620A57C6800F86FD8 /* UIViewController+Dynamic.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Dynamic.m"; sourceTree = "<group>"; };
 		EB7AFEEAC3602895CD0CB6F1 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		FD2384FA4B53FAE4091CD7C5 /* Pods-ZHRefresh_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZHRefresh_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZHRefresh_Example/Pods-ZHRefresh_Example.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -93,8 +105,10 @@
 		607FACD21AFB9204008FA782 /* Example for ZHRefresh */ = {
 			isa = PBXGroup;
 			children = (
+				C461D41320A57C4700F86FD8 /* Tool */,
+				C461D40C20A573EF00F86FD8 /* DemoViewController */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
-				607FACD71AFB9204008FA782 /* ViewController.swift */,
+				607FACD71AFB9204008FA782 /* MainViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
@@ -146,6 +160,27 @@
 				0975BCC75A8FF9FFB0A63F70 /* Pods_ZHRefresh_Tests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C461D40C20A573EF00F86FD8 /* DemoViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C461D40220A568E500F86FD8 /* Example.swift */,
+				C461D40E20A573EF00F86FD8 /* TableViewController.swift */,
+				C461D40D20A573EF00F86FD8 /* CollectionViewController.swift */,
+				C461D40F20A573EF00F86FD8 /* WebViewController.swift */,
+			);
+			path = DemoViewController;
+			sourceTree = "<group>";
+		};
+		C461D41320A57C4700F86FD8 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				C461D41520A57C6800F86FD8 /* UIViewController+Dynamic.h */,
+				C461D41620A57C6800F86FD8 /* UIViewController+Dynamic.m */,
+				C461D41420A57C6800F86FD8 /* ZHRefresh_Example-Bridging-Header.h */,
+			);
+			path = Tool;
 			sourceTree = "<group>";
 		};
 		ECBE34FF16CE087A727E582F /* Pods */ = {
@@ -215,7 +250,7 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 0930;
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
@@ -301,10 +336,12 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ZHRefresh_Example/Pods-ZHRefresh_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/ZHRefresh/ZHRefresh.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZHRefresh.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -370,8 +407,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				607FACD81AFB9204008FA782 /* MainViewController.swift in Sources */,
+				C461D41220A573EF00F86FD8 /* WebViewController.swift in Sources */,
+				C461D41720A57C6800F86FD8 /* UIViewController+Dynamic.m in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				C461D41120A573EF00F86FD8 /* TableViewController.swift in Sources */,
+				C461D40320A568E500F86FD8 /* Example.swift in Sources */,
+				C461D41020A573EF00F86FD8 /* CollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -521,11 +563,14 @@
 			baseConfigurationReference = FD2384FA4B53FAE4091CD7C5 /* Pods-ZHRefresh_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = ZHRefresh/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ZHRefresh/Tool/ZHRefresh_Example-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 			};
@@ -536,11 +581,13 @@
 			baseConfigurationReference = 90E7353CD4BED80D05F8EB67 /* Pods-ZHRefresh_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = ZHRefresh/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ZHRefresh/Tool/ZHRefresh_Example-Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 			};

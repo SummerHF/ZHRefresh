@@ -1,7 +1,9 @@
 PODS:
+  - SnapKit (4.0.0)
   - ZHRefresh (0.0.1)
 
 DEPENDENCIES:
+  - SnapKit (~> 4.0.0)
   - ZHRefresh (from `../`)
 
 EXTERNAL SOURCES:
@@ -9,8 +11,9 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
+  SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   ZHRefresh: e1b0ab492647dddad600a51bb65dd54bc4edf833
 
-PODFILE CHECKSUM: 53a770085fea487e5c7ad93bc572eb0bdab3151a
+PODFILE CHECKSUM: 52508ad78b226cd2d83bb0dbcb003d043991a4d7
 
 COCOAPODS: 1.4.0
