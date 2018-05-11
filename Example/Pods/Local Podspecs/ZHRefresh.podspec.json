@@ -20,7 +20,7 @@
   "platforms": {
     "ios": "8.0"
   },
-  "source_files": "ZHRefresh/Classes/**/*",
+  "source_files": "ZHRefresh/Classes/**/*.{swift,h,m}",
   "frameworks": "UIKit",
   "resource_bundles": {
     "ZHRefresh": [
