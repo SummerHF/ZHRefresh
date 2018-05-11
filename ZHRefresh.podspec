@@ -30,7 +30,7 @@ TODO: 1. add Custom refresh style
   s.social_media_url = 'http://summerhf.cn'
   s.ios.deployment_target = '8.0'
   # Classes/*.{h,m,swift}
-  s.source_files = 'ZHRefresh/Classes/*.{h,m,swift}'
+  s.source_files = 'ZHRefresh/Classes/**/*'
   s.frameworks = 'UIKit'
   s.resource_bundles = {
     'ZHRefresh' => ['ZHRefresh/Assets/ZHRefresh.bundle']

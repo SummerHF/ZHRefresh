@@ -7,80 +7,80 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0051BE53F91B184F55513D08F21F5DCE /* ZHRefreshChiBaoZiAutoFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11BB817F6ACD30F1B51B9E617F98BFD /* ZHRefreshChiBaoZiAutoFooter.swift */; };
 		009243A58804529A6CEFBE2E0C5A4E4B /* ConstraintDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645061FD8BF394AC613CF4F0D51EEE0B /* ConstraintDSL.swift */; };
-		05DB36F210889395309F09BE69BF4DBA /* UIScrollView+ZHExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = 3956ABACA1A689CF3B9E4D7C2FC6FB3A /* UIScrollView+ZHExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0E9D7DA3D0C2B228D385A59999CB4CE7 /* UIScrollView+ZHRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6E0CE70BF59EF3F5C5D4CE776DDB05 /* UIScrollView+ZHRefresh.swift */; };
-		1380D02CF61F91B5ED6BD08019F2997D /* ZHRefreshFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F63A965B95D93D7E7AA6E39B1A0C4D /* ZHRefreshFooter.swift */; };
 		14F116DBAECEFED8572D3F53E4BE8353 /* ConstraintMultiplierTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618BA51B32ACF0F8F31A11BACEF95396 /* ConstraintMultiplierTarget.swift */; };
 		16B0AB7A220A03A4CE8D785EDA507D18 /* ZHRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 293CD11885AF311A6EAC8181EDD4DE1A /* ZHRefresh.bundle */; };
 		16B7EC7FFF0EE95586A1E010EF6E5227 /* ConstraintPriorityTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5495F3260249C5CD5E62E6D02610A41D /* ConstraintPriorityTarget.swift */; };
 		1745B62FFB5F43C90D38B4896CA51C4B /* ConstraintRelation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA17F2D7F42352672F30A144E51AC809 /* ConstraintRelation.swift */; };
 		1749499C8A596B820DCE27EC52DC1100 /* Typealiases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABC9D64458AB89596AC989C36546AE0 /* Typealiases.swift */; };
-		183E8FE17F775977F989D8E5FE3389F3 /* UIScrollView+ZHExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = B3421F44296864B449C515F8BC05CCD6 /* UIScrollView+ZHExtension.m */; };
-		1E9F5BDC63E5B33AC448AE59583A0C91 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B6552EAA4EEEC3F6C911A90C72EF93 /* UIView+Extension.swift */; };
 		1EE8D8E143E4B175C66BBFFE8756E4B1 /* SnapKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F1F08ED6F3C072E7AC9154FBDC8C4E /* SnapKit-dummy.m */; };
+		22BCEE22023CCC49A4C683C0C726C3B1 /* ZHRefreshRunTime.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A1ADD5FB64A8E2B9F0F7542AF88102 /* ZHRefreshRunTime.m */; };
 		2308E6FC17AF5B403CED9BEA473E0DFB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
 		23A1828D5408071177AE1528DB339E66 /* ConstraintConstantTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155B0F68F55650AB9DA3EB802B75CFE0 /* ConstraintConstantTarget.swift */; };
 		25F2F97375A94AB3F73B43AC3E9B90E6 /* ConstraintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A91D0ACFB6CF1883A820AA2607BCA8 /* ConstraintView.swift */; };
 		2A2C82BB658EE3D22224CFEC1ACFD91F /* ConstraintLayoutSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE14A5BE5AA8350526F042EBC920BAA /* ConstraintLayoutSupport.swift */; };
 		2ECA61958BE8A2C578E75BADE9611D9B /* ConstraintConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C4EE941C99C2F663494C43944D63FD /* ConstraintConfig.swift */; };
-		300E2A6617A066DA723B773E09A2A1AF /* ZHRefreshBackStateFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6610946B2508492737E42B0EAB35A75A /* ZHRefreshBackStateFooter.swift */; };
+		30C3249A7C3288CEBD119ACC135FFDA9 /* ZHRefreshStateHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5629AFA1BC70246ADBFD9D178A65BB92 /* ZHRefreshStateHeader.swift */; };
 		3101316FA418D270D0A7155E471E5B97 /* ConstraintInsetTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FAC0AC855EFDB998E84AB91F91FC4CA /* ConstraintInsetTarget.swift */; };
-		3106CA7C84A44FAB1EA7FFF2C0F6A1FF /* ZHRefreshChiBaoZiHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBD7213D937EE7EB89C465E5D1278DA /* ZHRefreshChiBaoZiHeader.swift */; };
 		347D639AB15DB0F9C151A28BB18E801E /* ConstraintMakerExtendable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35E795A4705B4FB474FF417682335F1 /* ConstraintMakerExtendable.swift */; };
-		39FC292525CECAD547CF0AAD42995C7E /* ZHRefreshBackGifFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FC5EF3DD5684ED00F43930071B9F1B /* ZHRefreshBackGifFooter.swift */; };
+		3B546C0850662E8DB4976281D2D15D9C /* ZHRefreshConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D36B776CA67C43CA885BE1030B20642 /* ZHRefreshConst.swift */; };
+		3CD7CD1A01E069D677990F7D16C14449 /* ZHRefreshChiBaoZiAutoFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04FC8892B9D0A9A26251ADDFE060231 /* ZHRefreshChiBaoZiAutoFooter.swift */; };
 		3D458DC6419A6549BF69F49769FF080E /* ConstraintInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9297EFDA2A228BE0D126B13FEC2B2AC1 /* ConstraintInsets.swift */; };
 		40A8876E8AD1A994B4ED4579112A2C2C /* LayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465909C1E34108C63AB5FBA6378D3493 /* LayoutConstraint.swift */; };
 		4129D71F650C0BDE1C0C73C01CC88D26 /* Pods-ZHRefresh_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E94A190B1F6F2512DE6F392CFEC8C18 /* Pods-ZHRefresh_Example-dummy.m */; };
-		420AA9D321AF9ED8AA0A8AEF5C559BDE /* ZHRefreshRunTime.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E552640825AEB879D71F173AA5D8336 /* ZHRefreshRunTime.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		447EF5B66AF5FFB20B100B977AB6BB35 /* UILayoutSupport+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45908992EEDBCFF12244DAE9912F7228 /* UILayoutSupport+Extensions.swift */; };
-		49DF3436E24694EF26ED25A4FFD38FE9 /* ZHRefreshBackFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12214CF5A640F78F1E941E7B033EDEAB /* ZHRefreshBackFooter.swift */; };
 		551B739C109262FC121BFECD57F55FFC /* ConstraintLayoutGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5FAAF2F13CE5B667DCA58EF782CF6D /* ConstraintLayoutGuide.swift */; };
-		5C79D6C925B4D2FCCDBE6482ACCCCCA0 /* ZHRefreshHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF39465559DA9B52EB3013B27019AC0 /* ZHRefreshHeader.swift */; };
+		572A42DCDF012091BCF2F6BC04915344 /* ZHRefreshBackStateFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D480669836A5E7780ED87A26ABBA9326 /* ZHRefreshBackStateFooter.swift */; };
+		57BB514CE265D6C33949E8D79E2662C4 /* UIScrollView+ZHExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = C1634E689C61A16FE1A39A647E6A80B5 /* UIScrollView+ZHExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5FFAC1D536B20516816E2330CE58EFE3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
-		6145D21E295B2221214068C8FE40667E /* ZHRefreshChiBaoZiFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70FC619EB4447B54C783EED4592E95D /* ZHRefreshChiBaoZiFooter.swift */; };
 		6195BADCE911BB5210953AE7D30BEA92 /* ConstraintLayoutGuideDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068A4C41AD3E035EFFE7E7F568CE1EF9 /* ConstraintLayoutGuideDSL.swift */; };
 		61A5C3A3F46226657E55FFE678D400D7 /* ConstraintOffsetTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3463E11A1205B5C35B599F4A19C31C3 /* ConstraintOffsetTarget.swift */; };
-		68FC3BBD94BAEC9123B631A9D398DD9E /* ZHRefreshNormalHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F146D9791E7D05E3F2BD39F50E196862 /* ZHRefreshNormalHeader.swift */; };
+		6819B76739B1E0A5A6516FE7C3556CC7 /* UIScrollView+ZHExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = A04057611411397C133A14C5A76BEC3B /* UIScrollView+ZHExtension.m */; };
+		69A02C6A7C86EDC78F15D006218BDF29 /* ZHRefreshBackNormalFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBE151FE0CF0E8CC9A41CB70AEAE4F3 /* ZHRefreshBackNormalFooter.swift */; };
 		6A9D016AF2B5318A6ED39B17A4639FF3 /* ConstraintItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD97CEFB74800C4A5F04ED11A13D33D5 /* ConstraintItem.swift */; };
-		6B420C4B3C45FFCE96272BDDCF0215D0 /* ZHRefreshBackNormalFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D3E2E1F0234A661B6E36F7DF6A1F3D /* ZHRefreshBackNormalFooter.swift */; };
 		6D120FA76D71DCB80F8614E5DCEF7452 /* ConstraintRelatableTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB1C88D7583A855F149230ABA2DF3C8 /* ConstraintRelatableTarget.swift */; };
+		6F293B8C2AEF190BB06F99AB6B250934 /* ZHRefreshRunTime.h in Headers */ = {isa = PBXBuildFile; fileRef = 0C9AA96BD7D9FD614B045E481621C769 /* ZHRefreshRunTime.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6FD1A8A0436E7891A288280EBEC68A40 /* ConstraintMakerFinalizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F75E7EE36678F81FD1EC4247DB1B87 /* ConstraintMakerFinalizable.swift */; };
-		7477C456BD9A4B4795E25F0CB53EB70C /* ZHRefreshAutoFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB791B5CB8AB5BA220DAEDDB5B22215E /* ZHRefreshAutoFooter.swift */; };
-		75BE1D66B842233789751B692A1F131C /* ZHRefreshRunTime.m in Sources */ = {isa = PBXBuildFile; fileRef = E996EE899BF809AF961B3854150AF94E /* ZHRefreshRunTime.m */; };
-		76D95FBE8F0EFAD01BFF45DAE12C583A /* ZHRefreshGifHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB9D821DFD65FC6A8B139C51904048A /* ZHRefreshGifHeader.swift */; };
-		7FDFC45351770EAF841D8AAA13734EE8 /* ZHRefresh-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 999D5BDBABDEC55C4AEF7B23B08B8670 /* ZHRefresh-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7D25E1632425BDAFC00433C9844C6CFC /* ZHRefreshComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F3D5E3F2C43E8DD54CEC4321BAE580 /* ZHRefreshComponent.swift */; };
+		8025DCBE9797BDAE452D3671DF2ADC92 /* ZHRefreshFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8FF7667F7ED960F37E3FCB87494089 /* ZHRefreshFooter.swift */; };
+		81D56683478F529C1DB6932119B786E4 /* ZHRefreshAutoGifFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CD2F83A62EE1D2B188921FBBF2A629 /* ZHRefreshAutoGifFooter.swift */; };
+		83ED8DF716823BAFDA8198486B1EC03A /* ZHRefreshGifHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6671B9621DD278588816285B36C7F048 /* ZHRefreshGifHeader.swift */; };
 		83F210D62E244F6913264B87EC2D390B /* ConstraintMakerRelatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09C8BFD80A7988D3B139768116EE2A7 /* ConstraintMakerRelatable.swift */; };
-		87CF74E9BEC351751540CF4828353BC1 /* ZHRefreshConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF04D7191C896B3A7D2605185E5CE847 /* ZHRefreshConst.swift */; };
 		87F08DABF9FFBFBFD84A01A7E45E2916 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
 		8877B4A5B682F30CED68057F721FB9DA /* SnapKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B73C67F9EFC99A11440EE4069211B84A /* SnapKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		892BD360B170629257D59F8CC6B56375 /* ZHRefreshHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB2BC4D680E264CF36BBE63625F7C5B /* ZHRefreshHeader.swift */; };
 		89F782BC57D67BDEF693EAB030F67329 /* ConstraintView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BDCD0CDEC036E08EBEFEBDB5217C5A /* ConstraintView+Extensions.swift */; };
-		8A52E0B179ECC71D0E8270DDBA72A51C /* ZHRefresh-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 46B7DD5E19FBB3B3744EF9087BF3E1F3 /* ZHRefresh-dummy.m */; };
 		93B3B67B12598D7752D029117A7DAF54 /* Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2798FAD1ED522B9041959ED19ED6B3DE /* Constraint.swift */; };
 		95736E1D60EFFF1A5AD5FD7A077EAA91 /* ConstraintAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF518E3C1EEA98354E7A1BB1CEC881B /* ConstraintAttributes.swift */; };
+		96EA3BC8ECA67186BCF8C247B6E6D228 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72C08D7C84527970F24AAB65C491E1C /* UIView+Extension.swift */; };
 		974D7D95AE450C76FA3B686585DC7EAC /* ConstraintLayoutGuide+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1130FD3420568BD4A44BC6359400E0A8 /* ConstraintLayoutGuide+Extensions.swift */; };
 		9A611251E3A9AFA692366770773DE76A /* LayoutConstraintItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69B953D578152B8ABC94EDF5E0C6A43 /* LayoutConstraintItem.swift */; };
-		A144A57CA14A4489A6DDD17408FFB87D /* ZHRefreshAutoNormalFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491F911806EAF23F095D4B2BF8E78CA8 /* ZHRefreshAutoNormalFooter.swift */; };
+		9CB001C3A679B0B97FF88345FEAEE92B /* ZHRefresh-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BC37B0A8C5FC074307EA7EBF432AAF90 /* ZHRefresh-dummy.m */; };
+		A0B0FF32239C9E538B765F0C56EF5BE5 /* ZHRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AB57A09672ACFA5A07AAAB2E02DA33 /* ZHRecord.swift */; };
+		A3AC7A0B46F0D56882524CF0077661EA /* ZHRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5559EE6E85BC55815A373905E596C9C5 /* ZHRefresh.swift */; };
+		A421BD335312601B64071F716BCB0D3B /* ZHRefreshChiBaoZiFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABC6D78B81882D01072CB5DB652445C /* ZHRefreshChiBaoZiFooter.swift */; };
+		A600547000376DEC26464C0C28535AD8 /* ZHRefreshNormalHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A35695A4F3E063F610E5455A0D03158 /* ZHRefreshNormalHeader.swift */; };
 		A6B55A6C4131BE21FDEAB74692F8F34F /* ConstraintDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A39EF6D4C8D8F847461613349A75E07 /* ConstraintDescription.swift */; };
+		A7C8FCDD2C0B247B8F6413E677A39DB3 /* ZHRefreshAutoNormalFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68D6EA2A950A5CD9BF2DF75ADF14FF8 /* ZHRefreshAutoNormalFooter.swift */; };
 		A85595C0F462866D0FD52E49681FA35D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
 		A9FA768DDBDED48761075D9D741E8A13 /* ConstraintViewDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = B058F739089B32F3323418933731ADFB /* ConstraintViewDSL.swift */; };
-		B1B64E6D24E6A2D46EF1383C5B18A5CD /* ZHRefreshAutoGifFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368C849537E780783AEFB31425B22AE7 /* ZHRefreshAutoGifFooter.swift */; };
 		B32ED65E73A7AAE0D96830DBA8A9021A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B63C6A64CF66340668996F78DA6BB482 /* UIKit.framework */; };
-		B344BD6D10E6769C183A2992F8CF111E /* ZHRefreshAutoStateFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23238304401518D07C06658F47FBD156 /* ZHRefreshAutoStateFooter.swift */; };
-		BC1945308E2FE38B518477419A9FA8EA /* ZHRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88F8390A131B61F0CE3A4FA930C2CE9 /* ZHRecord.swift */; };
-		BD086F7BCF3DC11D069B93B6086246FD /* ZHRefreshKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEED16ED64959073587EDB32F9E0224 /* ZHRefreshKeys.swift */; };
-		C40A929F7261D8695176AB057868E511 /* ZHRefreshComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E666CC56E9F62BA9CA2D24018A72A0 /* ZHRefreshComponent.swift */; };
+		BFCA9AEB6A43AA5830CEA3BBF7E86CA4 /* ZHRefreshBackFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC83C7FB9B354FFC20CC2E7242369D63 /* ZHRefreshBackFooter.swift */; };
 		C656D5CCFDE2DFAEBF223FED7478AD9F /* Pods-ZHRefresh_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FD1244D2F23ED21C1291BB99027C41FE /* Pods-ZHRefresh_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CB0FFD68E117D1D0445149BBB1211F2A /* ZHRefresh-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 91E5C8F1B0937DA708662E1EEACEDCE8 /* ZHRefresh-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D0A3A98154FE86B9306CAC187373F9D5 /* ConstraintMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE1FE61DC3251BBA5CD452BE8564C8E7 /* ConstraintMaker.swift */; };
+		DD39992E00CEA9DFC480E6741450F72E /* ZHRefreshAutoStateFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B33DB935ED449A999621ECE4D9C694E /* ZHRefreshAutoStateFooter.swift */; };
 		E016766987CFA50D1BB6E277282DA02D /* ConstraintLayoutSupportDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EC67A9344FB011AC6B0CB0B1706C1C /* ConstraintLayoutSupportDSL.swift */; };
 		E036E664C7B9B9F3845E01B1ECFA6C99 /* ConstraintMakerEditable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CE3DCD5A18E652A9D4C4FCC6AEAE10 /* ConstraintMakerEditable.swift */; };
+		E4D48E1C03FFF98F12B4C46823A1814A /* ZHRefreshBackGifFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EBA84359CCD55E9000EDE93883C5284 /* ZHRefreshBackGifFooter.swift */; };
 		E62EFAA00A37443AB4E96261FBA9B27C /* ConstraintMakerPriortizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0A4D5D85B4FAEB4C7AF868A3E48121 /* ConstraintMakerPriortizable.swift */; };
 		E6352BA547B742713A10F021267087DA /* Pods-ZHRefresh_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F4A5AF1F8D353AA18931BB83FA721EA /* Pods-ZHRefresh_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E7C037D691E8C052B5D3EF601CE7DBC5 /* ZHRefreshChiBaoZiHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C968E61965B25CB1ADA4867E699D03 /* ZHRefreshChiBaoZiHeader.swift */; };
 		F5EE4605C81C4494602BC84A5A8F5E3A /* ConstraintPriority.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3A931CDC4FB0563592274ED61655C7 /* ConstraintPriority.swift */; };
-		F6D4FD5B7FC8C785F362E9843EE6AF56 /* ZHRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 17F2CFAA5439C5DDE392C1C18EF5BCF6 /* ZHRefresh.bundle */; };
+		F6AF78C639BFA78AAD49820FECF672F6 /* ZHRefreshAutoFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2858E616A44A4755E9DD97C7E660E2D /* ZHRefreshAutoFooter.swift */; };
+		F6D4FD5B7FC8C785F362E9843EE6AF56 /* ZHRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DED51B8DE350FA5D8461D7B0BBA0BE4E /* ZHRefresh.bundle */; };
 		F798864FBAC42C981560E20007446EA3 /* Pods-ZHRefresh_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FEE644CF6F5D4E508BDEE74A7843C8F /* Pods-ZHRefresh_Tests-dummy.m */; };
-		F96FFB4D80C4DA2BD2ADB4B7AEAF1EBF /* ZHRefreshStateHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394FD7ACE9EAB29E462567EFA6212CB8 /* ZHRefreshStateHeader.swift */; };
+		FACEDD824FA33B4DDB1C546DAF18B801 /* ZHRefreshKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E1C3BDF7F045D52E41512B67D1F9FC /* ZHRefreshKeys.swift */; };
 		FD8486140A161C6A1737A2C97BB5A821 /* Debugging.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E03888824F0BC09BC4827577C35087 /* Debugging.swift */; };
 /* End PBXBuildFile section */
 
@@ -111,107 +111,107 @@
 /* Begin PBXFileReference section */
 		068A4C41AD3E035EFFE7E7F568CE1EF9 /* ConstraintLayoutGuideDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutGuideDSL.swift; path = Source/ConstraintLayoutGuideDSL.swift; sourceTree = "<group>"; };
 		0AF518E3C1EEA98354E7A1BB1CEC881B /* ConstraintAttributes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintAttributes.swift; path = Source/ConstraintAttributes.swift; sourceTree = "<group>"; };
+		0C9AA96BD7D9FD614B045E481621C769 /* ZHRefreshRunTime.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ZHRefreshRunTime.h; path = ZHRefresh/Classes/ZHRefreshRunTime.h; sourceTree = "<group>"; };
 		0D3FA0435A2485542C409CFFE89DCD8F /* ZHRefresh.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ZHRefresh.framework; path = ZHRefresh.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		11084A6BA20780B0A92EE054D45AD2B7 /* SnapKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SnapKit.xcconfig; sourceTree = "<group>"; };
 		1130FD3420568BD4A44BC6359400E0A8 /* ConstraintLayoutGuide+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ConstraintLayoutGuide+Extensions.swift"; path = "Source/ConstraintLayoutGuide+Extensions.swift"; sourceTree = "<group>"; };
-		12214CF5A640F78F1E941E7B033EDEAB /* ZHRefreshBackFooter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ZHRefreshBackFooter.swift; sourceTree = "<group>"; };
 		155B0F68F55650AB9DA3EB802B75CFE0 /* ConstraintConstantTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintConstantTarget.swift; path = Source/ConstraintConstantTarget.swift; sourceTree = "<group>"; };
-		17F2CFAA5439C5DDE392C1C18EF5BCF6 /* ZHRefresh.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = ZHRefresh.bundle; path = ZHRefresh/Assets/ZHRefresh.bundle; sourceTree = "<group>"; };
 		1C3A931CDC4FB0563592274ED61655C7 /* ConstraintPriority.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintPriority.swift; path = Source/ConstraintPriority.swift; sourceTree = "<group>"; };
 		2057A81225328642D0E49115C61C8897 /* SnapKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SnapKit.modulemap; sourceTree = "<group>"; };
-		2107B4735692CF3686BF5B8F84272265 /* ZHRefresh.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = ZHRefresh.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		23238304401518D07C06658F47FBD156 /* ZHRefreshAutoStateFooter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ZHRefreshAutoStateFooter.swift; sourceTree = "<group>"; };
 		236B98A780E33EF977E7B1A02BB6A208 /* Pods-ZHRefresh_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ZHRefresh_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		23C4EE941C99C2F663494C43944D63FD /* ConstraintConfig.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintConfig.swift; path = Source/ConstraintConfig.swift; sourceTree = "<group>"; };
 		25CEC0F484D1A55CBAB97137E9DAABCD /* Pods-ZHRefresh_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ZHRefresh_Example.modulemap"; sourceTree = "<group>"; };
+		265BEF66D400A2CAA1259A4F74EC49CF /* ResourceBundle-ZHRefresh-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-ZHRefresh-Info.plist"; sourceTree = "<group>"; };
 		2798FAD1ED522B9041959ED19ED6B3DE /* Constraint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Constraint.swift; path = Source/Constraint.swift; sourceTree = "<group>"; };
+		27FAF15325882C73E77113809C3F2500 /* ZHRefresh.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ZHRefresh.xcconfig; sourceTree = "<group>"; };
+		28CD2F83A62EE1D2B188921FBBF2A629 /* ZHRefreshAutoGifFooter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZHRefreshAutoGifFooter.swift; path = ZHRefresh/Classes/ZHRefreshAutoGifFooter.swift; sourceTree = "<group>"; };
 		293CD11885AF311A6EAC8181EDD4DE1A /* ZHRefresh.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = ZHRefresh.bundle; path = "ZHRefresh-ZHRefresh.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2BBE151FE0CF0E8CC9A41CB70AEAE4F3 /* ZHRefreshBackNormalFooter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZHRefreshBackNormalFooter.swift; path = ZHRefresh/Classes/ZHRefreshBackNormalFooter.swift; sourceTree = "<group>"; };
 		2F4A5AF1F8D353AA18931BB83FA721EA /* Pods-ZHRefresh_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ZHRefresh_Example-umbrella.h"; sourceTree = "<group>"; };
 		3161F411092020CCB6D860DBF94D0734 /* Pods-ZHRefresh_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ZHRefresh_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		35A91D0ACFB6CF1883A820AA2607BCA8 /* ConstraintView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintView.swift; path = Source/ConstraintView.swift; sourceTree = "<group>"; };
-		368C849537E780783AEFB31425B22AE7 /* ZHRefreshAutoGifFooter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ZHRefreshAutoGifFooter.swift; sourceTree = "<group>"; };
+		37F3D5E3F2C43E8DD54CEC4321BAE580 /* ZHRefreshComponent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZHRefreshComponent.swift; path = ZHRefresh/Classes/ZHRefreshComponent.swift; sourceTree = "<group>"; };
 		38FD4EF8EDFC57DCDD2DD9D14D809B97 /* Pods-ZHRefresh_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ZHRefresh_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		394FD7ACE9EAB29E462567EFA6212CB8 /* ZHRefreshStateHeader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ZHRefreshStateHeader.swift; sourceTree = "<group>"; };
-		3956ABACA1A689CF3B9E4D7C2FC6FB3A /* UIScrollView+ZHExtension.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+ZHExtension.h"; sourceTree = "<group>"; };
 		3A39EF6D4C8D8F847461613349A75E07 /* ConstraintDescription.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintDescription.swift; path = Source/ConstraintDescription.swift; sourceTree = "<group>"; };
 		3ABC9D64458AB89596AC989C36546AE0 /* Typealiases.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Typealiases.swift; path = Source/Typealiases.swift; sourceTree = "<group>"; };
-		3DEED16ED64959073587EDB32F9E0224 /* ZHRefreshKeys.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ZHRefreshKeys.swift; sourceTree = "<group>"; };
 		45908992EEDBCFF12244DAE9912F7228 /* UILayoutSupport+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UILayoutSupport+Extensions.swift"; path = "Source/UILayoutSupport+Extensions.swift"; sourceTree = "<group>"; };
 		465909C1E34108C63AB5FBA6378D3493 /* LayoutConstraint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutConstraint.swift; path = Source/LayoutConstraint.swift; sourceTree = "<group>"; };
-		46B7DD5E19FBB3B3744EF9087BF3E1F3 /* ZHRefresh-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ZHRefresh-dummy.m"; sourceTree = "<group>"; };
 		48CE3DCD5A18E652A9D4C4FCC6AEAE10 /* ConstraintMakerEditable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerEditable.swift; path = Source/ConstraintMakerEditable.swift; sourceTree = "<group>"; };
-		491F911806EAF23F095D4B2BF8E78CA8 /* ZHRefreshAutoNormalFooter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ZHRefreshAutoNormalFooter.swift; sourceTree = "<group>"; };
-		4D6E0CE70BF59EF3F5C5D4CE776DDB05 /* UIScrollView+ZHRefresh.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIScrollView+ZHRefresh.swift"; sourceTree = "<group>"; };
-		4DE9188D27BF92BA29A7EE9A6360E261 /* ZHRefresh.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ZHRefresh.modulemap; sourceTree = "<group>"; };
-		4E552640825AEB879D71F173AA5D8336 /* ZHRefreshRunTime.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ZHRefreshRunTime.h; sourceTree = "<group>"; };
 		4FEE644CF6F5D4E508BDEE74A7843C8F /* Pods-ZHRefresh_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ZHRefresh_Tests-dummy.m"; sourceTree = "<group>"; };
 		5495F3260249C5CD5E62E6D02610A41D /* ConstraintPriorityTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintPriorityTarget.swift; path = Source/ConstraintPriorityTarget.swift; sourceTree = "<group>"; };
-		552CE947643BBCD46E85C086637A0033 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		5559EE6E85BC55815A373905E596C9C5 /* ZHRefresh.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZHRefresh.swift; path = ZHRefresh/Classes/ZHRefresh.swift; sourceTree = "<group>"; };
 		55F1F08ED6F3C072E7AC9154FBDC8C4E /* SnapKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SnapKit-dummy.m"; sourceTree = "<group>"; };
-		55FC5EF3DD5684ED00F43930071B9F1B /* ZHRefreshBackGifFooter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ZHRefreshBackGifFooter.swift; sourceTree = "<group>"; };
+		5629AFA1BC70246ADBFD9D178A65BB92 /* ZHRefreshStateHeader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZHRefreshStateHeader.swift; path = ZHRefresh/Classes/ZHRefreshStateHeader.swift; sourceTree = "<group>"; };
 		56D56DE2506984AB3097F3292C91DA94 /* Pods_ZHRefresh_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ZHRefresh_Example.framework; path = "Pods-ZHRefresh_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B33DB935ED449A999621ECE4D9C694E /* ZHRefreshAutoStateFooter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZHRefreshAutoStateFooter.swift; path = ZHRefresh/Classes/ZHRefreshAutoStateFooter.swift; sourceTree = "<group>"; };
 		5FAC0AC855EFDB998E84AB91F91FC4CA /* ConstraintInsetTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintInsetTarget.swift; path = Source/ConstraintInsetTarget.swift; sourceTree = "<group>"; };
-		60836DC4424674C8D77FCFB3BC13DAAC /* ZHRefresh-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ZHRefresh-prefix.pch"; sourceTree = "<group>"; };
 		618BA51B32ACF0F8F31A11BACEF95396 /* ConstraintMultiplierTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMultiplierTarget.swift; path = Source/ConstraintMultiplierTarget.swift; sourceTree = "<group>"; };
 		645061FD8BF394AC613CF4F0D51EEE0B /* ConstraintDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintDSL.swift; path = Source/ConstraintDSL.swift; sourceTree = "<group>"; };
 		65B754B8A73F6CDB9B48E2C9703A41E1 /* Pods-ZHRefresh_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ZHRefresh_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		6610946B2508492737E42B0EAB35A75A /* ZHRefreshBackStateFooter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ZHRefreshBackStateFooter.swift; sourceTree = "<group>"; };
-		6DBD7213D937EE7EB89C465E5D1278DA /* ZHRefreshChiBaoZiHeader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ZHRefreshChiBaoZiHeader.swift; sourceTree = "<group>"; };
-		6E081364F192C74E743586014051064D /* ZHRefresh.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ZHRefresh.xcconfig; sourceTree = "<group>"; };
+		6671B9621DD278588816285B36C7F048 /* ZHRefreshGifHeader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZHRefreshGifHeader.swift; path = ZHRefresh/Classes/ZHRefreshGifHeader.swift; sourceTree = "<group>"; };
+		6EBA84359CCD55E9000EDE93883C5284 /* ZHRefreshBackGifFooter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZHRefreshBackGifFooter.swift; path = ZHRefresh/Classes/ZHRefreshBackGifFooter.swift; sourceTree = "<group>"; };
 		70148C4B46C7638B4AAFF91B747BEEA9 /* Pods_ZHRefresh_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ZHRefresh_Tests.framework; path = "Pods-ZHRefresh_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7838E0D2EEFDC4825B00F748866E36FC /* Pods-ZHRefresh_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ZHRefresh_Example-resources.sh"; sourceTree = "<group>"; };
-		7DC1655E06E08AEB1406829E0A8FD14C /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		7A35695A4F3E063F610E5455A0D03158 /* ZHRefreshNormalHeader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZHRefreshNormalHeader.swift; path = ZHRefresh/Classes/ZHRefreshNormalHeader.swift; sourceTree = "<group>"; };
+		8662739D803F4E80CB76037CA72667F2 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		8981792EF950BB9C7245F36682A0FD77 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8A0A4D5D85B4FAEB4C7AF868A3E48121 /* ConstraintMakerPriortizable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerPriortizable.swift; path = Source/ConstraintMakerPriortizable.swift; sourceTree = "<group>"; };
+		8ABC6D78B81882D01072CB5DB652445C /* ZHRefreshChiBaoZiFooter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZHRefreshChiBaoZiFooter.swift; path = ZHRefresh/Classes/ZHRefreshChiBaoZiFooter.swift; sourceTree = "<group>"; };
+		8DB2BC4D680E264CF36BBE63625F7C5B /* ZHRefreshHeader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZHRefreshHeader.swift; path = ZHRefresh/Classes/ZHRefreshHeader.swift; sourceTree = "<group>"; };
+		91E5C8F1B0937DA708662E1EEACEDCE8 /* ZHRefresh-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ZHRefresh-umbrella.h"; sourceTree = "<group>"; };
 		9297EFDA2A228BE0D126B13FEC2B2AC1 /* ConstraintInsets.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintInsets.swift; path = Source/ConstraintInsets.swift; sourceTree = "<group>"; };
 		92EC67A9344FB011AC6B0CB0B1706C1C /* ConstraintLayoutSupportDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutSupportDSL.swift; path = Source/ConstraintLayoutSupportDSL.swift; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93AB57A09672ACFA5A07AAAB2E02DA33 /* ZHRecord.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZHRecord.swift; path = ZHRefresh/Classes/ZHRecord.swift; sourceTree = "<group>"; };
 		9485DCE427332708DF46008FCFBBDA0A /* Pods-ZHRefresh_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ZHRefresh_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		999D5BDBABDEC55C4AEF7B23B08B8670 /* ZHRefresh-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ZHRefresh-umbrella.h"; sourceTree = "<group>"; };
+		9D36B776CA67C43CA885BE1030B20642 /* ZHRefreshConst.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZHRefreshConst.swift; path = ZHRefresh/Classes/ZHRefreshConst.swift; sourceTree = "<group>"; };
 		9E94A190B1F6F2512DE6F392CFEC8C18 /* Pods-ZHRefresh_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ZHRefresh_Example-dummy.m"; sourceTree = "<group>"; };
+		A04057611411397C133A14C5A76BEC3B /* UIScrollView+ZHExtension.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIScrollView+ZHExtension.m"; path = "ZHRefresh/Classes/UIScrollView+ZHExtension.m"; sourceTree = "<group>"; };
 		A21C9936199BFB9676CF120985545647 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A262844A1FCC94AF67D2585DC85EAD04 /* ResourceBundle-ZHRefresh-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-ZHRefresh-Info.plist"; sourceTree = "<group>"; };
+		A2858E616A44A4755E9DD97C7E660E2D /* ZHRefreshAutoFooter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZHRefreshAutoFooter.swift; path = ZHRefresh/Classes/ZHRefreshAutoFooter.swift; sourceTree = "<group>"; };
 		A3AEF2A3C18FA314CDA4CDDCDCCBA363 /* Pods-ZHRefresh_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ZHRefresh_Example-frameworks.sh"; sourceTree = "<group>"; };
+		A3E1C3BDF7F045D52E41512B67D1F9FC /* ZHRefreshKeys.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZHRefreshKeys.swift; path = ZHRefresh/Classes/ZHRefreshKeys.swift; sourceTree = "<group>"; };
 		A5BF772D175F328FEFCF861FDAC3886B /* Pods-ZHRefresh_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ZHRefresh_Tests.modulemap"; sourceTree = "<group>"; };
-		A6B6552EAA4EEEC3F6C911A90C72EF93 /* UIView+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		A68D6EA2A950A5CD9BF2DF75ADF14FF8 /* ZHRefreshAutoNormalFooter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZHRefreshAutoNormalFooter.swift; path = ZHRefresh/Classes/ZHRefreshAutoNormalFooter.swift; sourceTree = "<group>"; };
+		A8A1ADD5FB64A8E2B9F0F7542AF88102 /* ZHRefreshRunTime.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ZHRefreshRunTime.m; path = ZHRefresh/Classes/ZHRefreshRunTime.m; sourceTree = "<group>"; };
 		AB147CB27ADE8B5CF9EC5C9E5A8517DD /* Pods-ZHRefresh_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ZHRefresh_Example.release.xcconfig"; sourceTree = "<group>"; };
-		AB791B5CB8AB5BA220DAEDDB5B22215E /* ZHRefreshAutoFooter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ZHRefreshAutoFooter.swift; sourceTree = "<group>"; };
 		AF33F2441E1BEDD027626CF6C0249DE1 /* Pods-ZHRefresh_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ZHRefresh_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		AF5FAAF2F13CE5B667DCA58EF782CF6D /* ConstraintLayoutGuide.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutGuide.swift; path = Source/ConstraintLayoutGuide.swift; sourceTree = "<group>"; };
+		B04FC8892B9D0A9A26251ADDFE060231 /* ZHRefreshChiBaoZiAutoFooter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZHRefreshChiBaoZiAutoFooter.swift; path = ZHRefresh/Classes/ZHRefreshChiBaoZiAutoFooter.swift; sourceTree = "<group>"; };
 		B058F739089B32F3323418933731ADFB /* ConstraintViewDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintViewDSL.swift; path = Source/ConstraintViewDSL.swift; sourceTree = "<group>"; };
-		B11BB817F6ACD30F1B51B9E617F98BFD /* ZHRefreshChiBaoZiAutoFooter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ZHRefreshChiBaoZiAutoFooter.swift; sourceTree = "<group>"; };
-		B3421F44296864B449C515F8BC05CCD6 /* UIScrollView+ZHExtension.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+ZHExtension.m"; sourceTree = "<group>"; };
-		B5C0C3D73F390CA71C1845ECA8DAE471 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B3E948B79BB3465AEF56F63547D81199 /* ZHRefresh.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = ZHRefresh.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		B5C9CEB30AA71EB58B5CD53321954DE0 /* SnapKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SnapKit-prefix.pch"; sourceTree = "<group>"; };
-		B5F63A965B95D93D7E7AA6E39B1A0C4D /* ZHRefreshFooter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ZHRefreshFooter.swift; sourceTree = "<group>"; };
 		B63C6A64CF66340668996F78DA6BB482 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		B73C67F9EFC99A11440EE4069211B84A /* SnapKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SnapKit-umbrella.h"; sourceTree = "<group>"; };
-		B7E666CC56E9F62BA9CA2D24018A72A0 /* ZHRefreshComponent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ZHRefreshComponent.swift; sourceTree = "<group>"; };
-		B88F8390A131B61F0CE3A4FA930C2CE9 /* ZHRecord.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ZHRecord.swift; sourceTree = "<group>"; };
+		B8462C96391A186D15DDD5016E9D1AF9 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B8BDCD0CDEC036E08EBEFEBDB5217C5A /* ConstraintView+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ConstraintView+Extensions.swift"; path = "Source/ConstraintView+Extensions.swift"; sourceTree = "<group>"; };
-		C70FC619EB4447B54C783EED4592E95D /* ZHRefreshChiBaoZiFooter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ZHRefreshChiBaoZiFooter.swift; sourceTree = "<group>"; };
+		BC37B0A8C5FC074307EA7EBF432AAF90 /* ZHRefresh-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ZHRefresh-dummy.m"; sourceTree = "<group>"; };
+		C1634E689C61A16FE1A39A647E6A80B5 /* UIScrollView+ZHExtension.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIScrollView+ZHExtension.h"; path = "ZHRefresh/Classes/UIScrollView+ZHExtension.h"; sourceTree = "<group>"; };
+		C72C08D7C84527970F24AAB65C491E1C /* UIView+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+Extension.swift"; path = "ZHRefresh/Classes/UIView+Extension.swift"; sourceTree = "<group>"; };
 		CB8A03661F67D121E3254D933726B919 /* Pods-ZHRefresh_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ZHRefresh_Tests-resources.sh"; sourceTree = "<group>"; };
-		CF04D7191C896B3A7D2605185E5CE847 /* ZHRefreshConst.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ZHRefreshConst.swift; sourceTree = "<group>"; };
 		D09C8BFD80A7988D3B139768116EE2A7 /* ConstraintMakerRelatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerRelatable.swift; path = Source/ConstraintMakerRelatable.swift; sourceTree = "<group>"; };
 		D3463E11A1205B5C35B599F4A19C31C3 /* ConstraintOffsetTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintOffsetTarget.swift; path = Source/ConstraintOffsetTarget.swift; sourceTree = "<group>"; };
 		D35E795A4705B4FB474FF417682335F1 /* ConstraintMakerExtendable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerExtendable.swift; path = Source/ConstraintMakerExtendable.swift; sourceTree = "<group>"; };
+		D36A60D5566B00707BAECFBFD0727073 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		D3C968E61965B25CB1ADA4867E699D03 /* ZHRefreshChiBaoZiHeader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZHRefreshChiBaoZiHeader.swift; path = ZHRefresh/Classes/ZHRefreshChiBaoZiHeader.swift; sourceTree = "<group>"; };
+		D480669836A5E7780ED87A26ABBA9326 /* ZHRefreshBackStateFooter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZHRefreshBackStateFooter.swift; path = ZHRefresh/Classes/ZHRefreshBackStateFooter.swift; sourceTree = "<group>"; };
 		D69B953D578152B8ABC94EDF5E0C6A43 /* LayoutConstraintItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutConstraintItem.swift; path = Source/LayoutConstraintItem.swift; sourceTree = "<group>"; };
 		D6E03888824F0BC09BC4827577C35087 /* Debugging.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Debugging.swift; path = Source/Debugging.swift; sourceTree = "<group>"; };
 		D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		DA17F2D7F42352672F30A144E51AC809 /* ConstraintRelation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintRelation.swift; path = Source/ConstraintRelation.swift; sourceTree = "<group>"; };
 		DBE14A5BE5AA8350526F042EBC920BAA /* ConstraintLayoutSupport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutSupport.swift; path = Source/ConstraintLayoutSupport.swift; sourceTree = "<group>"; };
+		DC83C7FB9B354FFC20CC2E7242369D63 /* ZHRefreshBackFooter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZHRefreshBackFooter.swift; path = ZHRefresh/Classes/ZHRefreshBackFooter.swift; sourceTree = "<group>"; };
 		DD97CEFB74800C4A5F04ED11A13D33D5 /* ConstraintItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintItem.swift; path = Source/ConstraintItem.swift; sourceTree = "<group>"; };
+		DED51B8DE350FA5D8461D7B0BBA0BE4E /* ZHRefresh.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = ZHRefresh.bundle; path = ZHRefresh/Assets/ZHRefresh.bundle; sourceTree = "<group>"; };
+		E36A80AB0637D8306AB3D0B2040F256A /* ZHRefresh.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ZHRefresh.modulemap; sourceTree = "<group>"; };
 		E4A88A63441A86B2385C0350EA5B6FD7 /* Pods-ZHRefresh_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ZHRefresh_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		E8879E29D3BDFC6AD972919D31CB7457 /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SnapKit.framework; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E996EE899BF809AF961B3854150AF94E /* ZHRefreshRunTime.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ZHRefreshRunTime.m; sourceTree = "<group>"; };
-		E9D3E2E1F0234A661B6E36F7DF6A1F3D /* ZHRefreshBackNormalFooter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ZHRefreshBackNormalFooter.swift; sourceTree = "<group>"; };
+		ECE230896E213AC5F21231506E82235B /* ZHRefresh-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ZHRefresh-prefix.pch"; sourceTree = "<group>"; };
 		ED52D783AF73851878E43D936CF1E9B8 /* Pods-ZHRefresh_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ZHRefresh_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		EE8FF7667F7ED960F37E3FCB87494089 /* ZHRefreshFooter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZHRefreshFooter.swift; path = ZHRefresh/Classes/ZHRefreshFooter.swift; sourceTree = "<group>"; };
 		EEB1C88D7583A855F149230ABA2DF3C8 /* ConstraintRelatableTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintRelatableTarget.swift; path = Source/ConstraintRelatableTarget.swift; sourceTree = "<group>"; };
 		EEC1C0925B7A75C47F90DA4CD473E0A9 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EFB9D821DFD65FC6A8B139C51904048A /* ZHRefreshGifHeader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ZHRefreshGifHeader.swift; sourceTree = "<group>"; };
-		F146D9791E7D05E3F2BD39F50E196862 /* ZHRefreshNormalHeader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ZHRefreshNormalHeader.swift; sourceTree = "<group>"; };
 		F3F75E7EE36678F81FD1EC4247DB1B87 /* ConstraintMakerFinalizable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerFinalizable.swift; path = Source/ConstraintMakerFinalizable.swift; sourceTree = "<group>"; };
-		FAF39465559DA9B52EB3013B27019AC0 /* ZHRefreshHeader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ZHRefreshHeader.swift; sourceTree = "<group>"; };
 		FD1244D2F23ED21C1291BB99027C41FE /* Pods-ZHRefresh_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ZHRefresh_Tests-umbrella.h"; sourceTree = "<group>"; };
 		FE1FE61DC3251BBA5CD452BE8564C8E7 /* ConstraintMaker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMaker.swift; path = Source/ConstraintMaker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -278,28 +278,64 @@
 			path = "Target Support Files/Pods-ZHRefresh_Tests";
 			sourceTree = "<group>";
 		};
-		0CB014C2147BEACECBC397C7B3FED1E7 /* ZHRefresh */ = {
-			isa = PBXGroup;
-			children = (
-				2994CC3DCFE15ED2321387E87A4CB44C /* Base */,
-				51B4B24271E71F3D604C9B282682C8AC /* Custom */,
-				E4F3D20DEB2BF3F8DC6E1CDC2473D37D /* DIY */,
-				7BA749CD23D5DE609A6D12330F6F35BD /* Extension */,
-				B4606248FE732E1202E211E7254A6B77 /* Pod */,
-				68F74B5C824A29F6C88640DF8D8C2C02 /* Resources */,
-				4F5AD3BAC8146A0E5682B9F3985EA453 /* Support Files */,
-				9C30718B7F136C2F826C167156C72BB8 /* Tool */,
-			);
-			name = ZHRefresh;
-			path = ../..;
-			sourceTree = "<group>";
-		};
 		0F14D01B37C684095099AE8C8376D636 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				ACE3CBBE2C7163F9C96209ED44FA75D0 /* SnapKit */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		1D2365F72DA99EBCB1157D39E37D0843 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				B8462C96391A186D15DDD5016E9D1AF9 /* Info.plist */,
+				265BEF66D400A2CAA1259A4F74EC49CF /* ResourceBundle-ZHRefresh-Info.plist */,
+				E36A80AB0637D8306AB3D0B2040F256A /* ZHRefresh.modulemap */,
+				27FAF15325882C73E77113809C3F2500 /* ZHRefresh.xcconfig */,
+				BC37B0A8C5FC074307EA7EBF432AAF90 /* ZHRefresh-dummy.m */,
+				ECE230896E213AC5F21231506E82235B /* ZHRefresh-prefix.pch */,
+				91E5C8F1B0937DA708662E1EEACEDCE8 /* ZHRefresh-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/ZHRefresh";
+			sourceTree = "<group>";
+		};
+		1F4DC225DB81F537D7A18E4EEF0D13ED /* ZHRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				C1634E689C61A16FE1A39A647E6A80B5 /* UIScrollView+ZHExtension.h */,
+				A04057611411397C133A14C5A76BEC3B /* UIScrollView+ZHExtension.m */,
+				C72C08D7C84527970F24AAB65C491E1C /* UIView+Extension.swift */,
+				93AB57A09672ACFA5A07AAAB2E02DA33 /* ZHRecord.swift */,
+				5559EE6E85BC55815A373905E596C9C5 /* ZHRefresh.swift */,
+				A2858E616A44A4755E9DD97C7E660E2D /* ZHRefreshAutoFooter.swift */,
+				28CD2F83A62EE1D2B188921FBBF2A629 /* ZHRefreshAutoGifFooter.swift */,
+				A68D6EA2A950A5CD9BF2DF75ADF14FF8 /* ZHRefreshAutoNormalFooter.swift */,
+				5B33DB935ED449A999621ECE4D9C694E /* ZHRefreshAutoStateFooter.swift */,
+				DC83C7FB9B354FFC20CC2E7242369D63 /* ZHRefreshBackFooter.swift */,
+				6EBA84359CCD55E9000EDE93883C5284 /* ZHRefreshBackGifFooter.swift */,
+				2BBE151FE0CF0E8CC9A41CB70AEAE4F3 /* ZHRefreshBackNormalFooter.swift */,
+				D480669836A5E7780ED87A26ABBA9326 /* ZHRefreshBackStateFooter.swift */,
+				B04FC8892B9D0A9A26251ADDFE060231 /* ZHRefreshChiBaoZiAutoFooter.swift */,
+				8ABC6D78B81882D01072CB5DB652445C /* ZHRefreshChiBaoZiFooter.swift */,
+				D3C968E61965B25CB1ADA4867E699D03 /* ZHRefreshChiBaoZiHeader.swift */,
+				37F3D5E3F2C43E8DD54CEC4321BAE580 /* ZHRefreshComponent.swift */,
+				9D36B776CA67C43CA885BE1030B20642 /* ZHRefreshConst.swift */,
+				EE8FF7667F7ED960F37E3FCB87494089 /* ZHRefreshFooter.swift */,
+				6671B9621DD278588816285B36C7F048 /* ZHRefreshGifHeader.swift */,
+				8DB2BC4D680E264CF36BBE63625F7C5B /* ZHRefreshHeader.swift */,
+				A3E1C3BDF7F045D52E41512B67D1F9FC /* ZHRefreshKeys.swift */,
+				7A35695A4F3E063F610E5455A0D03158 /* ZHRefreshNormalHeader.swift */,
+				0C9AA96BD7D9FD614B045E481621C769 /* ZHRefreshRunTime.h */,
+				A8A1ADD5FB64A8E2B9F0F7542AF88102 /* ZHRefreshRunTime.m */,
+				5629AFA1BC70246ADBFD9D178A65BB92 /* ZHRefreshStateHeader.swift */,
+				3EC01DE611DE1874FF92CBF9C52D5C87 /* Pod */,
+				CC1DC7A991526CC6BE3A2BAA1700DC29 /* Resources */,
+				1D2365F72DA99EBCB1157D39E37D0843 /* Support Files */,
+			);
+			name = ZHRefresh;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 		25118A5A57F6BAE4423EC02C9833AF3B /* Targets Support Files */ = {
@@ -311,25 +347,14 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		2994CC3DCFE15ED2321387E87A4CB44C /* Base */ = {
+		3EC01DE611DE1874FF92CBF9C52D5C87 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				AB791B5CB8AB5BA220DAEDDB5B22215E /* ZHRefreshAutoFooter.swift */,
-				12214CF5A640F78F1E941E7B033EDEAB /* ZHRefreshBackFooter.swift */,
-				B7E666CC56E9F62BA9CA2D24018A72A0 /* ZHRefreshComponent.swift */,
-				B5F63A965B95D93D7E7AA6E39B1A0C4D /* ZHRefreshFooter.swift */,
-				FAF39465559DA9B52EB3013B27019AC0 /* ZHRefreshHeader.swift */,
+				8662739D803F4E80CB76037CA72667F2 /* LICENSE */,
+				D36A60D5566B00707BAECFBFD0727073 /* README.md */,
+				B3E948B79BB3465AEF56F63547D81199 /* ZHRefresh.podspec */,
 			);
-			name = Base;
-			path = ZHRefresh/Classes/Base;
-			sourceTree = "<group>";
-		};
-		2B63626AE102CC0F35E30A8C14B4E168 /* Development Pods */ = {
-			isa = PBXGroup;
-			children = (
-				0CB014C2147BEACECBC397C7B3FED1E7 /* ZHRefresh */,
-			);
-			name = "Development Pods";
+			name = Pod;
 			sourceTree = "<group>";
 		};
 		432313F4618A6E0D54282078B6A48A1B /* Support Files */ = {
@@ -363,117 +388,24 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		456F88E2FBD82E6371D8F162EA07683E /* Footer */ = {
+		695F529FB9251D263BEE288EBDB67C4B /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				7B9F6C28F7E6E66383C1D0C9A9153621 /* Auto */,
-				8D48495F31EB825AE336D1DC794ADE82 /* Back */,
+				1F4DC225DB81F537D7A18E4EEF0D13ED /* ZHRefresh */,
 			);
-			name = Footer;
-			path = Footer;
-			sourceTree = "<group>";
-		};
-		4F5AD3BAC8146A0E5682B9F3985EA453 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				B5C0C3D73F390CA71C1845ECA8DAE471 /* Info.plist */,
-				A262844A1FCC94AF67D2585DC85EAD04 /* ResourceBundle-ZHRefresh-Info.plist */,
-				4DE9188D27BF92BA29A7EE9A6360E261 /* ZHRefresh.modulemap */,
-				6E081364F192C74E743586014051064D /* ZHRefresh.xcconfig */,
-				46B7DD5E19FBB3B3744EF9087BF3E1F3 /* ZHRefresh-dummy.m */,
-				60836DC4424674C8D77FCFB3BC13DAAC /* ZHRefresh-prefix.pch */,
-				999D5BDBABDEC55C4AEF7B23B08B8670 /* ZHRefresh-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/ZHRefresh";
-			sourceTree = "<group>";
-		};
-		51B4B24271E71F3D604C9B282682C8AC /* Custom */ = {
-			isa = PBXGroup;
-			children = (
-				456F88E2FBD82E6371D8F162EA07683E /* Footer */,
-				8ABC8FB473EAA76A3F7C67E83B3E6BD8 /* Header */,
-			);
-			name = Custom;
-			path = ZHRefresh/Classes/Custom;
-			sourceTree = "<group>";
-		};
-		68F74B5C824A29F6C88640DF8D8C2C02 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				17F2CFAA5439C5DDE392C1C18EF5BCF6 /* ZHRefresh.bundle */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		7B9F6C28F7E6E66383C1D0C9A9153621 /* Auto */ = {
-			isa = PBXGroup;
-			children = (
-				368C849537E780783AEFB31425B22AE7 /* ZHRefreshAutoGifFooter.swift */,
-				491F911806EAF23F095D4B2BF8E78CA8 /* ZHRefreshAutoNormalFooter.swift */,
-				23238304401518D07C06658F47FBD156 /* ZHRefreshAutoStateFooter.swift */,
-			);
-			name = Auto;
-			path = Auto;
-			sourceTree = "<group>";
-		};
-		7BA749CD23D5DE609A6D12330F6F35BD /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-				3956ABACA1A689CF3B9E4D7C2FC6FB3A /* UIScrollView+ZHExtension.h */,
-				B3421F44296864B449C515F8BC05CCD6 /* UIScrollView+ZHExtension.m */,
-				4D6E0CE70BF59EF3F5C5D4CE776DDB05 /* UIScrollView+ZHRefresh.swift */,
-				A6B6552EAA4EEEC3F6C911A90C72EF93 /* UIView+Extension.swift */,
-			);
-			name = Extension;
-			path = ZHRefresh/Classes/Extension;
+			name = "Development Pods";
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				2B63626AE102CC0F35E30A8C14B4E168 /* Development Pods */,
+				695F529FB9251D263BEE288EBDB67C4B /* Development Pods */,
 				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
 				0F14D01B37C684095099AE8C8376D636 /* Pods */,
 				F5DC085FC4BD7F140BC363EAB82B39A9 /* Products */,
 				25118A5A57F6BAE4423EC02C9833AF3B /* Targets Support Files */,
 			);
-			sourceTree = "<group>";
-		};
-		8ABC8FB473EAA76A3F7C67E83B3E6BD8 /* Header */ = {
-			isa = PBXGroup;
-			children = (
-				EFB9D821DFD65FC6A8B139C51904048A /* ZHRefreshGifHeader.swift */,
-				F146D9791E7D05E3F2BD39F50E196862 /* ZHRefreshNormalHeader.swift */,
-				394FD7ACE9EAB29E462567EFA6212CB8 /* ZHRefreshStateHeader.swift */,
-			);
-			name = Header;
-			path = Header;
-			sourceTree = "<group>";
-		};
-		8D48495F31EB825AE336D1DC794ADE82 /* Back */ = {
-			isa = PBXGroup;
-			children = (
-				55FC5EF3DD5684ED00F43930071B9F1B /* ZHRefreshBackGifFooter.swift */,
-				E9D3E2E1F0234A661B6E36F7DF6A1F3D /* ZHRefreshBackNormalFooter.swift */,
-				6610946B2508492737E42B0EAB35A75A /* ZHRefreshBackStateFooter.swift */,
-			);
-			name = Back;
-			path = Back;
-			sourceTree = "<group>";
-		};
-		9C30718B7F136C2F826C167156C72BB8 /* Tool */ = {
-			isa = PBXGroup;
-			children = (
-				B88F8390A131B61F0CE3A4FA930C2CE9 /* ZHRecord.swift */,
-				CF04D7191C896B3A7D2605185E5CE847 /* ZHRefreshConst.swift */,
-				3DEED16ED64959073587EDB32F9E0224 /* ZHRefreshKeys.swift */,
-				4E552640825AEB879D71F173AA5D8336 /* ZHRefreshRunTime.h */,
-				E996EE899BF809AF961B3854150AF94E /* ZHRefreshRunTime.m */,
-			);
-			name = Tool;
-			path = ZHRefresh/Classes/Tool;
 			sourceTree = "<group>";
 		};
 		ACE3CBBE2C7163F9C96209ED44FA75D0 /* SnapKit */ = {
@@ -519,25 +451,12 @@
 			path = SnapKit;
 			sourceTree = "<group>";
 		};
-		B4606248FE732E1202E211E7254A6B77 /* Pod */ = {
+		CC1DC7A991526CC6BE3A2BAA1700DC29 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				552CE947643BBCD46E85C086637A0033 /* LICENSE */,
-				7DC1655E06E08AEB1406829E0A8FD14C /* README.md */,
-				2107B4735692CF3686BF5B8F84272265 /* ZHRefresh.podspec */,
+				DED51B8DE350FA5D8461D7B0BBA0BE4E /* ZHRefresh.bundle */,
 			);
-			name = Pod;
-			sourceTree = "<group>";
-		};
-		E4F3D20DEB2BF3F8DC6E1CDC2473D37D /* DIY */ = {
-			isa = PBXGroup;
-			children = (
-				B11BB817F6ACD30F1B51B9E617F98BFD /* ZHRefreshChiBaoZiAutoFooter.swift */,
-				C70FC619EB4447B54C783EED4592E95D /* ZHRefreshChiBaoZiFooter.swift */,
-				6DBD7213D937EE7EB89C465E5D1278DA /* ZHRefreshChiBaoZiHeader.swift */,
-			);
-			name = DIY;
-			path = ZHRefresh/Classes/DIY;
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		F5DC085FC4BD7F140BC363EAB82B39A9 /* Products */ = {
@@ -597,13 +516,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A8528F77C6278034F30F5CD6B634E1E9 /* Headers */ = {
+		FA24D31C86964B7D7B47FE15986CCDA8 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				05DB36F210889395309F09BE69BF4DBA /* UIScrollView+ZHExtension.h in Headers */,
-				7FDFC45351770EAF841D8AAA13734EE8 /* ZHRefresh-umbrella.h in Headers */,
-				420AA9D321AF9ED8AA0A8AEF5C559BDE /* ZHRefreshRunTime.h in Headers */,
+				57BB514CE265D6C33949E8D79E2662C4 /* UIScrollView+ZHExtension.h in Headers */,
+				CB0FFD68E117D1D0445149BBB1211F2A /* ZHRefresh-umbrella.h in Headers */,
+				6F293B8C2AEF190BB06F99AB6B250934 /* ZHRefreshRunTime.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -667,10 +586,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0534707D0B50117C9CFB71DEC23490D7 /* Build configuration list for PBXNativeTarget "ZHRefresh" */;
 			buildPhases = (
-				D430D6C01CD04D279350D69B55B55F18 /* Sources */,
+				9D117EB2D43BF3CC1349132056DCD0CC /* Sources */,
 				237409F43A7C5A6879E14419907D36AF /* Frameworks */,
 				1137919F7BE4852BA54BF1C92884F23B /* Resources */,
-				A8528F77C6278034F30F5CD6B634E1E9 /* Headers */,
+				FA24D31C86964B7D7B47FE15986CCDA8 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -806,35 +725,35 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D430D6C01CD04D279350D69B55B55F18 /* Sources */ = {
+		9D117EB2D43BF3CC1349132056DCD0CC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				183E8FE17F775977F989D8E5FE3389F3 /* UIScrollView+ZHExtension.m in Sources */,
-				0E9D7DA3D0C2B228D385A59999CB4CE7 /* UIScrollView+ZHRefresh.swift in Sources */,
-				1E9F5BDC63E5B33AC448AE59583A0C91 /* UIView+Extension.swift in Sources */,
-				BC1945308E2FE38B518477419A9FA8EA /* ZHRecord.swift in Sources */,
-				8A52E0B179ECC71D0E8270DDBA72A51C /* ZHRefresh-dummy.m in Sources */,
-				7477C456BD9A4B4795E25F0CB53EB70C /* ZHRefreshAutoFooter.swift in Sources */,
-				B1B64E6D24E6A2D46EF1383C5B18A5CD /* ZHRefreshAutoGifFooter.swift in Sources */,
-				A144A57CA14A4489A6DDD17408FFB87D /* ZHRefreshAutoNormalFooter.swift in Sources */,
-				B344BD6D10E6769C183A2992F8CF111E /* ZHRefreshAutoStateFooter.swift in Sources */,
-				49DF3436E24694EF26ED25A4FFD38FE9 /* ZHRefreshBackFooter.swift in Sources */,
-				39FC292525CECAD547CF0AAD42995C7E /* ZHRefreshBackGifFooter.swift in Sources */,
-				6B420C4B3C45FFCE96272BDDCF0215D0 /* ZHRefreshBackNormalFooter.swift in Sources */,
-				300E2A6617A066DA723B773E09A2A1AF /* ZHRefreshBackStateFooter.swift in Sources */,
-				0051BE53F91B184F55513D08F21F5DCE /* ZHRefreshChiBaoZiAutoFooter.swift in Sources */,
-				6145D21E295B2221214068C8FE40667E /* ZHRefreshChiBaoZiFooter.swift in Sources */,
-				3106CA7C84A44FAB1EA7FFF2C0F6A1FF /* ZHRefreshChiBaoZiHeader.swift in Sources */,
-				C40A929F7261D8695176AB057868E511 /* ZHRefreshComponent.swift in Sources */,
-				87CF74E9BEC351751540CF4828353BC1 /* ZHRefreshConst.swift in Sources */,
-				1380D02CF61F91B5ED6BD08019F2997D /* ZHRefreshFooter.swift in Sources */,
-				76D95FBE8F0EFAD01BFF45DAE12C583A /* ZHRefreshGifHeader.swift in Sources */,
-				5C79D6C925B4D2FCCDBE6482ACCCCCA0 /* ZHRefreshHeader.swift in Sources */,
-				BD086F7BCF3DC11D069B93B6086246FD /* ZHRefreshKeys.swift in Sources */,
-				68FC3BBD94BAEC9123B631A9D398DD9E /* ZHRefreshNormalHeader.swift in Sources */,
-				75BE1D66B842233789751B692A1F131C /* ZHRefreshRunTime.m in Sources */,
-				F96FFB4D80C4DA2BD2ADB4B7AEAF1EBF /* ZHRefreshStateHeader.swift in Sources */,
+				6819B76739B1E0A5A6516FE7C3556CC7 /* UIScrollView+ZHExtension.m in Sources */,
+				96EA3BC8ECA67186BCF8C247B6E6D228 /* UIView+Extension.swift in Sources */,
+				A0B0FF32239C9E538B765F0C56EF5BE5 /* ZHRecord.swift in Sources */,
+				9CB001C3A679B0B97FF88345FEAEE92B /* ZHRefresh-dummy.m in Sources */,
+				A3AC7A0B46F0D56882524CF0077661EA /* ZHRefresh.swift in Sources */,
+				F6AF78C639BFA78AAD49820FECF672F6 /* ZHRefreshAutoFooter.swift in Sources */,
+				81D56683478F529C1DB6932119B786E4 /* ZHRefreshAutoGifFooter.swift in Sources */,
+				A7C8FCDD2C0B247B8F6413E677A39DB3 /* ZHRefreshAutoNormalFooter.swift in Sources */,
+				DD39992E00CEA9DFC480E6741450F72E /* ZHRefreshAutoStateFooter.swift in Sources */,
+				BFCA9AEB6A43AA5830CEA3BBF7E86CA4 /* ZHRefreshBackFooter.swift in Sources */,
+				E4D48E1C03FFF98F12B4C46823A1814A /* ZHRefreshBackGifFooter.swift in Sources */,
+				69A02C6A7C86EDC78F15D006218BDF29 /* ZHRefreshBackNormalFooter.swift in Sources */,
+				572A42DCDF012091BCF2F6BC04915344 /* ZHRefreshBackStateFooter.swift in Sources */,
+				3CD7CD1A01E069D677990F7D16C14449 /* ZHRefreshChiBaoZiAutoFooter.swift in Sources */,
+				A421BD335312601B64071F716BCB0D3B /* ZHRefreshChiBaoZiFooter.swift in Sources */,
+				E7C037D691E8C052B5D3EF601CE7DBC5 /* ZHRefreshChiBaoZiHeader.swift in Sources */,
+				7D25E1632425BDAFC00433C9844C6CFC /* ZHRefreshComponent.swift in Sources */,
+				3B546C0850662E8DB4976281D2D15D9C /* ZHRefreshConst.swift in Sources */,
+				8025DCBE9797BDAE452D3671DF2ADC92 /* ZHRefreshFooter.swift in Sources */,
+				83ED8DF716823BAFDA8198486B1EC03A /* ZHRefreshGifHeader.swift in Sources */,
+				892BD360B170629257D59F8CC6B56375 /* ZHRefreshHeader.swift in Sources */,
+				FACEDD824FA33B4DDB1C546DAF18B801 /* ZHRefreshKeys.swift in Sources */,
+				A600547000376DEC26464C0C28535AD8 /* ZHRefreshNormalHeader.swift in Sources */,
+				22BCEE22023CCC49A4C683C0C726C3B1 /* ZHRefreshRunTime.m in Sources */,
+				30C3249A7C3288CEBD119ACC135FFDA9 /* ZHRefreshStateHeader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -906,7 +825,7 @@
 		};
 		19E150ADC3D9D35AD51EABC82BF28851 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6E081364F192C74E743586014051064D /* ZHRefresh.xcconfig */;
+			baseConfigurationReference = 27FAF15325882C73E77113809C3F2500 /* ZHRefresh.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -938,7 +857,7 @@
 		};
 		1C7296A42E57C7A6EDCAE9C1C75D2DC8 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6E081364F192C74E743586014051064D /* ZHRefresh.xcconfig */;
+			baseConfigurationReference = 27FAF15325882C73E77113809C3F2500 /* ZHRefresh.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1032,7 +951,7 @@
 		};
 		51BE5198A95EAF1868A7B7680DE7E777 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6E081364F192C74E743586014051064D /* ZHRefresh.xcconfig */;
+			baseConfigurationReference = 27FAF15325882C73E77113809C3F2500 /* ZHRefresh.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ZHRefresh";
@@ -1268,7 +1187,7 @@
 		};
 		EDEE6030E409DEA4FC2B5C889481D27A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6E081364F192C74E743586014051064D /* ZHRefresh.xcconfig */;
+			baseConfigurationReference = 27FAF15325882C73E77113809C3F2500 /* ZHRefresh.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ZHRefresh";

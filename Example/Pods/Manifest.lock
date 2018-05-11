@@ -1,6 +1,6 @@
 PODS:
   - SnapKit (4.0.0)
-  - ZHRefresh (0.0.1)
+  - ZHRefresh (0.0.2)
 
 DEPENDENCIES:
   - SnapKit (~> 4.0.0)
@@ -12,7 +12,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
-  ZHRefresh: e1b0ab492647dddad600a51bb65dd54bc4edf833
+  ZHRefresh: 6e7b584d9f7b366da7ac6b9a381d462731ac9396
 
 PODFILE CHECKSUM: 52508ad78b226cd2d83bb0dbcb003d043991a4d7
 
