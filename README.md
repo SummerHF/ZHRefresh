@@ -1,7 +1,7 @@
 <h1 align="center">ZHRefresh</h1>
 
 <p align="center">
-<a href="https://travis-ci.org/SummerHF/ZHNavigationController"><img src="https://img.shields.io/travis/SummerHF/ZHNavigationController.svg?style=flat"></a>
+<a href="https://travis-ci.org/SummerHF/ZHRefresh.svg?branch=master"><img src="https://img.shields.io/travis/SummerHF/ZHNavigationController.svg?style=flat"></a>
 <a href="https://cocoapods.org/pods/ZHNavigationController"><img src="https://img.shields.io/cocoapods/v/ZHNavigationController.svg?style=flat"></a>
 <a><img src="https://img.shields.io/cocoapods/p/ZHNavigationController.svg?style=flat"></a>
 <a><img src="https://img.shields.io/github/license/mashape/apistatus.svg?style=flat"></a>
