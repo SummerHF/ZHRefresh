@@ -1,9 +1,23 @@
 PODS:
-  - SnapKit (4.0.0)
-  - ZHRefresh (0.0.3)
+  - FBSnapshotTestCase (2.1.4):
+    - FBSnapshotTestCase/SwiftSupport (= 2.1.4)
+  - FBSnapshotTestCase/Core (2.1.4)
+  - FBSnapshotTestCase/SwiftSupport (2.1.4):
+    - FBSnapshotTestCase/Core
+  - Nimble (7.0.3)
+  - Nimble-Snapshots (6.3.0):
+    - Nimble-Snapshots/Core (= 6.3.0)
+  - Nimble-Snapshots/Core (6.3.0):
+    - FBSnapshotTestCase (~> 2.0)
+    - Nimble (~> 7.0)
+  - Quick (1.2.0)
+  - ZHRefresh (0.1.0)
 
 DEPENDENCIES:
-  - SnapKit (~> 4.0.0)
+  - FBSnapshotTestCase (~> 2.1.4)
+  - Nimble (~> 7.0.2)
+  - Nimble-Snapshots (~> 6.3.0)
+  - Quick (~> 1.2.0)
   - ZHRefresh (from `../`)
 
 EXTERNAL SOURCES:
@@ -11,9 +25,12 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  SnapKit: a42d492c16e80209130a3379f73596c3454b7694
-  ZHRefresh: 67dc07e3057309b4d170e23d6905321548709470
+  FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
+  Nimble: 7f5a9c447a33002645a071bddafbfb24ea70e0ac
+  Nimble-Snapshots: f5459b5b091678dc942d03ec4741cacb58ba4a52
+  Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08
+  ZHRefresh: 7c15199225553045aeabb15f128427de01e08e9a
 
-PODFILE CHECKSUM: 52508ad78b226cd2d83bb0dbcb003d043991a4d7
+PODFILE CHECKSUM: 3b703fd0a136ac7637ea9cb4add868f6e976d06c
 
 COCOAPODS: 1.4.0
