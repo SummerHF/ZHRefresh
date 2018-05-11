@@ -1,8 +1,9 @@
 {
   "name": "ZHRefresh",
-  "version": "0.1.0",
-  "summary": "A short description of ZHRefresh.",
-  "description": "TODO: Add long description of the pod here.",
+  "version": "0.0.4",
+  "summary": "a refresh control write by Swift which like MJRefresh",
+  "swift_version": "4.0",
+  "description": "TODO: 1. add Custom refresh style\n      2. Adaptive iPhoneX and other device",
   "homepage": "https://github.com/SummerHF/ZHRefresh",
   "license": {
     "type": "MIT",
@@ -13,10 +14,17 @@
   },
   "source": {
     "git": "https://github.com/SummerHF/ZHRefresh.git",
-    "tag": "0.1.0"
+    "tag": "0.0.4"
   },
+  "social_media_url": "http://summerhf.cn",
   "platforms": {
     "ios": "8.0"
   },
-  "source_files": "ZHRefresh/Classes/**/*"
+  "source_files": "ZHRefresh/Classes/**/*",
+  "frameworks": "UIKit",
+  "resource_bundles": {
+    "ZHRefresh": [
+      "ZHRefresh/Assets/ZHRefresh.bundle"
+    ]
+  }
 }

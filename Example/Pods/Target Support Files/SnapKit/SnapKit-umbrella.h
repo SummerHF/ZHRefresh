@@ -10,9 +10,7 @@
 #endif
 #endif
 
-#import "UIScrollView+ZHExtension.h"
-#import "ZHRefreshRunTime.h"
 
-FOUNDATION_EXPORT double ZHRefreshVersionNumber;
-FOUNDATION_EXPORT const unsigned char ZHRefreshVersionString[];
+FOUNDATION_EXPORT double SnapKitVersionNumber;
+FOUNDATION_EXPORT const unsigned char SnapKitVersionString[];
 
