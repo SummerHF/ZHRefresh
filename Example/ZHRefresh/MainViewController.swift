@@ -27,6 +27,7 @@
 
 import UIKit
 import SnapKit
+import ZHRefresh
 
 /// 分组类型
 enum ZHRefreshGroup: Int {

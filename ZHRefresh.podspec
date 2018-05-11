@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ZHRefresh'
-  s.version          = '0.0.4'
+  s.version          = '0.0.6'
   s.summary          = 'a refresh control write by Swift which like MJRefresh'
   s.swift_version    = '4.0'
 
@@ -30,7 +30,8 @@ TODO: 1. add Custom refresh style
   s.social_media_url = 'http://summerhf.cn'
   s.ios.deployment_target = '8.0'
   # Classes/*.{h,m,swift}
-  s.source_files = 'ZHRefresh/Classes/**/*'
+  # Sources/**/*.{swift,h,m,c}
+  s.source_files = 'ZHRefresh/Classes/*.{swift,h,m,c}'
   s.frameworks = 'UIKit'
   s.resource_bundles = {
     'ZHRefresh' => ['ZHRefresh/Assets/ZHRefresh.bundle']

@@ -69,7 +69,7 @@ extension TableViewController {
     // MARK: - 默认样式
 
     @objc func action01() {
-        self.tableView.zh_reloadDataBlock
+        ZHRefresh
     }
     @objc func action02() {
         print("action02")
