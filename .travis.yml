@@ -1,8 +1,6 @@
 language: objective-c
-
 branches:
   only:
     - master
-
 xcode_project: Example/ZHRefresh.xcworkspace
 osx_image: xcode9
