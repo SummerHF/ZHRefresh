@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'ZHRefresh_Example' do
+  pod 'ZHRefresh', :path => '../'
+
+  target 'ZHRefresh_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

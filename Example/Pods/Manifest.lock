@@ -1,0 +1,16 @@
+PODS:
+  - ZHRefresh (0.0.1)
+
+DEPENDENCIES:
+  - ZHRefresh (from `../`)
+
+EXTERNAL SOURCES:
+  ZHRefresh:
+    :path: ../
+
+SPEC CHECKSUMS:
+  ZHRefresh: e1b0ab492647dddad600a51bb65dd54bc4edf833
+
+PODFILE CHECKSUM: 53a770085fea487e5c7ad93bc572eb0bdab3151a
+
+COCOAPODS: 1.4.0
