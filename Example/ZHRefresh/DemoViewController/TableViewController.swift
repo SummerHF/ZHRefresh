@@ -59,6 +59,10 @@ class TableViewController: UITableViewController {
         cell?.textLabel?.text = fakeData[indexPath.row]
         return cell!
     }
+
+    deinit {
+        printf("deinit")
+    }
 }
 
 // MARK: - 刷新的样式
@@ -86,7 +90,7 @@ extension TableViewController {
     }
 
     @objc func action03() {
-        print("action03")
+
     }
 
     @objc func action04() {

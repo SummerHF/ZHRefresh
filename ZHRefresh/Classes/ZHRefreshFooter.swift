@@ -43,7 +43,7 @@ public class ZHRefreshFooter: ZHRefreshComponent {
     }
 
     /// 带有回调target和action的footer
-    static public func footerWithRefreshing(target: Any, action: Selector) -> ZHRefreshFooter {
+    static public func footerWithRefreshing(target: AnyObject, action: Selector) -> ZHRefreshFooter {
         let footer = self.init()
         footer.setRefreshing(target: target, action: action)
         return footer

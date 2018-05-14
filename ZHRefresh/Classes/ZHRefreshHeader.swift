@@ -103,7 +103,7 @@ public class ZHRefreshHeader: ZHRefreshComponent {
     }
 
     /// 类方法, 快速的创建下拉刷新控件
-    public static func headerWithRefresing(target: Any, action: Selector) -> ZHRefreshHeader {
+    public static func headerWithRefresing(target: AnyObject, action: Selector) -> ZHRefreshHeader {
         let header = self.init()
         header.setRefreshing(target: target, action: action)
         return header

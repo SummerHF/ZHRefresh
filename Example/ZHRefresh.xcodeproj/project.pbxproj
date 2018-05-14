@@ -176,8 +176,8 @@
 		C461D41820A590C200F86FD8 /* DemoViewController */ = {
 			isa = PBXGroup;
 			children = (
-				C461D41920A590C200F86FD8 /* CollectionViewController.swift */,
 				C461D41A20A590C200F86FD8 /* Example.swift */,
+				C461D41920A590C200F86FD8 /* CollectionViewController.swift */,
 				C461D41B20A590C200F86FD8 /* TableViewController.swift */,
 				C461D41C20A590C200F86FD8 /* WebViewController.swift */,
 			);

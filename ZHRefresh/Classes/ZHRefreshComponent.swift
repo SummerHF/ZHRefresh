@@ -68,7 +68,7 @@ public class ZHRefreshComponent: UIView {
     /// 结束刷新的回调
     public var endRefreshingCompletionBlock: ZHRefreshComponentEndRefreshingCompletionBlock?
     /// 回调对象
-    public var refreshTarget: Any?
+    public weak var refreshTarget: AnyObject?
     /// 回调方法
     public var refreshAction: Selector?
     /// 手势
@@ -124,7 +124,7 @@ public class ZHRefreshComponent: UIView {
     }
 
     /// 设置回调对象和回调方法
-    public func setRefreshing(target: Any, action: Selector) {
+    public func setRefreshing(target: AnyObject, action: Selector) {
         self.refreshTarget = target
         self.refreshAction = action
     }
