@@ -27,9 +27,9 @@
 
 import UIKit
 
-class ZHRefreshChiBaoZiFooter: ZHRefreshBackGifFooter {
+public class ZHRefreshChiBaoZiFooter: ZHRefreshBackGifFooter {
 
-    override func prepare() {
+    override public func prepare() {
         super.prepare()
         /// 设置普通状态的动画图片
         var idleImages = [UIImage]()

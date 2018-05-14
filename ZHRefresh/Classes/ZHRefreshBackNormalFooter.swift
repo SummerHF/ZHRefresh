@@ -28,20 +28,20 @@
 import UIKit
 
 /// 默认的上拉加载更多控件
-class ZHRefreshBackNormalFooter: ZHRefreshBackStateFooter {
+public class ZHRefreshBackNormalFooter: ZHRefreshBackStateFooter {
     /// 箭头
     private var _arrowView: UIImageView?
     /// 菊花
     private var _loadingView: UIActivityIndicatorView?
     /// 默认`.gray`
-    var activityStyle: UIActivityIndicatorViewStyle = .gray {
+    public var activityStyle: UIActivityIndicatorViewStyle = .gray {
         didSet {
             self._loadingView = nil
             self.setNeedsLayout()
         }
     }
     /// 不允许子类重写
-    final var arrowView: UIImageView! {
+    public final var arrowView: UIImageView! {
         if _arrowView == nil {
            let image = UIImage.bundleImage(name: "arrow")
            _arrowView = UIImageView(image: image)
@@ -61,12 +61,12 @@ class ZHRefreshBackNormalFooter: ZHRefreshBackStateFooter {
 
     // MARK: - override
 
-    override func prepare() {
+    override public func prepare() {
         super.prepare()
         self.activityStyle = .gray
     }
 
-    override func placeSubViews() {
+    override public func placeSubViews() {
         super.placeSubViews()
         var arrowCenterX = self.zh_w * 0.5
         if  !self.stateLable.isHidden {
@@ -88,7 +88,7 @@ class ZHRefreshBackNormalFooter: ZHRefreshBackStateFooter {
         self.arrowView.tintColor = self.stateLable.tintColor
     }
 
-    override var state: ZHRefreshState {
+    override public var state: ZHRefreshState {
         get {
             return super.state
         }

@@ -28,19 +28,19 @@
 import UIKit
 
 /// 会自动刷新的上拉刷新控件
-class ZHRefreshAutoFooter: ZHRefreshFooter {
+public class ZHRefreshAutoFooter: ZHRefreshFooter {
     /// 是否自动刷新, 默认是`true`
-    var automaticallyRefresh: Bool = true
+    public var automaticallyRefresh: Bool = true
     /// 当底部控件出现多少时就自动刷新(默认为1.0 也就是底部控件完全出现时, 才会自动刷新)
-    var triggerAutomaticallyRefreshPercent: CGFloat = 1.0
+    public var triggerAutomaticallyRefreshPercent: CGFloat = 1.0
     /// 是否每次拖拽一次只发一次请求, 默认是`false`
-    var onlyRefreshPerDray: Bool = false
+    public var onlyRefreshPerDray: Bool = false
      /// 一个新的拖拽事件
     private var oneNewPan: Bool?
 
     // MARK: - 初始化
 
-    override func willMove(toSuperview newSuperview: UIView?) {
+    override public func willMove(toSuperview newSuperview: UIView?) {
         super.willMove(toSuperview: newSuperview)
         /// 新的父控件
         if newSuperview != nil {
@@ -59,7 +59,7 @@ class ZHRefreshAutoFooter: ZHRefreshFooter {
     }
 
     // MARK: - override
-    override func prepare() {
+    override public func prepare() {
         super.prepare()
         /// 默认底部控件100%出现时才会自动刷新
         self.triggerAutomaticallyRefreshPercent = 1.0
@@ -68,13 +68,13 @@ class ZHRefreshAutoFooter: ZHRefreshFooter {
         self.onlyRefreshPerDray = false
     }
 
-    override func scrollViewContentSizeDid(change: [NSKeyValueChangeKey: Any]?) {
+    override public func scrollViewContentSizeDid(change: [NSKeyValueChangeKey: Any]?) {
         super.scrollViewContentSizeDid(change: change)
         /// 设置位置
         self.zh_y = self.scrollView.zh_contentH
     }
 
-    override func scrollViewContentOffsetDid(change: [NSKeyValueChangeKey: Any]) {
+    override public func scrollViewContentOffsetDid(change: [NSKeyValueChangeKey: Any]) {
         super.scrollViewContentOffsetDid(change: change)
         if self.state != .idle || self.automaticallyRefresh || self.zh_y == 0 { return }
         /// 内容超过一个屏幕
@@ -90,7 +90,7 @@ class ZHRefreshAutoFooter: ZHRefreshFooter {
         }
     }
 
-    override func scrollViewPanStateDid(change: [NSKeyValueChangeKey: Any]) {
+    override public func scrollViewPanStateDid(change: [NSKeyValueChangeKey: Any]) {
         super.scrollViewPanStateDid(change: change)
         if self.state != .idle { return }
         let state = self.scrollView.panGestureRecognizer.state
@@ -111,14 +111,14 @@ class ZHRefreshAutoFooter: ZHRefreshFooter {
         }
     }
 
-    override func beginRefreshing() {
+    override public func beginRefreshing() {
         guard let newPan = self.oneNewPan else { return }
         if !newPan && self.onlyRefreshPerDray { return }
         super.beginRefreshing()
         self.oneNewPan = false
     }
 
-    override var state: ZHRefreshState {
+    override public var state: ZHRefreshState {
         get {
             return super.state
         }
@@ -137,7 +137,7 @@ class ZHRefreshAutoFooter: ZHRefreshFooter {
         }
     }
 
-    override var isHidden: Bool {
+    override public var isHidden: Bool {
         didSet {
             if isHidden && !oldValue {
                 self.state = .idle

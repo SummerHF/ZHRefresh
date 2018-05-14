@@ -28,13 +28,13 @@
 import UIKit
 
 /// 带有状态文字的上拉刷新控件
-class ZHRefreshAutoStateFooter: ZHRefreshAutoFooter {
+public class ZHRefreshAutoStateFooter: ZHRefreshAutoFooter {
     /// 文字距离圈圈, 箭头的距离
-    var lableLeftInset: CGFloat = 0.0
+    public var lableLeftInset: CGFloat = 0.0
     private var _stateLbale: UILabel?
     private var stateTitles: [ZHRefreshState: String] = [ZHRefreshState: String]()
     /// 显示刷新状态的lable
-    var stateLable: UILabel! {
+    public var stateLable: UILabel! {
         if _stateLbale == nil {
             _stateLbale = UILabel.zh_lable()
             self.addSubview(_stateLbale!)
@@ -42,16 +42,16 @@ class ZHRefreshAutoStateFooter: ZHRefreshAutoFooter {
         return _stateLbale
     }
     /// 隐藏刷新状态的文字
-    var refreshingTitleHidden: Bool = false 
+    public var refreshingTitleHidden: Bool = false
     /// 设置state状态下的文字
-    func set(title: String, for state: ZHRefreshState) {
+    public func set(title: String, for state: ZHRefreshState) {
         self.stateTitles[state] = title
         self.stateLable.text = self.stateTitles[state]
     }
     
     // MARK: - override
     
-    override func prepare() {
+    override public func prepare() {
         super.prepare()
         /// 初始化间距
         self.lableLeftInset = ZHRefreshKeys.lableLeftInset
@@ -69,7 +69,7 @@ class ZHRefreshAutoStateFooter: ZHRefreshAutoFooter {
         }
     }
     
-    override func placeSubViews() {
+    override public func placeSubViews() {
         super.placeSubViews()
         if self.stateLable.constraints.count == 0 {
             /// 设置状态标签frame
@@ -77,7 +77,7 @@ class ZHRefreshAutoStateFooter: ZHRefreshAutoFooter {
         }
     }
     
-    override var state: ZHRefreshState {
+    override public var state: ZHRefreshState {
         /// 根据状态做事情
         get {
             return super.state

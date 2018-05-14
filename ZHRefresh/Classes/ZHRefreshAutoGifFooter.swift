@@ -28,10 +28,10 @@
 import UIKit
 
 /// 带动图的上拉刷新控件
-class ZHRefreshAutoGifFooter: ZHRefreshAutoStateFooter {
+public class ZHRefreshAutoGifFooter: ZHRefreshAutoStateFooter {
     private var _gifImageView: UIImageView?
     /// 只读属性
-    var gifImageView: UIImageView! {
+    public var gifImageView: UIImageView! {
         if _gifImageView == nil {
             _gifImageView = UIImageView()
             self.addSubview(_gifImageView!)
@@ -52,7 +52,7 @@ class ZHRefreshAutoGifFooter: ZHRefreshAutoStateFooter {
     // MARK: - Public method
     
     /// 设置对应状态下的图片 以及动画时间
-    func set(images: [UIImage], duration: TimeInterval, state: ZHRefreshState) {
+    public func set(images: [UIImage], duration: TimeInterval, state: ZHRefreshState) {
         self.stateImages[state] = images
         self.stateDurations[state] = duration
         if let image = images.first {
@@ -63,19 +63,19 @@ class ZHRefreshAutoGifFooter: ZHRefreshAutoStateFooter {
         }
     }
     
-    func set(images: [UIImage], state: ZHRefreshState) {
+    public func set(images: [UIImage], state: ZHRefreshState) {
         set(images: images, duration: TimeInterval(CGFloat(images.count) * 0.1), state: state)
     }
     
     // MARK: - override method
     
-    override func prepare() {
+    override public func prepare() {
         super.prepare()
         /// 初始化间距
         self.lableLeftInset = 20
     }
     
-    override func placeSubViews() {
+    override public func placeSubViews() {
         super.placeSubViews()
         if gifImageView.constraints.count == 0 {
             self.gifImageView.frame = self.bounds
@@ -88,7 +88,7 @@ class ZHRefreshAutoGifFooter: ZHRefreshAutoStateFooter {
         }
     }
     
-    override var state: ZHRefreshState {
+    override public var state: ZHRefreshState {
         get {
             return super.state
         }

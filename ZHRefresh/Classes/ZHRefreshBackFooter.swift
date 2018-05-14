@@ -28,18 +28,18 @@
 import UIKit
 
 /// 会回弹到底部的上拉刷新控件
-class ZHRefreshBackFooter: ZHRefreshFooter {
+public class ZHRefreshBackFooter: ZHRefreshFooter {
     private var lastRefreshCount: Int = 0
     private var lastBottomDelta: CGFloat = 0.0
 
     // MARK: - 重写父类的方法
-    override func willMove(toSuperview newSuperview: UIView?) {
+    override public func willMove(toSuperview newSuperview: UIView?) {
         super.willMove(toSuperview: newSuperview)
         self.scrollViewContentSizeDid(change: nil)
     }
 
     // MARK: - 实现父类的方法
-    override func scrollViewContentOffsetDid(change: [NSKeyValueChangeKey: Any]) {
+    override public func scrollViewContentOffsetDid(change: [NSKeyValueChangeKey: Any]) {
         super.scrollViewContentOffsetDid(change: change)
         /// 如果正在刷新 直接返回
         if self.state == .refreshing { return }
@@ -75,7 +75,7 @@ class ZHRefreshBackFooter: ZHRefreshFooter {
         }
     }
 
-    override func scrollViewContentSizeDid(change: [NSKeyValueChangeKey: Any]?) {
+    override public func scrollViewContentSizeDid(change: [NSKeyValueChangeKey: Any]?) {
         super.scrollViewContentSizeDid(change: change)
         /// 内容高度
         let contentHeight = self.scrollView.zh_contentH + self.ignoredScrollViewContentInsetBottom
@@ -84,7 +84,7 @@ class ZHRefreshBackFooter: ZHRefreshFooter {
         self.zh_y = max(contentHeight, scrollHeight)
     }
 
-    override var state: ZHRefreshState {
+    override public var state: ZHRefreshState {
         get {
            return super.state
         }

@@ -28,7 +28,7 @@
 import UIKit
 
 /// 基础的下拉刷新控件, 负责监控用户下拉的状态
-class ZHRefreshHeader: ZHRefreshComponent {
+public class ZHRefreshHeader: ZHRefreshComponent {
 
     /// 插入的偏移量
     private var insertDelta: CGFloat = 0.0
@@ -38,18 +38,18 @@ class ZHRefreshHeader: ZHRefreshComponent {
     // MARK: - Set & Get
 
     /// 上一次下拉刷新成功的时间
-    var lastUpdatedTime: Date? {
+    public var lastUpdatedTime: Date? {
         return UserDefaults.standard.object(forKey: self.lastUpdatedTimeKey) as? Date
     }
 
     /// 忽略多少scrollView的contentInset的top
-    var ignoredScrollViewContentInsetTop: CGFloat = 0.0 {
+    public var ignoredScrollViewContentInsetTop: CGFloat = 0.0 {
         didSet {
             self.zh_y = -self.zh_h - ignoredScrollViewContentInsetTop
         }
     }
 
-    override var state: ZHRefreshState {
+    override public var state: ZHRefreshState {
         get {
             return super.state
         }
@@ -96,14 +96,14 @@ class ZHRefreshHeader: ZHRefreshComponent {
     // MARK: - 构造方法
 
     /// 类方法, 快速的创建带有正在刷新回调的下拉刷新控件
-    static func headerWithRefreshing(block: @escaping ZHRefreshComponentRefreshingBlock) -> ZHRefreshHeader {
+    public static func headerWithRefreshing(block: @escaping ZHRefreshComponentRefreshingBlock) -> ZHRefreshHeader {
         let header = self.init()
         header.refreshingBlock = block
         return header
     }
 
     /// 类方法, 快速的创建下拉刷新控件
-    static func headerWithRefresing(target: Any, action: Selector) -> ZHRefreshHeader {
+    public static func headerWithRefresing(target: Any, action: Selector) -> ZHRefreshHeader {
         let header = self.init()
         header.setRefreshing(target: target, action: action)
         return header
@@ -111,18 +111,18 @@ class ZHRefreshHeader: ZHRefreshComponent {
 
     // MARK: - 重写父类的方法
 
-    override func prepare() {
+    override public func prepare() {
         super.prepare()
         self.zh_h =  ZHRefreshKeys.headerHeight
     }
 
-    override func placeSubViews() {
+    override public func placeSubViews() {
         super.placeSubViews()
         /// 设置y值(当自己的高度发生改变了, 肯定要重新调整y值, 所以放到placeSubViews中调整y值)
         self.zh_y = -self.zh_h - self.ignoredScrollViewContentInsetTop
     }
     
-    override func scrollViewContentOffsetDid(change: [NSKeyValueChangeKey: Any]) {
+    override public func scrollViewContentOffsetDid(change: [NSKeyValueChangeKey: Any]) {
         super.scrollViewContentOffsetDid(change: change)
         /// 在刷新的状态
         if self.state == .refreshing {

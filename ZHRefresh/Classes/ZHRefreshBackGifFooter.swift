@@ -27,10 +27,10 @@
 
 import UIKit
 
-class ZHRefreshBackGifFooter: ZHRefreshBackStateFooter {
+public class ZHRefreshBackGifFooter: ZHRefreshBackStateFooter {
     private var _gifImageView: UIImageView?
     /// 只读属性
-    var gifImageView: UIImageView! {
+    public var gifImageView: UIImageView! {
         if _gifImageView == nil {
             _gifImageView = UIImageView()
             self.addSubview(_gifImageView!)
@@ -51,7 +51,7 @@ class ZHRefreshBackGifFooter: ZHRefreshBackStateFooter {
     // MARK: - Public method
 
     /// 设置对应状态下的图片 以及动画时间
-    func set(images: [UIImage], duration: TimeInterval, state: ZHRefreshState) {
+    public func set(images: [UIImage], duration: TimeInterval, state: ZHRefreshState) {
         self.stateImages[state] = images
         self.stateDurations[state] = duration
         if let image = images.first {
@@ -62,19 +62,19 @@ class ZHRefreshBackGifFooter: ZHRefreshBackStateFooter {
         }
     }
 
-    func set(images: [UIImage], state: ZHRefreshState) {
+    public func set(images: [UIImage], state: ZHRefreshState) {
          set(images: images, duration: TimeInterval(CGFloat(images.count) * 0.1), state: state)
     }
 
     // MARK: - override method
     
-    override func prepare() {
+    override public func prepare() {
         super.prepare()
         /// 初始化间距
         self.lableLeftInset = 20
     }
 
-    override var pullingPercent: CGFloat {
+    override public var pullingPercent: CGFloat {
         didSet {
             if let images = self.stateImages[.idle] {
                 if self.state != .idle || images.count == 0 { return }
@@ -89,7 +89,7 @@ class ZHRefreshBackGifFooter: ZHRefreshBackStateFooter {
         }
     }
 
-    override func placeSubViews() {
+    override public func placeSubViews() {
         super.placeSubViews()
         if self.gifImageView.constraints.count == 0 {
             self.gifImageView.frame = self.bounds
@@ -102,7 +102,7 @@ class ZHRefreshBackGifFooter: ZHRefreshBackStateFooter {
         }
     }
 
-    override var state: ZHRefreshState {
+    override public var state: ZHRefreshState {
         get {
             return super.state
         }

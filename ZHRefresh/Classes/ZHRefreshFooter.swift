@@ -28,22 +28,22 @@
 import UIKit
 
 /// 上拉加载更多
-class ZHRefreshFooter: ZHRefreshComponent {
+public class ZHRefreshFooter: ZHRefreshComponent {
 
     /// 忽略scrollView contentInset的bottom
-    var ignoredScrollViewContentInsetBottom: CGFloat = 0.0
+    public var ignoredScrollViewContentInsetBottom: CGFloat = 0.0
 
     // MARK: - 构造方法
 
     /// 类方法, 创建footer
-    static func footerWithRefreshing(block: @escaping ZHRefreshComponentRefreshingBlock) -> ZHRefreshFooter {
+    static public func footerWithRefreshing(block: @escaping ZHRefreshComponentRefreshingBlock) -> ZHRefreshFooter {
         let footer = self.init()
         footer.refreshingBlock = block
         return footer
     }
 
     /// 带有回调target和action的footer
-    static func footerWithRefreshing(target: Any, action: Selector) -> ZHRefreshFooter {
+    static public func footerWithRefreshing(target: Any, action: Selector) -> ZHRefreshFooter {
         let footer = self.init()
         footer.setRefreshing(target: target, action: action)
         return footer
@@ -51,13 +51,13 @@ class ZHRefreshFooter: ZHRefreshComponent {
 
     // MARK: - override method
 
-    override func prepare() {
+    override public func prepare() {
         super.prepare()
         /// 设置高度
         self.zh_h = ZHRefreshKeys.footerHeight
     }
 
-    override func willMove(toSuperview newSuperview: UIView?) {
+    override public func willMove(toSuperview newSuperview: UIView?) {
         super.willMove(toSuperview: newSuperview)
         guard newSuperview != nil else { return }
         /// 监听scrollView的数据的变化
@@ -72,14 +72,14 @@ class ZHRefreshFooter: ZHRefreshComponent {
     // MARK: - public method
 
     /// 提示没有更多数据
-    func endRefreshingWithNoMoreData() {
+    public func endRefreshingWithNoMoreData() {
         DispatchQueue.main.async {
             self.state = .nomoreData
         }
     }
 
     /// 重置没有更多数据
-    func resetNoMoreData() {
+    public func resetNoMoreData() {
         DispatchQueue.main.async {
             self.state = .idle
         }

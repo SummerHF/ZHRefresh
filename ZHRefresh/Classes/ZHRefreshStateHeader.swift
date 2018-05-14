@@ -27,18 +27,18 @@
 
 import UIKit
 
-typealias lastUpdatedTimeTextBlock = (Date) -> String
+public typealias lastUpdatedTimeTextBlock = (Date) -> String
 
 /// 带有状态文字的下拉刷新控件
-class ZHRefreshStateHeader: ZHRefreshHeader {
+public class ZHRefreshStateHeader: ZHRefreshHeader {
 
     // MARK: - 刷新时间相关
     
-    var lastUpdatedTimeTextBlcok: lastUpdatedTimeTextBlock?
+    public var lastUpdatedTimeTextBlcok: lastUpdatedTimeTextBlock?
 
     private var _lastUpdatedTimeLable: UILabel?
     /// 显示上一次刷新时间的lable
-    var lastUpdatedTimeLable: UILabel! {
+    public var lastUpdatedTimeLable: UILabel! {
         if _lastUpdatedTimeLable == nil {
            _lastUpdatedTimeLable = UILabel.zh_lable()
            self.addSubview(_lastUpdatedTimeLable!)
@@ -48,7 +48,7 @@ class ZHRefreshStateHeader: ZHRefreshHeader {
 
     /// 显示刷新状态的lable
     private var _stateLable: UILabel?
-    var stateLable: UILabel! {
+    public var stateLable: UILabel! {
         if _stateLable == nil {
            _stateLable = UILabel.zh_lable()
            self.addSubview(_stateLable!)
@@ -59,12 +59,12 @@ class ZHRefreshStateHeader: ZHRefreshHeader {
     // MARK: - 状态相关
 
     /// 文字距离圈圈, 箭头的距离
-    var lableLeftInset: CGFloat = 0.0
+    public var lableLeftInset: CGFloat = 0.0
     /// 所有状态对应的文字
     private var stateTitles: [ZHRefreshState: String] = [ZHRefreshState: String]()
 
     /// 设置state状态下的文字
-    func set(title: String?, for state: ZHRefreshState) {
+    public func set(title: String?, for state: ZHRefreshState) {
          if title == nil { return }
          self.stateTitles[state] = title
          self.stateLable.text = self.stateTitles[state]
@@ -72,7 +72,7 @@ class ZHRefreshStateHeader: ZHRefreshHeader {
 
     // MARK: - Key的处理
 
-    override var lastUpdatedTimeKey: String {
+    override public var lastUpdatedTimeKey: String {
         didSet {
             super.lastUpdatedTimeKey = lastUpdatedTimeKey
             if self.lastUpdatedTimeLable.isHidden { return }
@@ -114,13 +114,13 @@ class ZHRefreshStateHeader: ZHRefreshHeader {
 
     // MARK: - 日历获取方法
 
-    func currentCalendar() -> Calendar {
+    private func currentCalendar() -> Calendar {
         return Calendar.current
     }
 
     // MARK: - 重写父类的方法
 
-    override func prepare() {
+    override public func prepare() {
         super.prepare()
         self.lableLeftInset = ZHRefreshKeys.lableLeftInset
         self.set(title: Bundle.zh_localizedString(forKey: ZHRefreshKeys.headerIdleText), for: .idle)
@@ -128,7 +128,7 @@ class ZHRefreshStateHeader: ZHRefreshHeader {
         self.set(title: Bundle.zh_localizedString(forKey: ZHRefreshKeys.headerRefreshingText), for: .refreshing)
     }
 
-    override func placeSubViews() {
+    override public func placeSubViews() {
         super.placeSubViews()
         if self.stateLable.isHidden { return }
         let noConstraintOnStatusLable: Bool = self.stateLable.constraints.count == 0
@@ -156,7 +156,7 @@ class ZHRefreshStateHeader: ZHRefreshHeader {
         }
     }
 
-    override var state: ZHRefreshState {
+    override public var state: ZHRefreshState {
         /// check date
         get {
            return super.state

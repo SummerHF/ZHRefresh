@@ -28,11 +28,11 @@
 import UIKit
 
 /// 默认的上拉刷新控件
-class ZHRefreshAutoNormalFooter: ZHRefreshAutoStateFooter {
+public class ZHRefreshAutoNormalFooter: ZHRefreshAutoStateFooter {
     /// 菊花
     private var _loadingView: UIActivityIndicatorView?
     /// 默认`.gray`
-    var activityStyle: UIActivityIndicatorViewStyle = .gray {
+    public var activityStyle: UIActivityIndicatorViewStyle = .gray {
         didSet {
             self._loadingView = nil
             self.setNeedsLayout()
@@ -49,12 +49,12 @@ class ZHRefreshAutoNormalFooter: ZHRefreshAutoStateFooter {
     
     // MARK: - override
     
-    override func prepare() {
+    override public func prepare() {
         super.prepare()
         self.activityStyle = .gray
     }
     
-    override func placeSubViews() {
+    override public func placeSubViews() {
         super.placeSubViews()
         if self.loadingView.constraints.count == 0 {
             var loadingCenterX = self.zh_w * 0.5
@@ -66,7 +66,7 @@ class ZHRefreshAutoNormalFooter: ZHRefreshAutoStateFooter {
         }
     }
     
-    override var state: ZHRefreshState {
+    override public var state: ZHRefreshState {
         get {
             return super.state
         }

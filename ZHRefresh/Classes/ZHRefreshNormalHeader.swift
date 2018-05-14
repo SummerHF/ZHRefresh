@@ -28,18 +28,18 @@
 import UIKit
 
 /// 默认的下拉刷新控件
-class ZHRefreshNormalHeader: ZHRefreshStateHeader {
+public class ZHRefreshNormalHeader: ZHRefreshStateHeader {
     private var _arrowView: UIImageView?
     private var _loadingView: UIActivityIndicatorView?
     /// 默认`.gray`
-    var activityStyle: UIActivityIndicatorViewStyle = .gray {
+    public var activityStyle: UIActivityIndicatorViewStyle = .gray {
         didSet {
             self._loadingView = nil
             self.setNeedsLayout()
         }
     }
     /// 箭头
-    var arrowView: UIImageView! {
+    public var arrowView: UIImageView! {
         if _arrowView == nil {
            let image = UIImage.bundleImage(name: "arrow")
            _arrowView = UIImageView(image: image)
@@ -48,7 +48,7 @@ class ZHRefreshNormalHeader: ZHRefreshStateHeader {
         return _arrowView
     }
     /// 菊花
-    var loadingView: UIActivityIndicatorView! {
+    public var loadingView: UIActivityIndicatorView! {
         if _loadingView == nil {
             _loadingView = UIActivityIndicatorView(activityIndicatorStyle: activityStyle)
             self.addSubview(_loadingView!)
@@ -57,12 +57,12 @@ class ZHRefreshNormalHeader: ZHRefreshStateHeader {
     }
 
     // MARK: - 重写父类的方法
-    override func prepare() {
+    override public func prepare() {
         super.prepare()
         self.activityStyle = .gray
     }
 
-    override func placeSubViews() {
+    override public func placeSubViews() {
         super.placeSubViews()
         var arrowCenterX = self.zh_w * 0.5
         if !self.stateLable.isHidden {
@@ -86,7 +86,7 @@ class ZHRefreshNormalHeader: ZHRefreshStateHeader {
         self.arrowView.tintColor = self.stateLable.tintColor
     }
 
-    override var state: ZHRefreshState {
+    override public var state: ZHRefreshState {
         /// check date
         get {
            return super.state
