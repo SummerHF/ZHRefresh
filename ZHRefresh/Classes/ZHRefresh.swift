@@ -27,7 +27,7 @@
 
 import UIKit
 
-extension UIScrollView {
+public extension UIScrollView {
     
     /// header
      @objc dynamic var header: ZHRefreshHeader? {
