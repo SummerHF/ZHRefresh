@@ -30,7 +30,7 @@ import UIKit
 extension UIScrollView {
     
     /// header
-    @objc dynamic var header: ZHRefreshHeader? {
+     @objc dynamic var header: ZHRefreshHeader? {
         get {
             return objc_getAssociatedObject(self, &ZHRefreshKeys.header) as? ZHRefreshHeader
         }
@@ -49,7 +49,7 @@ extension UIScrollView {
     }
 
     /// footer
-    @objc dynamic var footer: ZHRefreshFooter? {
+     @objc dynamic var footer: ZHRefreshFooter? {
         get {
             return objc_getAssociatedObject(self, &ZHRefreshKeys.footer) as? ZHRefreshFooter
         }

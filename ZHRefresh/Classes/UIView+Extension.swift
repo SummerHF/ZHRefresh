@@ -34,7 +34,7 @@ import UIKit
 extension UIImage {
 
     /// 从bundle中提取照片
-    static func bundleImage(name: String) -> UIImage? {
+    public static func bundleImage(name: String) -> UIImage? {
         let string = (ZHRefreshKeys.bundleName as NSString).appendingPathComponent(name)
         return UIImage(named: string)
     }
@@ -48,7 +48,7 @@ extension UIImage {
 
 // MARK: - UILabel
 
-extension UILabel {
+public extension UILabel {
     
     /// 快速创建lable
     static func zh_lable() -> UILabel {
