@@ -73,6 +73,8 @@ extension TableViewController {
             guard let `self` = self else { return }
             self.loadNewData()
         }
+        /// 进入刷新状态
+        self.tableView.header?.beginRefreshing()
     }
 
     @objc func action02() {

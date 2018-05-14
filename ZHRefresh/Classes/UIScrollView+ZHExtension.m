@@ -254,6 +254,9 @@ static NSString  *const ZHRefreshReloadDataKey = @"ZHRefreshReloadDataKey";
     static NSBundle *refreshBundle = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
+        /** if nil may cause crash
+         /Users/hero/Library/Developer/CoreSimulator/Devices/00A855F7-03DA-4FB9-9A65-8843230FDE84/data/Containers/Bundle/Application/69C5C096-2B3A-4A43-94E6-8203EEEB55EC/ZHRefresh_Example.app/Frameworks/ZHRefresh.framework/ZHRefresh.bundle
+         */
         NSString * bundlePath = [[NSBundle bundleForClass:[ZHRefreshRuntime class]] pathForResource:@"ZHRefresh" ofType:@"bundle"];
         refreshBundle = [NSBundle bundleWithPath:bundlePath];
     });

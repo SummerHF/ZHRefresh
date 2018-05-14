@@ -76,8 +76,8 @@ public class ZHRefreshNormalHeader: ZHRefreshStateHeader {
         }
         let arrowCenterY = self.zh_h * 0.5
         let center = CGPoint(x: arrowCenterX, y: arrowCenterY)
-        if arrowView.constraints.count == 0 {
-            self.arrowView.zh_size = self.arrowView.image!.size
+        if arrowView.constraints.count == 0 , let image = self.arrowView.image {
+            self.arrowView.zh_size = image.size
             self.arrowView.center = center
         }
         if self.loadingView.constraints.count == 0 {
