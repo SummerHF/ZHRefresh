@@ -24,30 +24,45 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 //
-import UIKit
+import ZHRefresh
+import WebKit
 
-class WebViewController: UIViewController {
+class WebViewController: UIViewController, WKNavigationDelegate {
+
+    lazy var webView: WKWebView = {
+         let view = WKWebView(frame: CGRect.zero)
+         view.navigationDelegate = self
+         return view
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.view.addSubview(self.webView)
+        self.webView.snp.makeConstraints { (make) in
+            if let navgationBar = self.navigationController?.navigationBar {
+                make.top.equalTo(navgationBar.frame.maxY)
+            } else {
+                make.top.equalToSuperview()
+            }
+            make.left.right.bottom.equalToSuperview()
+        }
+        /// 个人主页
+        let request = URLRequest(url: URL(string: "http://summerhf.cn/")!)
+        /// 加载页面
+        self.webView.load(request)
+        self.perform(Selector(self.method))
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @objc func action19() {
+        /// 设置回调, 一旦进入刷新状态 就会调用block
+        self.webView.scrollView.header = ZHRefreshNormalHeader.headerWithRefreshing { [weak self] in
+            guard let `self` = self else { return }
+            self.webView.reload()
+        }
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        self.webView.scrollView.header?.endRefreshing()
     }
-    */
 
 }
