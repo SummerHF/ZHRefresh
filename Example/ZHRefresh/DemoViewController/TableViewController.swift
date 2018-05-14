@@ -210,15 +210,38 @@ extension TableViewController {
 
     @objc func action13() {
         action01()
-        if let footer =  ZHRefreshAutoNormalFooter.footerWithRefreshing(target: self, action: #selector(loadMoreData)) as? ZHRefreshAutoNormalFooter {
-            footer.set(title: "Click or drag up to refresh", for: .idle)
-            footer.set(title: "Loading more...", for: .refreshing)
-            footer.set(title: "No more data...", for: .nomoreData)
-            /// 分别设置字体大小和文字颜色
-            footer.stateLable.font = UIFont.systemFont(ofSize: 17)
-            footer.stateLable.textColor = UIColor.blue
-            self.tableView.footer = footer
-        }
+        self.tableView.footer =  ZHRefreshAutoNormalFooter.footerWithRefreshing(target: self, action: #selector(loadOnceData))
+    }
+
+    // MARK: - 上拉加载 自动回弹的上拉01
+
+    @objc func action14() {
+        action01()
+        self.tableView.footer =  ZHRefreshBackNormalFooter.footerWithRefreshing(target: self, action: #selector(loadMoreData))
+        self.tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 30, right: 0)
+        self.tableView.footer?.ignoredScrollViewContentInsetBottom = 30
+    }
+
+    // MARK: - 上拉加载 自动回弹的上拉02
+
+    @objc func action15() {
+        action01()
+        self.tableView.footer =  ZHRefreshChiBaoZiFooter.footerWithRefreshing(target: self, action: #selector(loadMoreData))
+        self.tableView.footer?.automaticallyChangeAlpha = true
+    }
+
+    // MARK: - 上拉加载 自定义刷新控件(自动刷新)
+
+    @objc func action16() {
+        action01()
+        self.tableView.footer =  ZHDIYBackFooter.footerWithRefreshing(target: self, action: #selector(loadMoreData))
+    }
+
+    // MARK: - 上拉加载 自定义刷新控件(自动回弹)
+
+    @objc func action17() {
+        action01()
+        self.tableView.footer =  ZHDIYAutoFooter.footerWithRefreshing(target: self, action: #selector(loadMoreData))
     }
 }
 
@@ -271,6 +294,20 @@ extension TableViewController {
             self.tableView.reloadData()
             /// 结束刷新
             self.tableView.footer?.endRefreshingWithNoMoreData()
+        }
+    }
+
+    /// 加载后隐藏
+    @objc private func loadOnceData() {
+        for _ in 0...5 {
+            let string = "随机数据:---->\(arc4random_uniform(100000))"
+            fakeData.append(string)
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            /// 刷新tableView
+            self.tableView.reloadData()
+            /// 结束刷新
+            self.tableView.footer?.isHidden = true
         }
     }
 }

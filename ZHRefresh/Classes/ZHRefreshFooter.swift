@@ -28,7 +28,7 @@
 import UIKit
 
 /// 上拉加载更多
-public class ZHRefreshFooter: ZHRefreshComponent {
+open class ZHRefreshFooter: ZHRefreshComponent {
 
     /// 忽略scrollView contentInset的bottom
     public var ignoredScrollViewContentInsetBottom: CGFloat = 0.0
@@ -51,13 +51,13 @@ public class ZHRefreshFooter: ZHRefreshComponent {
 
     // MARK: - override method
 
-    override public func prepare() {
+    override open func prepare() {
         super.prepare()
         /// 设置高度
         self.zh_h = ZHRefreshKeys.footerHeight
     }
 
-    override public func willMove(toSuperview newSuperview: UIView?) {
+    override open func willMove(toSuperview newSuperview: UIView?) {
         super.willMove(toSuperview: newSuperview)
         guard newSuperview != nil, let indeedScrollView = self.scrollView else { return }
         /// 监听scrollView的数据的变化

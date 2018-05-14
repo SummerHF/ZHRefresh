@@ -21,6 +21,8 @@
 		C461D42220A590CC00F86FD8 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C461D42120A590CB00F86FD8 /* MainViewController.swift */; };
 		C461D42B20A5942D00F86FD8 /* UIViewController+Dynamic.m in Sources */ = {isa = PBXBuildFile; fileRef = C461D42A20A5942D00F86FD8 /* UIViewController+Dynamic.m */; };
 		C4C066B820A963BB008F9D83 /* ZHDIYHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C066B720A963BB008F9D83 /* ZHDIYHeader.swift */; };
+		C4C066BA20A97CC6008F9D83 /* ZHDIYAutoFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C066B920A97CC6008F9D83 /* ZHDIYAutoFooter.swift */; };
+		C4C066BC20A97CDA008F9D83 /* ZHDIYBackFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C066BB20A97CDA008F9D83 /* ZHDIYBackFooter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,8 @@
 		C461D42920A5942D00F86FD8 /* UIViewController+Dynamic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Dynamic.h"; sourceTree = "<group>"; };
 		C461D42A20A5942D00F86FD8 /* UIViewController+Dynamic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Dynamic.m"; sourceTree = "<group>"; };
 		C4C066B720A963BB008F9D83 /* ZHDIYHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZHDIYHeader.swift; sourceTree = "<group>"; };
+		C4C066B920A97CC6008F9D83 /* ZHDIYAutoFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZHDIYAutoFooter.swift; sourceTree = "<group>"; };
+		C4C066BB20A97CDA008F9D83 /* ZHDIYBackFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZHDIYBackFooter.swift; sourceTree = "<group>"; };
 		C53C974C4E8765810A5D18C5 /* Pods-ZHRefresh_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZHRefresh_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZHRefresh_Example/Pods-ZHRefresh_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		DD5B17725EBBA6A02C1A3F19 /* ZHRefresh.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = ZHRefresh.podspec; path = ../ZHRefresh.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 /* End PBXFileReference section */
@@ -201,6 +205,8 @@
 			isa = PBXGroup;
 			children = (
 				C4C066B720A963BB008F9D83 /* ZHDIYHeader.swift */,
+				C4C066B920A97CC6008F9D83 /* ZHDIYAutoFooter.swift */,
+				C4C066BB20A97CDA008F9D83 /* ZHDIYBackFooter.swift */,
 			);
 			path = DIY;
 			sourceTree = "<group>";
@@ -429,6 +435,8 @@
 			files = (
 				C461D41D20A590C200F86FD8 /* CollectionViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				C4C066BA20A97CC6008F9D83 /* ZHDIYAutoFooter.swift in Sources */,
+				C4C066BC20A97CDA008F9D83 /* ZHDIYBackFooter.swift in Sources */,
 				C461D42B20A5942D00F86FD8 /* UIViewController+Dynamic.m in Sources */,
 				C461D41E20A590C200F86FD8 /* Example.swift in Sources */,
 				C461D42220A590CC00F86FD8 /* MainViewController.swift in Sources */,
