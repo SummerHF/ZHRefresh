@@ -12,65 +12,191 @@
 
 ## Contents
 
-* [Getting Started 【开始使用】](#Getting_Started)
-	* [Features 【能做什么】](#Features)
-	* [Thinking 【实现思路】](#Thinking)
+<strong>swift</strong>版的下拉刷新框架, 一行代码搞定<strong>上拉加载, 下拉刷新</strong>
+
+* 开始使用
+	* [Features 【支持哪些控件刷新】](#Features)
+	* [Installation 【如何安装】](#Install)
+	* [Class structure 【类结构】](#structure)
 	
+* 常见API
+	* [ZHRefreshComponent.swift](#ZHRefreshComponent.swift)
+	* [ZHRefreshHeader.swift](#ZHRefreshHeader.swift)
+	* [ZHRefreshFooter.swift](#ZHRefreshFooter.swift)
+	* [ZHRefresh.swift](#ZHRefresh.swift)
+* 使用例子
+	* [参考](#参考)
+	* [下拉刷新(默认)](#the_drop_down_default)
+	* [下拉刷新(动画图片)](#the_drop_down_animate)
+	* [Features 【支持哪些控件刷新】](#Features)
 	
-### <a id="Getting_Started"></a>Getting Started【开始使用】
+----------
+	
+### <a id="Features"></a>支持哪些控件刷新
+继承自<strong>UIScollView</strong>的类都可以使用.如
+<strong>UIScrollView</strong>, <strong>UITableView</strong>, <strong>UICollectionView</strong>, <strong>WKWebView</strong>, <strong>UIWebView</strong>...
 
+### <a id="Install"></a>如何安装
+* 使用CocoaPods安装
 
-#### <a id="Features"></a>Features 【能做什么】
-
-* 为每一个控制器定制`navigationBar`
-* 为每一个控制器添加`全屏侧滑返回手势`,或者`使用系统的左侧侧滑返回手势`等
-* 单独的禁用某一个页面的`侧滑返回手势`
-* 禁用全局页面的`侧滑返回手势`
-* 提供多种类型的侧滑返回交互动画效果
-* 支持`3D Touch`
-* `hidesBottomBarWhenPushed`可选显示或隐藏指定页面(默认全部隐藏)
-
-
-Gesture(手势相关) | Function(功能) | 支持(enable) | 不支持(disable)
---------- | -------------|------------|----------
- 禁用手势 |  禁用全局手势 | 支持 | - 
- 禁用手势 |  禁用单个页面手势 | 支持 | -
- 半屏侧滑 |  屏幕左侧边缘右滑`Pop` | 支持自定义样式，支持精度设置|不支持侧滑样式选择(默认使用自定义样式),不支持左滑`Push`
- 全屏侧滑 |  屏幕右滑`Pop`,左滑`Push`| 支持自定义样式,支持侧滑样式选择(默认使用自定义样式),支持左滑`Push`(可选)|不支持精度设置.
-
-
-#### <a id="Thinking"></a>Features 【实现思路】
-大致的需要实现的效果如下
-
-<p align="center"><img src = "https://ws3.sinaimg.cn/large/006tKfTcgy1fpkifxs2j3g308w0fskjl.gif"></p>
-<p align="center">网易新闻</p>
-
-<p align="center"><img src = "https://ws3.sinaimg.cn/large/006tKfTcgy1fpkiqyg9sxg30820ehn3b.gif"></p>
-<p align="center">今日头条</p>
-
-我们知道,为了满足多样化的`navigation bar`需求,仅仅在控制器中修改`navigation bar`的属性是很难达到上图效果的.因为多个控制器是共用同一个导航条的(同一个栈中的控制器).那么我们该怎么实现上述的效果,大致有三种实现思路:
+因为该框架是基于<strong>swift</strong>的, 所以请确保打开<strong>use_frameworks!</strong>的注释, 允许使用动态库.
 
 ```
+pod 'ZHRefresh'
+```
 
-1. 第一种是使用自定义navigationBar.淘宝,网易新闻,等使用的是这种.
-2. 第二种是用截图的办法,在push到下一个页面时,截取屏幕,在使用edgePan来pop时看到的就是背后的截图,也能实现这种效果.京东,天猫等使用的是这种.
-3. 第三种是使用了一种比较特别,比较巧妙的办法实现的,为每一个控制器拥有自己独立的导航栏
+然后
 
 ```
-具体的思路可参考[Jerry Tian's Blog](http://jerrytian.com/2016/01/07/%E7%94%A8Reveal%E5%88%86%E6%9E%90%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90%E7%9A%84%E5%AF%BC%E8%88%AA%E6%8E%A7%E5%88%B6%E5%99%A8%E5%88%87%E6%8D%A2%E6%95%88%E6%9E%9C/).该框架借鉴的是第三种思路.采用导航控制器包裹的方式在填充到容器视图中,并将该容器视图作为我们导航控制器的根视图控制器,在每次push的时候,都采用上述包裹的方式.
+pod install
+```
 
-<p align="center"><img src = "https://ws2.sinaimg.cn/large/006tKfTcly1fpkjj650izj30cv0623ym.jpg"></p>
-<p align="center">结构图</p>
+在需要使用该框架的地方
 
-其中灰色区域的控制器就是你自己的控制器.
+```
+import ZHRefresh
+```
+
+即可
+
+---------------
+
+### <a id="structure"></a>类结构
+![类结构](https://ws4.sinaimg.cn/large/006tNc79gy1frb7sduotwj313u0b7q3b.jpg)
 
 
+## <a id="ZHRefreshComponent.swift"></a>ZHRefreshComponent.swift
+
+```swift
+    /// 正在刷新的回调
+    public var refreshingBlock: ZHRefreshComponentRefreshingBlock?
+    /// 开始刷新后的回调(进入刷新状态后的回调)
+    public var beginRefreshingCompletionBlock: ZHRefreshComponentbeiginRefreshingCompletionBlock?
+    /// 结束刷新的回调
+    public var endRefreshingCompletionBlock: ZHRefreshComponentEndRefreshingCompletionBlock?
+    /// 回调对象
+    public weak var refreshTarget: AnyObject?
+    /// 回调方法
+    public var refreshAction: Selector?
+    
+```
+
+## <a id="ZHRefreshHeader.swift"></a>ZHRefreshHeader.swift
+
+```swift
+    /// 类方法, 快速的创建下拉刷新控件
+    public static func headerWithRefresing(target: AnyObject, action: Selector) -> ZHRefreshHeader
+    /// 类方法, 快速的创建带有正在刷新回调的下拉刷新控件
+    public static func headerWithRefreshing(block: @escaping ZHRefreshComponentRefreshingBlock) -> ZHRefreshHeader
+    /// 忽略多少scrollView的contentInset的top
+    public var ignoredScrollViewContentInsetTop: CGFloat = 0.0
+    /// 上一次下拉刷新成功的时间
+    public var lastUpdatedTime: Date?
+```
+
+## <a id="ZHRefreshFooter.swift"></a>ZHRefreshFooter.swift
+
+```swift
+	  /// 带有回调target和action的footer
+    static public func footerWithRefreshing(target: AnyObject, action: Selector) -> ZHRefreshFooter
+	  /// 类方法, 创建footer
+     static public func footerWithRefreshing(block: @escaping ZHRefreshComponentRefreshingBlock) -> ZHRefreshFooter
+    /// 提示没有更多数据
+    public func endRefreshingWithNoMoreData()
+    /// 重置没有更多数据
+    public func resetNoMoreData()
+```
+
+## <a id="ZHRefresh.swift"></a>ZHRefresh.swift
+
+```swift
+   /// header and footer
+	public extension UIScrollView {
+    /// header
+     @objc dynamic var header: ZHRefreshHeader? {
+        get {
+            return objc_getAssociatedObject(self, &ZHRefreshKeys.header) as? ZHRefreshHeader
+        }
+        set {
+            if let newHeader = newValue {
+                if let oldHeader = header {
+                    /// 如果有旧值, 删除它
+                    oldHeader.removeFromSuperview()
+                }
+                /// 添加新的
+                self.insertSubview(newHeader, at: 0)
+                /// 存储新值
+                objc_setAssociatedObject(self, &ZHRefreshKeys.header, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_ASSIGN)
+            }
+        }
+    }
+
+    /// footer
+     @objc dynamic var footer: ZHRefreshFooter? {
+        get {
+            return objc_getAssociatedObject(self, &ZHRefreshKeys.footer) as? ZHRefreshFooter
+        }
+        set {
+            if let newFooter = newValue {
+                if let oldFooter = footer {
+                    /// 如果有旧值, 删除它
+                    oldFooter.removeFromSuperview()
+                }
+                /// 添加新值
+                self.insertSubview(newFooter, at: 0)
+                /// 存储新值
+                objc_setAssociatedObject(self, &ZHRefreshKeys.footer, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_ASSIGN)
+            }
+        }
+    }
+}
+```
+
+## <a id="参考"></a>参考
+请下载[源程序](https://github.com/SummerHF/ZHRefresh), 并打开附带的`demo`程序 `Example`->`ZHRefresh.xcworkspace`
+
+* `MainViewController.swift` 主入口
+* `CollectionViewController.swift` 提供`collectionView相关`的实例程序
+* `TableViewController.swift`提供`tableView相关`的实例程序
+* `WebViewController.swift`提供`webView相关`的实例程序
+* `Example.swift`提供模型数据
+
+具体结构如下图:
+![](https://ws2.sinaimg.cn/large/006tNc79gy1frb8qg100wj30960a10sy.jpg)
 
 
+以下截屏皆取自`iPhoneX`
+## <a id="the_drop_down_default"></a>下拉刷新(默认)
 
+code:
+```swift
+  // MARK: - 下拉刷新 默认样式
 
+    @objc func action01() {
+        /// 设置回调, 一旦进入刷新状态 就会调用block
+        self.tableView.header = ZHRefreshNormalHeader.headerWithRefreshing { [weak self] in
+            guard let `self` = self else { return }
+            self.loadNewData()
+        }
+        /// 进入刷新状态
+        self.tableView.header?.beginRefreshing()
+    }
+```
+screenShots:
+![](https://ws1.sinaimg.cn/large/006tNc79gy1frb9f0li9ng308k0ihgni.gif)
 
+## <a id="the_drop_down_animate"></a>下拉刷新(动画图片)
 
+code:
+```swift
+  // MARK: - 下拉刷新 动态图片
 
-
+    @objc func action02() {
+        /// 一旦进入刷新状态 就会调用target的action, 也就是调用self的loadNewData
+        self.tableView.header = ZHRefreshChiBaoZiHeader.headerWithRefresing(target: self, action: #selector(loadNewData))
+        self.tableView.header?.beginRefreshing()
+    }
+```
+screenShots:
+![](https://ws1.sinaimg.cn/large/006tNc79gy1frb9fyem4mg308k0ihgog.gif)
 
