@@ -183,7 +183,7 @@ code:
     }
 ```
 screenShots:
-<p align="center">![](https://ws1.sinaimg.cn/large/006tNc79gy1frb9f0li9ng308k0ihgni.gif)</p>
+![](https://ws1.sinaimg.cn/large/006tNc79gy1frb9f0li9ng308k0ihgni.gif)
 
 ## <a id="the_drop_down_animate"></a>下拉刷新(动画图片)
 
@@ -198,6 +198,6 @@ code:
     }
 ```
 screenShots:
-<p align="center">![](https://ws1.sinaimg.cn/large/006tNc79gy1frb9fyem4mg308k0ihgog.gif)</p>
+![](https://ws1.sinaimg.cn/large/006tNc79gy1frb9fyem4mg308k0ihgog.gif)
 
 
