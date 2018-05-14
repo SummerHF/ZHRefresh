@@ -42,18 +42,19 @@ public class ZHRefreshAutoFooter: ZHRefreshFooter {
 
     override public func willMove(toSuperview newSuperview: UIView?) {
         super.willMove(toSuperview: newSuperview)
+        guard let indeedScrollView = self.scrollView else { return }
         /// 新的父控件
         if newSuperview != nil {
             if !self.isHidden {
-                self.scrollView.zh_insertB += self.zh_h
+                indeedScrollView.zh_insertB += self.zh_h
             }
             /// 设置位置
-            self.zh_y = self.scrollView.zh_contentH
+            self.zh_y = indeedScrollView.zh_contentH
         } else {
             /// 被移除
             if !self.isHidden {
                 /// 恢复到原始状态
-                self.scrollView.zh_insertB -= self.zh_h
+                indeedScrollView.zh_insertB -= self.zh_h
             }
         }
     }
@@ -71,15 +72,17 @@ public class ZHRefreshAutoFooter: ZHRefreshFooter {
     override public func scrollViewContentSizeDid(change: [NSKeyValueChangeKey: Any]?) {
         super.scrollViewContentSizeDid(change: change)
         /// 设置位置
-        self.zh_y = self.scrollView.zh_contentH
+        guard let indeedScrollView = self.scrollView else { return }
+        self.zh_y = indeedScrollView.zh_contentH
     }
 
     override public func scrollViewContentOffsetDid(change: [NSKeyValueChangeKey: Any]) {
         super.scrollViewContentOffsetDid(change: change)
+        guard let indeedScrollView = self.scrollView else { return }
         if self.state != .idle || self.automaticallyRefresh || self.zh_y == 0 { return }
         /// 内容超过一个屏幕
-        if self.scrollView.zh_insertT + self.scrollView.zh_contentH > self.scrollView.zh_contentH {
-            let condition = scrollView.zh_offsetY >= scrollView.zh_contentH - scrollView.zh_h + self.zh_h * self.triggerAutomaticallyRefreshPercent + scrollView.zh_insertB - self.zh_h
+        if indeedScrollView.zh_insertT + indeedScrollView.zh_contentH > indeedScrollView.zh_contentH {
+            let condition = indeedScrollView.zh_offsetY >= indeedScrollView.zh_contentH - indeedScrollView.zh_h + self.zh_h * self.triggerAutomaticallyRefreshPercent + indeedScrollView.zh_insertB - self.zh_h
             if condition {
                 if let old = change[.oldKey] as? CGPoint, let new = change[.newKey] as? CGPoint {
                     if new.y <= old.y { return }
@@ -92,17 +95,18 @@ public class ZHRefreshAutoFooter: ZHRefreshFooter {
 
     override public func scrollViewPanStateDid(change: [NSKeyValueChangeKey: Any]) {
         super.scrollViewPanStateDid(change: change)
+        guard let indeedScrollView = self.scrollView else { return }
         if self.state != .idle { return }
-        let state = self.scrollView.panGestureRecognizer.state
+        let state = indeedScrollView.panGestureRecognizer.state
         /// 手松开
         if state == .ended {
-            if scrollView.zh_insertT + scrollView.zh_contentH <= scrollView.zh_h {
-                if scrollView.zh_offsetY >= -scrollView.zh_insertT {
+            if indeedScrollView.zh_insertT + indeedScrollView.zh_contentH <= indeedScrollView.zh_h {
+                if indeedScrollView.zh_offsetY >= -indeedScrollView.zh_insertT {
                     self.beginRefreshing()
                 }
             } else {
                 /// 超出一个屏幕
-                if scrollView.zh_offsetY >= scrollView.zh_contentH + scrollView.zh_insertB - scrollView.zh_h {
+                if indeedScrollView.zh_offsetY >= indeedScrollView.zh_contentH + indeedScrollView.zh_insertB - indeedScrollView.zh_h {
                     self.beginRefreshing()
                 }
             }
@@ -139,13 +143,14 @@ public class ZHRefreshAutoFooter: ZHRefreshFooter {
 
     override public var isHidden: Bool {
         didSet {
+            guard let indeedScrollView = self.scrollView else { return }
             if isHidden && !oldValue {
                 self.state = .idle
-                self.scrollView.zh_insertB -= self.zh_h
+                indeedScrollView.zh_insertB -= self.zh_h
             } else if !isHidden && oldValue {
-                self.scrollView.zh_insertB += self.zh_h
+                indeedScrollView.zh_insertB += self.zh_h
                 /// 设置位置
-                self.zh_y = scrollView.zh_contentH
+                self.zh_y = indeedScrollView.zh_contentH
             }
         }
     }

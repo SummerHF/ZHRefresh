@@ -55,7 +55,7 @@ public class ZHRefreshComponent: UIView {
     /// 记录scrollView刚开始的inset
     var _scrollViewOriginalInset: UIEdgeInsets = UIEdgeInsets.zero
     /// 父控件
-    private weak var _scrollView: UIScrollView! {
+    private weak var _scrollView: UIScrollView? {
         didSet {
             /// 初始化状态
             self.state = .idle
@@ -81,7 +81,7 @@ public class ZHRefreshComponent: UIView {
         return _scrollViewOriginalInset
     }
     /// 父控件
-    public var scrollView: UIScrollView {
+    public var scrollView: UIScrollView? {
         return _scrollView
     }
 
@@ -220,9 +220,9 @@ public class ZHRefreshComponent: UIView {
             self.zh_x = 0
             _scrollView = scrollView
             /// 设置永远支持垂直弹簧效果 否则不会出发UIScrollViewDelegate的方法, KVO也会失效
-            _scrollView.alwaysBounceVertical = true
+            _scrollView?.alwaysBounceVertical = true
             /// 记录UIScrollView最开始的contentInset
-            _scrollViewOriginalInset = self.scrollView.contentInset
+            _scrollViewOriginalInset = scrollView.contentInset
             /// 添加监听
             self.addObservers()
         }
@@ -260,9 +260,9 @@ public class ZHRefreshComponent: UIView {
     /// 添加监听
     func addObservers() {
         let options: NSKeyValueObservingOptions = [NSKeyValueObservingOptions.new, NSKeyValueObservingOptions.old]
-        self.scrollView.addObserver(self, forKeyPath: ZHRefreshKeys.contentOffset, options: options, context: nil)
-        self.scrollView.addObserver(self, forKeyPath: ZHRefreshKeys.contentSize, options: options, context: nil)
-        self.pan = self.scrollView.panGestureRecognizer
+        self.scrollView?.addObserver(self, forKeyPath: ZHRefreshKeys.contentOffset, options: options, context: nil)
+        self.scrollView?.addObserver(self, forKeyPath: ZHRefreshKeys.contentSize, options: options, context: nil)
+        self.pan = self.scrollView?.panGestureRecognizer
         self.pan?.addObserver(self, forKeyPath: ZHRefreshKeys.panState, options: options, context: nil)
     }
 

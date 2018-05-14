@@ -59,17 +59,13 @@ class TableViewController: UITableViewController {
         cell?.textLabel?.text = fakeData[indexPath.row]
         return cell!
     }
-
-    deinit {
-        printf("deinit")
-    }
 }
 
 // MARK: - 刷新的样式
 
 extension TableViewController {
 
-    // MARK: - 默认样式
+    // MARK: - 下拉刷新 默认样式
 
     @objc func action01() {
         /// 设置回调, 一旦进入刷新状态 就会调用block
@@ -89,12 +85,52 @@ extension TableViewController {
         self.tableView.header?.beginRefreshing()
     }
 
-    @objc func action03() {
+    // MARK: - 下拉刷新 隐藏时间
 
+    @objc func action03() {
+        /// change header type
+        if let header  = ZHRefreshNormalHeader.headerWithRefresing(target: self, action: #selector(loadNewData)) as? ZHRefreshNormalHeader {
+            /// 自动切换透明度
+            header.automaticallyChangeAlpha = true
+            /// 隐藏时间
+            header.lastUpdatedTimeLable.isHidden = true
+            self.tableView.header = header
+            self.tableView.header?.beginRefreshing()
+        }
     }
 
+    // MARK: - 下拉刷新 隐藏状态和时间
+
     @objc func action04() {
-        print("action04")
+        if let header  = ZHRefreshChiBaoZiHeader.headerWithRefresing(target: self, action: #selector(loadNewData)) as? ZHRefreshChiBaoZiHeader {
+            /// 隐藏时间
+            header.lastUpdatedTimeLable.isHidden = true
+            /// 隐藏状态
+            header.stateLable.isHidden = true
+            self.tableView.header = header
+            self.tableView.header?.beginRefreshing()
+        }
+    }
+
+    // MARK: - 下拉刷新 隐藏状态和时间
+
+    @objc func action05() {
+        if let header  = ZHRefreshNormalHeader.headerWithRefresing(target: self, action: #selector(loadNewData)) as? ZHRefreshNormalHeader {
+            /// 设置文字
+            header.set(title: "下拉刷新...", for: .idle)
+            header.set(title: "释放刷新...", for: .pulling)
+            header.set(title: "加载中...", for: .refreshing)
+            /// 设置字体
+            header.stateLable.font = UIFont.systemFont(ofSize: 15)
+            header.lastUpdatedTimeLable.font = UIFont.systemFont(ofSize: 14)
+            /// 设置颜色
+            header.stateLable.textColor = UIColor.red
+            header.lastUpdatedTimeLable.textColor = UIColor.blue
+            /// 赋值
+            self.tableView.header = header
+            /// 开始刷新
+            self.tableView.header?.beginRefreshing()
+        }
     }
 }
 
@@ -108,7 +144,7 @@ extension TableViewController {
             let string = "随机数据:---->\(arc4random_uniform(100000))"
             fakeData.insert(string, at: 0)
         }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
             /// 刷新tableView
             self.tableView.reloadData()
             /// 结束刷新

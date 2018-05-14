@@ -41,11 +41,12 @@ public class ZHRefreshBackFooter: ZHRefreshFooter {
     // MARK: - 实现父类的方法
     override public func scrollViewContentOffsetDid(change: [NSKeyValueChangeKey: Any]) {
         super.scrollViewContentOffsetDid(change: change)
+        guard let indeedScrollView = self.scrollView else { return }
         /// 如果正在刷新 直接返回
         if self.state == .refreshing { return }
-        _scrollViewOriginalInset = self.scrollView.zh_inset
+        _scrollViewOriginalInset = indeedScrollView.zh_inset
         /// 当前的contentOffSet
-        let currentOffSetY = self.scrollView.zh_offsetY
+        let currentOffSetY = indeedScrollView.zh_offsetY
         /// 尾部控件刚好出现的offSetY
         let happenOffSetY = self.happenOffSetY()
         /// 如果是向下滚动到看不见尾部控件, 直接返回
@@ -56,7 +57,7 @@ public class ZHRefreshBackFooter: ZHRefreshFooter {
             self.pullingPercent = pullingPercent
             return
         }
-        if self.scrollView.isDragging {
+        if indeedScrollView.isDragging {
             self.pullingPercent = pullingPercent
             // 普通和即将刷新的临界点
             let normalPullingOffSetY = happenOffSetY + self.zh_h
@@ -77,10 +78,11 @@ public class ZHRefreshBackFooter: ZHRefreshFooter {
 
     override public func scrollViewContentSizeDid(change: [NSKeyValueChangeKey: Any]?) {
         super.scrollViewContentSizeDid(change: change)
+        guard let indeedScrollView = self.scrollView else { return }
         /// 内容高度
-        let contentHeight = self.scrollView.zh_contentH + self.ignoredScrollViewContentInsetBottom
+        let contentHeight = indeedScrollView.zh_contentH + self.ignoredScrollViewContentInsetBottom
         /// scrollView height
-        let scrollHeight = self.scrollView.zh_h - self.scrollViewOriginalInset.top - self.scrollViewOriginalInset.bottom + self.ignoredScrollViewContentInsetBottom
+        let scrollHeight = indeedScrollView.zh_h - self.scrollViewOriginalInset.top - self.scrollViewOriginalInset.bottom + self.ignoredScrollViewContentInsetBottom
         self.zh_y = max(contentHeight, scrollHeight)
     }
 
@@ -89,13 +91,13 @@ public class ZHRefreshBackFooter: ZHRefreshFooter {
            return super.state
         }
         set {
-            guard let oldState = check(newState: newValue, oldState: state) else { return }
+            guard let oldState = check(newState: newValue, oldState: state), let indeedScrollView = self.scrollView else { return }
             super.state = newValue
             if newValue == .nomoreData || state == .idle {
                 /// 刷新完毕
                 if oldState == .refreshing {
                     UIView.animate(withDuration: ZHRefreshKeys.slowAnimateDuration, animations: {
-                        self.scrollView.zh_insertB -= self.lastBottomDelta
+                        indeedScrollView.zh_insertB -= self.lastBottomDelta
                         if self.automaticallyChangeAlpha { self.alpha = 0.0 }
                     }) { (finished) in
                         self.pullingPercent = 0.0
@@ -106,12 +108,13 @@ public class ZHRefreshBackFooter: ZHRefreshFooter {
                 }
                 let deltaH = self.heightForContentBreakView()
                 /// 刚刷新完毕
-                if oldState == .refreshing && deltaH > 0 && self.scrollView.zh_totalCount() != self.lastRefreshCount {
-                    self.scrollView.zh_offsetY = self.scrollView.zh_offsetY
+                if oldState == .refreshing && deltaH > 0 && indeedScrollView.zh_totalCount() != self.lastRefreshCount {
+                    let tempOffSetY = indeedScrollView.zh_offsetY
+                    indeedScrollView.zh_offsetY = tempOffSetY
                 }
             } else if newValue == .refreshing {
                 /// 记录刷新前的数量
-                self.lastRefreshCount = self.scrollView.zh_totalCount()
+                self.lastRefreshCount = indeedScrollView.zh_totalCount()
                 UIView.animate(withDuration: ZHRefreshKeys.fastAnimateDuration, animations: {
                     var bottom = self.zh_h + self.scrollViewOriginalInset.bottom
                     let deltaH = self.heightForContentBreakView()
@@ -119,9 +122,9 @@ public class ZHRefreshBackFooter: ZHRefreshFooter {
                     if  deltaH < 0 {
                         bottom -= deltaH
                     }
-                    self.lastBottomDelta = bottom - self.scrollView.zh_insertB
-                    self.scrollView.zh_insertB = bottom
-                    self.scrollView.zh_offsetY = self.happenOffSetY() + self.zh_h
+                    self.lastBottomDelta = bottom - indeedScrollView.zh_insertB
+                    indeedScrollView.zh_insertB = bottom
+                    indeedScrollView.zh_offsetY = self.happenOffSetY() + self.zh_h
                 }) { (finished) in
                     self.executeRefreshingCallBack()
                 }
@@ -141,7 +144,11 @@ public class ZHRefreshBackFooter: ZHRefreshFooter {
 
     /// 获得scrollView的内容超出view的高度
     private func heightForContentBreakView() -> CGFloat {
-        let height = self.scrollView.frame.size.height - self.scrollViewOriginalInset.top - self.scrollViewOriginalInset.bottom
-        return self.scrollView.contentSize.height - height
+        if let indeedScrollView = self.scrollView {
+           let height = indeedScrollView.frame.size.height - self.scrollViewOriginalInset.top - self.scrollViewOriginalInset.bottom
+           return indeedScrollView.contentSize.height - height
+        } else {
+           return 0
+        }
     }
 }

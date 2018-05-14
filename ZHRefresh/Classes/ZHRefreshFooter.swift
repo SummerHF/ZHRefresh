@@ -59,10 +59,10 @@ public class ZHRefreshFooter: ZHRefreshComponent {
 
     override public func willMove(toSuperview newSuperview: UIView?) {
         super.willMove(toSuperview: newSuperview)
-        guard newSuperview != nil else { return }
+        guard newSuperview != nil, let indeedScrollView = self.scrollView else { return }
         /// 监听scrollView的数据的变化
-        if self.scrollView.isKind(of: UITableView.self) || self.scrollView.isKind(of: UICollectionView.self) {
-            self.scrollView.zh_reloadDataBlock = { totalCount in
+        if indeedScrollView.isKind(of: UITableView.self) || indeedScrollView.isKind(of: UICollectionView.self) {
+            indeedScrollView.zh_reloadDataBlock = { totalCount in
                 /// 预留属性
             }
         }

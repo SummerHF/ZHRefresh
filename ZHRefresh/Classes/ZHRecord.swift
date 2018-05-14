@@ -38,7 +38,7 @@
 ///Any and AnyObject?
 /// - https://cocoacasts.com/what-is-any-in-swift
 /// - https://medium.com/@markohlebar/5-things-you-can-do-in-objective-c-but-cant-do-in-pure-swift-31bb66b4aab8
-
+/// - https://medium.com/@mimicatcodes/any-vs-anyobject-in-swift-3-b1a8d3a02e00
 ///What is escaping and nonescaping meaning?
 /// - https://medium.com/@kumarpramod017/what-do-mean-escaping-and-nonescaping-closures-in-swift-d404d721f39d
 /// In Swift 3, they made a change: closure parameters are no-escaping by default, if you wanna to escape the closure execution, you have to use @escaping with the closure parameters.

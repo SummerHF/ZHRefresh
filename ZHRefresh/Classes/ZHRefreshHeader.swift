@@ -55,7 +55,7 @@ public class ZHRefreshHeader: ZHRefreshComponent {
         }
         set {
             /// check state, 相同的state 直接return
-            guard let oldState = check(newState: newValue, oldState: state) else { return }
+            guard let oldState = check(newState: newValue, oldState: state), let indeedScrollView = self.scrollView else { return }
             super.state = newValue
             /// 更具状态做事情
             if newValue == .idle {
@@ -65,7 +65,7 @@ public class ZHRefreshHeader: ZHRefreshComponent {
                 UserDefaults.standard.synchronize()
                 /// 恢复inset和offSet
                 UIView.animate(withDuration: ZHRefreshKeys.slowAnimateDuration, animations: {
-                    self.scrollView.zh_insertT += self.insertDelta
+                    indeedScrollView.zh_insertT += self.insertDelta
                     /// 自动调整透明度
                     if self.automaticallyChangeAlpha { self.alpha = 0.0 }
                 }) { (finished) in
@@ -80,11 +80,11 @@ public class ZHRefreshHeader: ZHRefreshComponent {
                     UIView.animate(withDuration: ZHRefreshKeys.fastAnimateDuration, animations: {
                         let top = self.scrollViewOriginalInset.top + self.zh_h
                         /// 增加滚动区域top
-                        self.scrollView.zh_insertT = top
+                        indeedScrollView.zh_insertT = top
                         /// 设置滚动位置
-                        var offset = self.scrollView.contentOffset
+                        var offset = indeedScrollView.contentOffset
                         offset.y = -top
-                        self.scrollView.setContentOffset(offset, animated: false)
+                        indeedScrollView.setContentOffset(offset, animated: false)
                     }) { (finished) in
                         /// 回调正在刷新的block
                         self.executeRefreshingCallBack()
@@ -124,22 +124,23 @@ public class ZHRefreshHeader: ZHRefreshComponent {
     
     override public func scrollViewContentOffsetDid(change: [NSKeyValueChangeKey: Any]) {
         super.scrollViewContentOffsetDid(change: change)
+        guard let indeedScrollView = self.scrollView else { return }
         /// 在刷新的状态
         if self.state == .refreshing {
             /// 暂时保留
             /// 可能会导致问题
             if self.window == nil { return }
             /// sectionHeader停留解决, 计算应该偏移的位置 重点
-            var inserT = -self.scrollView.zh_offsetY > _scrollViewOriginalInset.top ? -self.scrollView.zh_offsetY : _scrollViewOriginalInset.top
+            var inserT = -indeedScrollView.zh_offsetY > _scrollViewOriginalInset.top ? -indeedScrollView.zh_offsetY : _scrollViewOriginalInset.top
             inserT = inserT > self.zh_h + _scrollViewOriginalInset.top ? self.zh_h + _scrollViewOriginalInset.top : inserT
-            self.scrollView.zh_insertT = inserT
+            indeedScrollView.zh_insertT = inserT
             self.insertDelta = _scrollViewOriginalInset.top - inserT
             return
         }
         /// 跳转到下一个控制器时, contentInset可能会变
-        _scrollViewOriginalInset = self.scrollView.zh_inset
+        _scrollViewOriginalInset = indeedScrollView.zh_inset
         /// 当前的contentOffset
-        let offsetY = self.scrollView.zh_offsetY
+        let offsetY = indeedScrollView.zh_offsetY
         /// 头部控件刚好出现的offsetY
         let happenOffsetY = -self.scrollViewOriginalInset.top
         /// 如果向上滚动到看不见头部控件, 直接返回
@@ -149,7 +150,7 @@ public class ZHRefreshHeader: ZHRefreshComponent {
         let normalpullingOffsetY = happenOffsetY - self.zh_h
         let pullingPercent = (happenOffsetY - offsetY) / self.zh_h
         /// 如果正在拖拽
-        if self.scrollView.isDragging {
+        if indeedScrollView.isDragging {
             self.pullingPercent = pullingPercent
             if self.state == .idle && offsetY < normalpullingOffsetY {
                 /// 转换为即将刷新状态
