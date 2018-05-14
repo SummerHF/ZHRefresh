@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ZHRefresh'
-  s.version          = '0.1.4'
+  s.version          = '0.1.5'
   s.summary          = 'a refresh control write by Swift which like MJRefresh'
   s.swift_version    = '4.0'
 
@@ -32,10 +32,7 @@ TODO: 1. add Custom refresh style
   s.source_files = 'ZHRefresh/Classes/*.*'
   s.frameworks = 'UIKit', 'Foundation'
   s.module_name = 'ZHRefresh'
-  s.resource_bundles = {
-    'ZHRefresh' => ['ZHRefresh/Assets/*']
-  }
-  s.resources = "ZHRefresh/Assets/*.{png,lproj}"
+  s.resources = "ZHRefresh/Assets/ZHRefresh.bundle"
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.dependency 'AFNetworking', '~> 2.3'
