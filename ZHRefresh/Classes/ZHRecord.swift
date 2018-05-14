@@ -73,4 +73,5 @@
 /// https://medium.com/@abhimuralidharan/all-about-properties-in-swift-d618481b1cc1
 /// podspec file meading?
 /// https://www.jianshu.com/p/9eea3e7cb3a1
-
+/// Cannot inherit from non-open class [duplicate]
+/// https://stackoverflow.com/questions/39072300/xcode-8-cannot-inherit-from-non-open-class

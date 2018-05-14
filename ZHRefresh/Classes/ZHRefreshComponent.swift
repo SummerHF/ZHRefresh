@@ -51,7 +51,7 @@ public typealias ZHRefreshComponentbeiginRefreshingCompletionBlock = () -> Void
 public typealias ZHRefreshComponentEndRefreshingCompletionBlock = () -> Void
 
 /// 刷新控件的基类
-public class ZHRefreshComponent: UIView {
+open class ZHRefreshComponent: UIView {
     /// 记录scrollView刚开始的inset
     var _scrollViewOriginalInset: UIEdgeInsets = UIEdgeInsets.zero
     /// 父控件
@@ -86,7 +86,7 @@ public class ZHRefreshComponent: UIView {
     }
 
     /// 拉拽的百分比(交给子类重写)
-    public var pullingPercent: CGFloat = 0.0 {
+    open var pullingPercent: CGFloat = 0.0 {
         didSet {
             if self.isRefreshing() { return }
             if self.automaticallyChangeAlpha {
@@ -110,7 +110,7 @@ public class ZHRefreshComponent: UIView {
     /// 内部维护的状态
     private var _state: ZHRefreshState = .none
     /// 刷新状态, 一般交给子类内部实现, 默认是普通状态 (通过该方式模拟oc的set and get)
-    public var state: ZHRefreshState {
+    open var state: ZHRefreshState {
         get {
             return _state
         }
@@ -193,18 +193,18 @@ public class ZHRefreshComponent: UIView {
         super.init(coder: aDecoder)
     }
 
-    override init(frame: CGRect) {
+    override public init(frame: CGRect) {
         super.init(frame: frame)
         /// 准备工作
         self.prepare()
     }
 
-    override public func layoutSubviews() {
+    override open func layoutSubviews() {
         self.placeSubViews()
         super.layoutSubviews()
     }
 
-    override public func willMove(toSuperview newSuperview: UIView?) {
+    override open func willMove(toSuperview newSuperview: UIView?) {
         super.willMove(toSuperview: newSuperview)
         guard let superView = newSuperview else { return }
         /// 如果不是UIScrollView, 不做任何事情
@@ -228,7 +228,7 @@ public class ZHRefreshComponent: UIView {
         }
     }
 
-    override public func draw(_ rect: CGRect) {
+    override open func draw(_ rect: CGRect) {
         super.draw(rect)
         if self.state == .willRefresh {
             /// 预防view还未完全显示就调用了beginRefreshing ?????
@@ -240,20 +240,20 @@ public class ZHRefreshComponent: UIView {
     // MARK: - 交给子类们去实现
 
     /// 初始化
-    public func prepare() {
+    open func prepare() {
         /// 基本属性
         self.autoresizingMask = [.flexibleWidth]
         self.backgroundColor = UIColor.clear
     }
 
     /// 摆放子控件的frame
-    public func placeSubViews() {}
+    open func placeSubViews() {}
     /// 当scrollView的contentOffset发生改变的时候调用
-    public func scrollViewContentOffsetDid(change: [NSKeyValueChangeKey: Any]) {}
+    open func scrollViewContentOffsetDid(change: [NSKeyValueChangeKey: Any]) {}
     /// 当scrollView的contentSize发生改变的时候调用
-    public func scrollViewContentSizeDid(change: [NSKeyValueChangeKey: Any]?) {}
+    open func scrollViewContentSizeDid(change: [NSKeyValueChangeKey: Any]?) {}
     /// 当scrollView的拖拽状态发生改变的时候调用
-    public func scrollViewPanStateDid(change: [NSKeyValueChangeKey: Any]) {}
+    open func scrollViewPanStateDid(change: [NSKeyValueChangeKey: Any]) {}
 
     // MARK: - Observers
 
@@ -275,7 +275,7 @@ public class ZHRefreshComponent: UIView {
     }
 
     /// KVO
-    override public func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey: Any]?, context: UnsafeMutableRawPointer?) {
+    override open func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey: Any]?, context: UnsafeMutableRawPointer?) {
         if !self.isUserInteractionEnabled || self.isHidden { return }
         guard let path = keyPath as NSString? else { return }
         /// 未开启手势交互 或者被隐藏 直接返回
@@ -294,7 +294,7 @@ public class ZHRefreshComponent: UIView {
     /// - parameter oldState: 旧状态
 
     /// - return: 如果两者相同 返回nil, 如果两者不相同, 返回旧的状态
-    func check(newState: ZHRefreshState, oldState: ZHRefreshState) -> ZHRefreshState? {
+    public func check(newState: ZHRefreshState, oldState: ZHRefreshState) -> ZHRefreshState? {
          return newState == oldState ? nil : oldState
     }
 }

@@ -28,7 +28,7 @@
 import UIKit
 
 /// 基础的下拉刷新控件, 负责监控用户下拉的状态
-public class ZHRefreshHeader: ZHRefreshComponent {
+open class ZHRefreshHeader: ZHRefreshComponent {
 
     /// 插入的偏移量
     private var insertDelta: CGFloat = 0.0
@@ -49,7 +49,7 @@ public class ZHRefreshHeader: ZHRefreshComponent {
         }
     }
 
-    override public var state: ZHRefreshState {
+    override open var state: ZHRefreshState {
         get {
             return super.state
         }
@@ -111,18 +111,18 @@ public class ZHRefreshHeader: ZHRefreshComponent {
 
     // MARK: - 重写父类的方法
 
-    override public func prepare() {
+    override open func prepare() {
         super.prepare()
         self.zh_h =  ZHRefreshKeys.headerHeight
     }
 
-    override public func placeSubViews() {
+    override open func placeSubViews() {
         super.placeSubViews()
         /// 设置y值(当自己的高度发生改变了, 肯定要重新调整y值, 所以放到placeSubViews中调整y值)
         self.zh_y = -self.zh_h - self.ignoredScrollViewContentInsetTop
     }
     
-    override public func scrollViewContentOffsetDid(change: [NSKeyValueChangeKey: Any]) {
+    override open func scrollViewContentOffsetDid(change: [NSKeyValueChangeKey: Any]) {
         super.scrollViewContentOffsetDid(change: change)
         guard let indeedScrollView = self.scrollView else { return }
         /// 在刷新的状态

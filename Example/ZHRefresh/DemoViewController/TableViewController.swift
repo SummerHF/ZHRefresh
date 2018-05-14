@@ -132,6 +132,17 @@ extension TableViewController {
             self.tableView.header?.beginRefreshing()
         }
     }
+
+    // MARK: - 自定义刷新控件
+
+    @objc func action06() {
+        if let header  = ZHDIYHeader.headerWithRefresing(target: self, action: #selector(loadNewData)) as? ZHDIYHeader {
+            /// 赋值
+            self.tableView.header = header
+            /// 开始刷新
+            self.tableView.header?.beginRefreshing()
+        }
+    }
 }
 
 // MARK: - 添加更多假数据
