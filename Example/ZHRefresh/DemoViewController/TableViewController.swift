@@ -67,9 +67,9 @@ class TableViewController: UITableViewController {
 extension TableViewController {
 
     // MARK: - 默认样式
-
+    
     @objc func action01() {
-        
+        print("action01")
     }
 
     @objc func action02() {

@@ -31,10 +31,10 @@ import UIKit
 
 // MARK: - UIImage
 
-extension UIImage {
+public extension UIImage {
 
     /// 从bundle中提取照片
-    public static func bundleImage(name: String) -> UIImage? {
+    static func bundleImage(name: String) -> UIImage? {
         let string = (ZHRefreshKeys.bundleName as NSString).appendingPathComponent(name)
         return UIImage(named: string)
     }
@@ -63,7 +63,7 @@ public extension UILabel {
 
 // MARK: - UIView
 
-extension UIView {
+public extension UIView {
 
     var zh_x: CGFloat {
         get {

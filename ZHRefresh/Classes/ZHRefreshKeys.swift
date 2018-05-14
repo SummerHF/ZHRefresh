@@ -35,42 +35,42 @@ public func printf<T>(_ message: T, fileName: String = #file, methodName: String
 }
 
 /// Key - Value
-struct ZHRefreshKeys {
+public struct ZHRefreshKeys {
 
-    static let bundleName = "ZHRefresh.bundle"
+    public static let bundleName = "ZHRefresh.bundle"
     /// key path 
-    static var header = "header"
-    static var footer = "header"
+    public static var header = "header"
+    public static var footer = "header"
     /// 最后一次下拉刷新存储时间对应的key
-    static let headerLastUpdatedTimeKey = "headerLastUpdatedTimeKey"
-    static let contentOffset = "contentOffset"
-    static let contentInSet = "contentInset"
-    static let contentSize = "contentSize"
-    static let panState = "state"
+    public static let headerLastUpdatedTimeKey = "headerLastUpdatedTimeKey"
+    public static let contentOffset = "contentOffset"
+    public static let contentInSet = "contentInset"
+    public static let contentSize = "contentSize"
+    public static let panState = "state"
 
     /// animate duration
-    static let fastAnimateDuration: TimeInterval = 0.25
-    static let slowAnimateDuration: TimeInterval = 0.4
+    public static let fastAnimateDuration: TimeInterval = 0.25
+    public static let slowAnimateDuration: TimeInterval = 0.4
     /// height and width
     /// 刷新控件的高度
-    static let headerHeight: CGFloat = 54.0
-    static let footerHeight: CGFloat = 44.0
-    static let lableLeftInset: CGFloat = 25.0
+    public static let headerHeight: CGFloat = 54.0
+    public static let footerHeight: CGFloat = 44.0
+    public static let lableLeftInset: CGFloat = 25.0
     /// 本地化
-    static let headerIdleText = "ZHRefreshHeaderIdleText"
-    static let headerPullingText = "ZHRefreshHeaderPullingText"
-    static let headerRefreshingText = "ZHRefreshHeaderRefreshingText"
+    public static let headerIdleText = "ZHRefreshHeaderIdleText"
+    public static let headerPullingText = "ZHRefreshHeaderPullingText"
+    public static let headerRefreshingText = "ZHRefreshHeaderRefreshingText"
 
-    static let autoFooterIdleText = "ZHRefreshAutoFooterIdleText"
-    static let autoFooterRefreshingText = "ZHRefreshAutoFooterRefreshingText"
-    static let autoFooterNoMoreDataText = "ZHRefreshAutoFooterNoMoreDataText"
+    public static let autoFooterIdleText = "ZHRefreshAutoFooterIdleText"
+    public static let autoFooterRefreshingText = "ZHRefreshAutoFooterRefreshingText"
+    public static let autoFooterNoMoreDataText = "ZHRefreshAutoFooterNoMoreDataText"
 
-    static let backFooterIdleText = "ZHRefreshBackFooterIdleText"
-    static let backFooterPullingText = "ZHRefreshBackFooterPullingText"
-    static let backFooterRefreshingText = "ZHRefreshBackFooterRefreshingText"
-    static let backFooterNoMoreDataText = "ZHRefreshBackFooterNoMoreDataText"
+    public static let backFooterIdleText = "ZHRefreshBackFooterIdleText"
+    public static let backFooterPullingText = "ZHRefreshBackFooterPullingText"
+    public static let backFooterRefreshingText = "ZHRefreshBackFooterRefreshingText"
+    public static let backFooterNoMoreDataText = "ZHRefreshBackFooterNoMoreDataText"
 
-    static let headerLastTimeText = "ZHRefreshHeaderLastTimeText"
-    static let headerDateTodayText = "ZHRefreshHeaderDateTodayText"
-    static let headerNoneLastDateText = "ZHRefreshHeaderNoneLastDateText"
+    public static let headerLastTimeText = "ZHRefreshHeaderLastTimeText"
+    public static let headerDateTodayText = "ZHRefreshHeaderDateTodayText"
+    public static let headerNoneLastDateText = "ZHRefreshHeaderNoneLastDateText"
 }
