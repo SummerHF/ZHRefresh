@@ -64,7 +64,6 @@ public class ZHRefreshFooter: ZHRefreshComponent {
         if self.scrollView.isKind(of: UITableView.self) || self.scrollView.isKind(of: UICollectionView.self) {
             self.scrollView.zh_reloadDataBlock = { totalCount in
                 /// 预留属性
-                printf(totalCount)
             }
         }
     }

@@ -28,7 +28,7 @@
 import UIKit
 
 let Example00 = "UITableView + 下拉刷新";
-let Example10 = "UITableView + 上拉刷新";
+let Example10 = "UITableView + 上拉加载";
 let Example20 = "UICollectionView";
 let Example30 = "UIWebView";
 
@@ -61,6 +61,7 @@ class Example: NSObject {
         let example01 = Example(header: Example10, titles: ["默认", "动画图片", "隐藏刷新状态的文字", "全部加载完毕", "禁止自动加载", "自定义文字", "加载后隐藏", "自动回弹的上拉01", "自动回弹的上拉02", "自定义刷新控件(自动刷新)", "自定义刷新控件(自动回弹)"], methods: ["action07", "action08", "action09", "action10", "action11", "action12", "action13", "action14", "action15", "action16","action17"], classType: TableViewController.classForCoder())
         /// 1
         let example02 = Example(header: Example20, titles: ["上下拉刷新"], methods: ["action18"], classType: CollectionViewController.classForCoder())
+        /// 1
         let example03 = Example(header: Example30, titles: ["下拉刷新"], methods: ["action19"], classType: WebViewController.classForCoder())
         models.append(example00)
         models.append(example01)

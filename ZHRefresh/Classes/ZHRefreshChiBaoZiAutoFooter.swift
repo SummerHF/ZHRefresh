@@ -33,16 +33,16 @@ public class ZHRefreshChiBaoZiAutoFooter: ZHRefreshAutoGifFooter {
         /// 设置普通状态的动画图片
         var idleImages = [UIImage]()
         for i in 1...60 {
-            let string = String(format: "dropdown_anim__000%zd", i)
-            let image = UIImage(named: string)!
+            let string = String(format: "dropdown_anim__000%zd@2x", i)
+            let image = UIImage.bundleImage(name: string)!
             idleImages.append(image)
         }
         set(images: idleImages, state: .idle)
         /// 设置即将刷新状态的动画图片
         var refreshingImages = [UIImage]()
         for i in 1...3 {
-            let string = String(format: "dropdown_anim__000%zd", i)
-            let image = UIImage(named: string)!
+            let string = String(format: "dropdown_anim__000%zd@2x", i)
+            let image = UIImage.bundleImage(name: string)!
             refreshingImages.append(image)
         }
         set(images: refreshingImages, state: .pulling)

@@ -101,8 +101,6 @@ public class ZHRefreshStateHeader: ZHRefreshHeader {
                     formatter.dateFormat = "yyyy-MM-dd HH:mm"
                 }
                 let timeStr = formatter.string(from: time)
-                printf(timeStr)
-                printf(isToday)
                 /// 显示日期
                 let desc: String = isToday ? Bundle.zh_localizedString(forKey: ZHRefreshKeys.headerDateTodayText) : ""
                 self.lastUpdatedTimeLable.text = String(format: "%@%@%@", arguments: [Bundle.zh_localizedString(forKey: ZHRefreshKeys.headerLastTimeText), desc, timeStr])

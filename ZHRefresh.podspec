@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ZHRefresh'
-  s.version          = '0.1.6'
+  s.version          = '0.1.7'
   s.summary          = 'a refresh control write by Swift which like MJRefresh'
   s.swift_version    = '4.0'
 

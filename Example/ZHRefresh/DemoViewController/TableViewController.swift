@@ -66,7 +66,7 @@ class TableViewController: UITableViewController {
 extension TableViewController {
 
     // MARK: - 默认样式
-    
+
     @objc func action01() {
         /// 设置回调, 一旦进入刷新状态 就会调用block
         self.tableView.header = ZHRefreshNormalHeader.headerWithRefreshing { [weak self] in
@@ -77,8 +77,12 @@ extension TableViewController {
         self.tableView.header?.beginRefreshing()
     }
 
+    // MARK: - 下拉刷新 动态图片
+
     @objc func action02() {
-        print("action02")
+        /// 一旦进入刷新状态 就会调用target的action, 也就是调用self的loadNewData
+        self.tableView.header = ZHRefreshChiBaoZiHeader.headerWithRefresing(target: self, action: #selector(loadNewData))
+        self.tableView.header?.beginRefreshing()
     }
 
     @objc func action03() {
@@ -95,7 +99,7 @@ extension TableViewController {
 extension TableViewController {
 
     /// 加载更多数据
-    private func loadNewData() {
+    @objc private func loadNewData() {
         for _ in 0...5 {
             let string = "随机数据:---->\(arc4random_uniform(100000))"
             fakeData.insert(string, at: 0)

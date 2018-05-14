@@ -164,7 +164,5 @@ public class ZHRefreshHeader: ZHRefreshComponent {
         } else if pullingPercent < 1 {
             self.pullingPercent = pullingPercent
         }
-        printf("originalInset:\(self.scrollViewOriginalInset)offsetY: \(offsetY), happenOffsetY:\(happenOffsetY)")
-        printf("contentInset:\(self.scrollView.contentInset)offsetY: \(offsetY), happenOffsetY:\(happenOffsetY)")
     }
 }
