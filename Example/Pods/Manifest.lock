@@ -12,7 +12,7 @@ PODS:
     - Nimble (~> 7.0)
   - Quick (1.2.0)
   - SnapKit (4.0.0)
-  - ZHRefresh (0.1.4)
+  - ZHRefresh (0.1.5)
 
 DEPENDENCIES:
   - FBSnapshotTestCase (~> 2.1.4)
@@ -32,7 +32,7 @@ SPEC CHECKSUMS:
   Nimble-Snapshots: f5459b5b091678dc942d03ec4741cacb58ba4a52
   Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
-  ZHRefresh: 6ba91c3d41c4d0d1c3fb9c385d31b064bef0333e
+  ZHRefresh: 11e3f1a99b57f8d4a9a4424479fd927d564dba35
 
 PODFILE CHECKSUM: 00f8cd483bef23708d3523ad932b765c16468584
 

@@ -26,6 +26,7 @@
 //
 
 #import "UIScrollView+ZHExtension.h"
+#import "ZHRefreshRunTime.h"
 #import <objc/runtime.h>
 
 #pragma clang diagnostic push
@@ -253,8 +254,8 @@ static NSString  *const ZHRefreshReloadDataKey = @"ZHRefreshReloadDataKey";
     static NSBundle *refreshBundle = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        NSString *path = [[NSBundle mainBundle] pathForResource:@"ZHRefresh" ofType:@"bundle"];
-        refreshBundle = [NSBundle bundleWithPath:path];
+        NSString * bundlePath = [[NSBundle bundleForClass:[ZHRefreshRuntime class]] pathForResource:@"ZHRefresh" ofType:@"bundle"];
+        refreshBundle = [NSBundle bundleWithPath:bundlePath];
     });
     return refreshBundle;
 }
