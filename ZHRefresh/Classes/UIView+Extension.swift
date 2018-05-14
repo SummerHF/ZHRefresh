@@ -35,8 +35,10 @@ public extension UIImage {
 
     /// 从bundle中提取照片
     static func bundleImage(name: String) -> UIImage? {
-        let string = (ZHRefreshKeys.bundleName as NSString).appendingPathComponent(name)
-        return UIImage(named: string)
+        if let path = Bundle.zh_refresh().path(forResource: name, ofType: "png") {
+           return UIImage(contentsOfFile: path)?.withRenderingMode(.alwaysTemplate)
+        }
+        return nil
     }
 
     /// 从指定bundle中提取照片

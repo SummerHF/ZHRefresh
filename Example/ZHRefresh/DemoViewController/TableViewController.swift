@@ -42,7 +42,6 @@ class TableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.separatorStyle = .singleLineEtched
-        print(self.method)
         self.perform(Selector(self.method))
     }
 
@@ -69,7 +68,11 @@ extension TableViewController {
     // MARK: - 默认样式
     
     @objc func action01() {
-        print("action01")
+        /// 设置回调, 一旦进入刷新状态 就会调用block
+        self.tableView.header = ZHRefreshNormalHeader.headerWithRefreshing { [weak self] in
+            guard let `self` = self else { return }
+            self.loadNewData()
+        }
     }
 
     @objc func action02() {
@@ -82,5 +85,24 @@ extension TableViewController {
 
     @objc func action04() {
         print("action04")
+    }
+}
+
+// MARK: - 添加更多假数据
+
+extension TableViewController {
+
+    /// 加载更多数据
+    private func loadNewData() {
+        for _ in 0...5 {
+            let string = "随机数据:---->\(arc4random_uniform(100000))"
+            fakeData.insert(string, at: 0)
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            /// 刷新tableView
+            self.tableView.reloadData()
+            /// 结束刷新
+            self.tableView.header?.endRefreshing()
+        }
     }
 }

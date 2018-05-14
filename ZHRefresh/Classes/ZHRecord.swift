@@ -71,4 +71,6 @@
 /// - https://stackoverflow.com/questions/25230780/is-it-possible-to-allow-didset-to-be-called-during-initialization-in-swift
 /// 计算属性 存储属性 willSet didSet(属性观察)
 /// https://medium.com/@abhimuralidharan/all-about-properties-in-swift-d618481b1cc1
+/// podspec file meading?
+/// https://www.jianshu.com/p/9eea3e7cb3a1
 
