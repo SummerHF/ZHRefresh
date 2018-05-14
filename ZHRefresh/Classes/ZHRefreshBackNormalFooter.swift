@@ -43,7 +43,7 @@ public class ZHRefreshBackNormalFooter: ZHRefreshBackStateFooter {
     /// 不允许子类重写
     public final var arrowView: UIImageView! {
         if _arrowView == nil {
-           let image = UIImage.bundleImage(name: "arrow")
+           let image = UIImage.bundleImage(name: "arrow@2x")
            _arrowView = UIImageView(image: image)
            self.addSubview(_arrowView!)
         }

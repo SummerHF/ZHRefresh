@@ -41,7 +41,7 @@ public class ZHRefreshNormalHeader: ZHRefreshStateHeader {
     /// 箭头
     public var arrowView: UIImageView! {
         if _arrowView == nil {
-           let image = UIImage.bundleImage(name: "arrow")
+           let image = UIImage.bundleImage(name: "arrow@2x")
            _arrowView = UIImageView(image: image)
            self.addSubview(_arrowView!)
         }
