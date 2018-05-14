@@ -116,8 +116,8 @@
 		607FACD21AFB9204008FA782 /* Example for ZHRefresh */ = {
 			isa = PBXGroup;
 			children = (
-				C4C066B320A9636E008F9D83 /* DIY */,
 				C461D42320A593CC00F86FD8 /* Tool */,
+				C4C066B320A9636E008F9D83 /* DIY */,
 				C461D41820A590C200F86FD8 /* DemoViewController */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				C461D42120A590CB00F86FD8 /* MainViewController.swift */,

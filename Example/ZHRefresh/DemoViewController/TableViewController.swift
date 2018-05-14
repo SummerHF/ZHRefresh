@@ -143,13 +143,96 @@ extension TableViewController {
             self.tableView.header?.beginRefreshing()
         }
     }
+
+    // MARK: - 上拉加载 默认
+
+    @objc func action07() {
+        action01()
+        self.tableView.footer = ZHRefreshAutoNormalFooter.footerWithRefreshing { [weak self] in
+            guard let `self` = self else { return }
+            self.loadMoreData()
+        }
+    }
+
+    // MARK: - 上拉加载 动画图片
+
+    @objc func action08() {
+        action01()
+        self.tableView.footer = ZHRefreshChiBaoZiAutoFooter.footerWithRefreshing(target: self, action: #selector(loadMoreData))
+    }
+
+    // MARK: - 上拉加载 隐藏刷新状态的文字
+
+    @objc func action09() {
+        action01()
+        if let footer = ZHRefreshChiBaoZiAutoFooter.footerWithRefreshing(target: self, action: #selector(loadMoreData)) as? ZHRefreshChiBaoZiAutoFooter {
+            // 当上拉刷新控件出现50%时（出现一半），就会自动刷新。这个值默认是1.0（也就是上拉刷新100%出现时，才会自动刷新）
+            //    footer.triggerAutomaticallyRefreshPercent = 0.5;
+            footer.refreshingTitleHidden = true
+            self.tableView.footer = footer
+        }
+    }
+
+    // MARK: - 上拉加载 全部加载完毕
+
+    @objc func action10() {
+        action01()
+        self.tableView.footer = ZHRefreshAutoNormalFooter.footerWithRefreshing(target: self, action: #selector(loadLastData))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "恢复数据加载", style: .plain, target: self, action: #selector(resetData))
+    }
+
+    // MARK: - 上拉加载 禁止自动加载
+
+    @objc func action11() {
+        action01()
+        if let footer =  ZHRefreshAutoNormalFooter.footerWithRefreshing(target: self, action: #selector(loadMoreData)) as? ZHRefreshAutoNormalFooter {
+            footer.automaticallyRefresh = false
+            self.tableView.footer = footer
+        }
+    }
+
+    // MARK: - 上拉加载 自定义文字
+
+    @objc func action12() {
+        action01()
+        if let footer =  ZHRefreshAutoNormalFooter.footerWithRefreshing(target: self, action: #selector(loadMoreData)) as? ZHRefreshAutoNormalFooter {
+            footer.set(title: "Click or drag up to refresh", for: .idle)
+            footer.set(title: "Loading more...", for: .refreshing)
+            footer.set(title: "No more data...", for: .nomoreData)
+            /// 分别设置字体大小和文字颜色
+            footer.stateLable.font = UIFont.systemFont(ofSize: 17)
+            footer.stateLable.textColor = UIColor.blue
+            self.tableView.footer = footer
+        }
+    }
+
+    // MARK: - 上拉加载 加载后隐藏
+
+    @objc func action13() {
+        action01()
+        if let footer =  ZHRefreshAutoNormalFooter.footerWithRefreshing(target: self, action: #selector(loadMoreData)) as? ZHRefreshAutoNormalFooter {
+            footer.set(title: "Click or drag up to refresh", for: .idle)
+            footer.set(title: "Loading more...", for: .refreshing)
+            footer.set(title: "No more data...", for: .nomoreData)
+            /// 分别设置字体大小和文字颜色
+            footer.stateLable.font = UIFont.systemFont(ofSize: 17)
+            footer.stateLable.textColor = UIColor.blue
+            self.tableView.footer = footer
+        }
+    }
 }
 
 // MARK: - 添加更多假数据
 
 extension TableViewController {
 
-    /// 加载更多数据
+    /// 恢复数据
+    @objc private func resetData() {
+        self.tableView.footer?.setRefreshing(target: self, action: #selector(loadMoreData))
+        self.tableView.footer?.resetNoMoreData()
+    }
+
+    /// 加载新数据 header
     @objc private func loadNewData() {
         for _ in 0...5 {
             let string = "随机数据:---->\(arc4random_uniform(100000))"
@@ -160,6 +243,34 @@ extension TableViewController {
             self.tableView.reloadData()
             /// 结束刷新
             self.tableView.header?.endRefreshing()
+        }
+    }
+
+    /// 加载更多的数据 footer
+    @objc private func loadMoreData() {
+        for _ in 0...5 {
+            let string = "随机数据:---->\(arc4random_uniform(100000))"
+            fakeData.append(string)
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            /// 刷新tableView
+            self.tableView.reloadData()
+            /// 结束刷新
+            self.tableView.footer?.endRefreshing()
+        }
+    }
+
+    /// 没有更多数据
+    @objc private func loadLastData() {
+        for _ in 0...5 {
+            let string = "随机数据:---->\(arc4random_uniform(100000))"
+            fakeData.append(string)
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            /// 刷新tableView
+            self.tableView.reloadData()
+            /// 结束刷新
+            self.tableView.footer?.endRefreshingWithNoMoreData()
         }
     }
 }
