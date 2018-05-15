@@ -4,8 +4,10 @@
 <a href="https://travis-ci.org/SummerHF/ZHRefresh"><img src="https://img.shields.io/travis/SummerHF/ZHNavigationController.svg?style=flat"></a>
 <a href="https://cocoapods.org/pods/ZHRefresh"><img src="https://img.shields.io/cocoapods/v/ZHRefresh.svg?style=flat"></a>
 <a><img src="https://img.shields.io/cocoapods/p/ZHNavigationController.svg?style=flat"></a>
-<a><img src="https://img.shields.io/github/license/mashape/apistatus.svg?style=flat"></a>
 <a href="https://cocoapods.org/pods/ZHRefresh"><img src="https://img.shields.io/badge/swift-4.0-orange.svg?style=flat"></a>
+<a><img src="https://img.shields.io/github/license/mashape/apistatus.svg?style=flat"></a>
+<a href="https://cocoapods.org/pods/ZHRefresh"><img src="https://img.shields.io/pypi/status/Django.svg"></a>
+<a href="https://twitter.com/DefinetelyLoser"><img src="https://img.shields.io/badge/twitter-@SummerHF-blue.svg?style=flat"></a>
 </p>
 
 <p align="center"><strong>Swift</strong>版的刷新控件, <strong>MJRefresh</strong>的翻版</p>
