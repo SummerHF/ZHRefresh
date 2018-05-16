@@ -30,7 +30,7 @@
 	* [参考](#参考)
 	* [下拉刷新(默认)](#the_drop_down_default)
 	* [下拉刷新(动画图片)](#the_drop_down_animate)
-	* [Features 【支持哪些控件刷新】](#Features)
+	* 由于demo较多, 就不一一截图了, 有需要的可以自行下载运行...
 	
 ----------
 	
