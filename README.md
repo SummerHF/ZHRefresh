@@ -99,10 +99,10 @@ import ZHRefresh
 ## <a id="ZHRefreshFooter.swift"></a>ZHRefreshFooter.swift
 
 ```swift
-	  /// 带有回调target和action的footer
+	 /// 带有回调target和action的footer
     static public func footerWithRefreshing(target: AnyObject, action: Selector) -> ZHRefreshFooter
-	  /// 类方法, 创建footer
-     static public func footerWithRefreshing(block: @escaping ZHRefreshComponentRefreshingBlock) -> ZHRefreshFooter
+	 /// 类方法, 创建footer
+    static public func footerWithRefreshing(block: @escaping ZHRefreshComponentRefreshingBlock) -> ZHRefreshFooter
     /// 提示没有更多数据
     public func endRefreshingWithNoMoreData()
     /// 重置没有更多数据
