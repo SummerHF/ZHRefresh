@@ -28,6 +28,7 @@
 	* [ZHRefresh.swift](#ZHRefresh.swift)
 * 使用例子
 	* [参考](#参考)
+	* [下拉刷新(仿QQ阅读)](#the_drop_down_qq_reader)
 	* [下拉刷新(默认)](#the_drop_down_default)
 	* [下拉刷新(动画图片)](#the_drop_down_animate)
 	* 由于demo较多, 就不一一截图了, 有需要的可以自行下载运行...
