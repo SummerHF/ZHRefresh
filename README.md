@@ -28,6 +28,7 @@
 	* [ZHRefresh.swift](#ZHRefresh.swift)
 * 使用例子
 	* [参考](#参考)
+	* [下拉刷新(仿QQ阅读)](#the_drop_down_qq_reader)
 	* [下拉刷新(默认)](#the_drop_down_default)
 	* [下拉刷新(动画图片)](#the_drop_down_animate)
 	* 由于demo较多, 就不一一截图了, 有需要的可以自行下载运行...
@@ -168,6 +169,28 @@ import ZHRefresh
 
 
 以下截屏皆取自`iPhoneX`
+
+## <a id="the_drop_down_qq_reader"></a>下拉刷新(仿QQ阅读)
+
+code:
+```swift
+  // MARK: - 下拉刷新 默认样式
+
+     /// 添加刷新控件
+        self.tableView.header = ZHDIYQQReaderHeader.headerWithRefreshing { [weak self] in
+            guard let `self` = self else { return }
+            self.loadQQReaderNewData()
+        }
+        /// 开始刷新
+        self.tableView.header?.beginRefreshing()
+	
+	/// 结束刷新 
+        (self.tableView.header as? ZHDIYQQReaderHeader)?.endRefreshWith(success: true)
+```
+screenShots:
+![](https://ws2.sinaimg.cn/large/006tKfTcgy1ft3nkwkx29g309f0kgq66.gif)
+
+
 ## <a id="the_drop_down_default"></a>下拉刷新(默认)
 
 code:
