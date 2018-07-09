@@ -14,6 +14,8 @@
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		BDBF683D9BFD69281B89CA2D /* Pods_ZHRefresh_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F46F3FE378DECFFF620AA8B /* Pods_ZHRefresh_Tests.framework */; };
+		C435297620F339FE00E343B1 /* ZHDIYQQReaderHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C435297520F339FE00E343B1 /* ZHDIYQQReaderHeader.swift */; };
+		C435297820F33B6300E343B1 /* Utilities .swift in Sources */ = {isa = PBXBuildFile; fileRef = C435297720F33B6300E343B1 /* Utilities .swift */; };
 		C461D41D20A590C200F86FD8 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C461D41920A590C200F86FD8 /* CollectionViewController.swift */; };
 		C461D41E20A590C200F86FD8 /* Example.swift in Sources */ = {isa = PBXBuildFile; fileRef = C461D41A20A590C200F86FD8 /* Example.swift */; };
 		C461D41F20A590C200F86FD8 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C461D41B20A590C200F86FD8 /* TableViewController.swift */; };
@@ -52,6 +54,8 @@
 		7AE9041F8BA89A94ED5E04A7 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		8986F0F64EEBB5EBB6C69F62 /* Pods-ZHRefresh_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZHRefresh_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZHRefresh_Tests/Pods-ZHRefresh_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		C09A01D33767270FF2D851FD /* Pods-ZHRefresh_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZHRefresh_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZHRefresh_Example/Pods-ZHRefresh_Example.release.xcconfig"; sourceTree = "<group>"; };
+		C435297520F339FE00E343B1 /* ZHDIYQQReaderHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZHDIYQQReaderHeader.swift; sourceTree = "<group>"; };
+		C435297720F33B6300E343B1 /* Utilities .swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Utilities .swift"; sourceTree = "<group>"; };
 		C461D41920A590C200F86FD8 /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		C461D41A20A590C200F86FD8 /* Example.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Example.swift; sourceTree = "<group>"; };
 		C461D41B20A590C200F86FD8 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
@@ -194,6 +198,7 @@
 		C461D42320A593CC00F86FD8 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				C435297720F33B6300E343B1 /* Utilities .swift */,
 				C461D42920A5942D00F86FD8 /* UIViewController+Dynamic.h */,
 				C461D42A20A5942D00F86FD8 /* UIViewController+Dynamic.m */,
 				C461D42820A5942C00F86FD8 /* ZHRefresh_Example-Bridging-Header.h */,
@@ -207,6 +212,7 @@
 				C4C066B720A963BB008F9D83 /* ZHDIYHeader.swift */,
 				C4C066B920A97CC6008F9D83 /* ZHDIYAutoFooter.swift */,
 				C4C066BB20A97CDA008F9D83 /* ZHDIYBackFooter.swift */,
+				C435297520F339FE00E343B1 /* ZHDIYQQReaderHeader.swift */,
 			);
 			path = DIY;
 			sourceTree = "<group>";
@@ -438,11 +444,13 @@
 				C461D41D20A590C200F86FD8 /* CollectionViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 				C4C066BA20A97CC6008F9D83 /* ZHDIYAutoFooter.swift in Sources */,
+				C435297820F33B6300E343B1 /* Utilities .swift in Sources */,
 				C4C066BC20A97CDA008F9D83 /* ZHDIYBackFooter.swift in Sources */,
 				C461D42B20A5942D00F86FD8 /* UIViewController+Dynamic.m in Sources */,
 				C461D41E20A590C200F86FD8 /* Example.swift in Sources */,
 				C461D42220A590CC00F86FD8 /* MainViewController.swift in Sources */,
 				C4C066B820A963BB008F9D83 /* ZHDIYHeader.swift in Sources */,
+				C435297620F339FE00E343B1 /* ZHDIYQQReaderHeader.swift in Sources */,
 				C461D42020A590C200F86FD8 /* WebViewController.swift in Sources */,
 				C461D41F20A590C200F86FD8 /* TableViewController.swift in Sources */,
 			);

@@ -243,12 +243,56 @@ extension TableViewController {
         action01()
         self.tableView.footer =  ZHDIYAutoFooter.footerWithRefreshing(target: self, action: #selector(loadMoreData))
     }
+    
+    // MARK: - 下拉刷新 自定义刷新控件
+    @objc func action20() {
+        
+        /// 添加推出按钮
+        let button = UIButton(type: .custom)
+        button.setTitle("退出", for: .normal)
+        button.setTitleColor(UIColor.red, for: .normal)
+        button.addTarget(self, action: #selector(exit), for: .touchUpInside)
+        self.view.addSubview(button)
+        
+        button.snp.makeConstraints { (make) in
+            make.size.equalTo(CGSize(width: 44, height: 44))
+            make.centerX.equalToSuperview()
+            make.centerY.equalToSuperview().multipliedBy(1.2)
+        }
+        
+        /// 添加刷新控件
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        self.tableView.header = ZHDIYQQReaderHeader.headerWithRefreshing { [weak self] in
+            guard let `self` = self else { return }
+            self.loadQQReaderNewData()
+        }
+        /// 开始刷新
+        self.tableView.header?.beginRefreshing()
+    }
 }
 
 // MARK: - 添加更多假数据
 
 extension TableViewController {
 
+    @objc private func exit() {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    /// 加载新数据 header
+    @objc private func loadQQReaderNewData() {
+        for _ in 0...5 {
+            let string = "随机数据:---->\(arc4random_uniform(100000))"
+            fakeData.insert(string, at: 0)
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            /// 刷新tableView
+            self.tableView.reloadData()
+            /// 结束刷新
+            (self.tableView.header as? ZHDIYQQReaderHeader)?.endRefreshWith(success: true)
+        }
+    }
+    
     /// 恢复数据
     @objc private func resetData() {
         self.tableView.footer?.setRefreshing(target: self, action: #selector(loadMoreData))

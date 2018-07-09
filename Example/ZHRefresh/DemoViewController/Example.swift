@@ -31,6 +31,7 @@ let Example00 = "UITableView + 下拉刷新";
 let Example10 = "UITableView + 上拉加载";
 let Example20 = "UICollectionView";
 let Example30 = "UIWebView";
+let Example40 = "自定义下拉刷新";
 
 /// 模型数据
 class Example: NSObject {
@@ -63,10 +64,13 @@ class Example: NSObject {
         let example02 = Example(header: Example20, titles: ["上下拉刷新"], methods: ["action18"], classType: CollectionViewController.classForCoder())
         /// 1
         let example03 = Example(header: Example30, titles: ["下拉刷新"], methods: ["action19"], classType: WebViewController.classForCoder())
+        /// 2
+        let examole04 = Example(header: Example40, titles: ["仿QQ阅读"], methods: ["action20"], classType: TableViewController.classForCoder())
         models.append(example00)
         models.append(example01)
         models.append(example02)
         models.append(example03)
+        models.append(examole04)
         return models
     }
 }
